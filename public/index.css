@@ -1,0 +1,26 @@
+:root {
+  --color-primary-pink: #fea5b7;
+  --color-primary-black: #000;
+  --color-primary-white: #fff;
+
+  --color-secondary-pink: #f178b6;
+  --color-secondary-oceanblue: #7b97f9;
+  --color-secondary-lightblue: #d6f0ff;
+  --color-secondary-bluepasteil: #8ccef2;
+  --color-secondary-puple: #c58cf2;
+  --color-secondary-yellow: #ffef61;
+}
+* {
+  margin: 0;
+  padding: 0;
+}
+.body {
+  background-color: var(--color-primary-white);
+}
+.navbar {
+  background-color: var(--color-primary-pink);
+}
+.menubar{
+    background-color: var(--color-secondary-lightblue);
+    color: var(--color-secondary-puple) ;
+}
