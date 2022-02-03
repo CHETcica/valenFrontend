@@ -14,7 +14,7 @@ const Menubar = () => {
           </div>
           
           <div className="flex-1 lg:flex hidden">
-            <h1 className="text-2xl ">Valen Matching</h1>
+            <h1 className="text-2xl">Valen Matching</h1>
           </div>
           <div className="flex-1 lg:flex ">
             
@@ -27,7 +27,7 @@ const Menubar = () => {
                 <img src="https://i.pravatar.cc/500?img=32" />
               </div>
             </div>
-            <h4 className="my-auto ml-5">Chetsadakorn Mueangnam</h4>
+            <h3 className="lg:flex my-auto ml-5 hidden">Chetsadakorn Mueangnam</h3>
           </div>
           
         </div>
