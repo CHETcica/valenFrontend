@@ -39,3 +39,9 @@
 .text-color-black{
   color: var(--color-primary-black);
 }
+
+.card-actions-passion{
+ background-color: var(--color-primary-pink);
+ padding: 0.8rem 2rem;
+ border-radius: 3rem;
+}

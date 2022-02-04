@@ -44,11 +44,13 @@ const Carduser = () => {
               </div>
             </div>
             <p className="text-color-black">
-              Rerum necessitatibus veritatis sed molestiae voluptates incidunt
+              Rerum necessitatibus veritatis 
               iure sapiente.
             </p>
+            <hr className="text-color-black"/>
             <div className="card-actions">
-              <div></div>
+              <div className="text-color-black card-actions-passion ">Game</div>
+              <div className="text-color-black card-actions-passion ">Music</div>
             </div>
           </div>
         </div>
