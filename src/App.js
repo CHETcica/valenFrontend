@@ -2,17 +2,14 @@ import React from "react";
 // import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Navbar";
 import Menubar from "./component/Menubar";
-import Carduser from "./component/Carduser";
+import Homepage from "./pages/Homepage";
+
 function App() {
   return (
     <>
       <Navbar/>
       <Menubar/>
-      <div className="container mx-auto">
-          <div className="grid">
-            <Carduser/>
-          </div>
-      </div>
+        <Homepage/>
       
     </>
     // <BrowserRouter>
@@ -23,6 +20,12 @@ function App() {
     //     </Routes>
     //   </div>
     // </BrowserRouter>
+
+    // <div className="container mx-auto">
+    //       <div className="grid">
+    //         <Carduser/>
+    //       </div>
+    //   </div>
   );
 }
 
