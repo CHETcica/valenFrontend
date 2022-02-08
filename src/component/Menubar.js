@@ -53,7 +53,7 @@ const Menubar = () => {
               <div className="my-auto ml-2 lg:flex hidden">Chat</div>
             </div>
           </a>
-          <a herf="#" className="flex-1 mx-4 text-2xl">
+          <label herf="#" className="flex-1 mx-4 text-2xl drawer-button" htmlFor="my-drawer-4">
             <div className="flex">
               <div className="flex-1">
                 <svg
@@ -130,7 +130,7 @@ const Menubar = () => {
               </div>
               <div className="my-auto ml-2 lg:flex hidden">Setting</div>
             </div>
-          </a>
+          </label>
           <a herf="#" className="flex-1 mx-4 text-2xl">
             <div className="flex">
               <div className="flex-1">
