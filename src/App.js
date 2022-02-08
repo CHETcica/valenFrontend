@@ -3,13 +3,13 @@ import React from "react";
 import Navbar from "./component/Navbar";
 import Menubar from "./component/Menubar";
 import Homepage from "./pages/Homepage";
-
+import Chatpage from "./pages/Chatpage";
 function App() {
   return (
     <>
       <Navbar/>
       <Menubar/>
-        <Homepage/>
+        <Chatpage/>
       
     </>
     // <BrowserRouter>
