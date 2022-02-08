@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Carduser from "../component/Carduser";
 
 const Homepage = () => {

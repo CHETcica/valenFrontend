@@ -55,8 +55,8 @@ const Carduser = () => {
           </div>
         </div>
         <div className="mt-2 grid grid-cols-3">
-          <div className="mx-auto">
-            <svg
+          <div className="mx-auto button-close">
+            <svg 
               width="87"
               height="87"
               viewBox="0 0 87 87"
@@ -134,7 +134,7 @@ const Carduser = () => {
               </defs>
             </svg>
           </div>
-          <div className="mx-auto">
+          <div className="mx-auto button-close">
             <svg
               width="88"
               height="87"
@@ -181,7 +181,7 @@ const Carduser = () => {
               />
             </svg>
           </div>
-          <div className="mx-auto">
+          <div className="mx-auto button-close">
             <svg
               width="87"
               height="87"

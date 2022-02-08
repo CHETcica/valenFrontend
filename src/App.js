@@ -10,7 +10,6 @@ function App() {
       <Navbar/>
       <Menubar/>
         <Homepage/>
-      
     </>
     // <BrowserRouter>
     //   <div className="container mx-auto">
