@@ -39,17 +39,31 @@
 .text-color-black{
   color: var(--color-primary-black);
 }
-
+.card-actions{
+  margin: 0;
+ }
 .card-actions-passion{
  background-color: var(--color-primary-pink);
- padding: 0.8rem 2rem;
+ padding: 0.4rem 1.5rem;
  border-radius: 3rem;
 }
-.button-close:hover {
+.button_groupt:hover {
   cursor:pointer;
-  margin-top: 0.5rem;
-  background-color: var(--color-primary-pink);
+  background-color: var(--color-primary-black);
   border-radius: 50%;
-  margin: 0.5rem;
   
 }
+.bg-footer {
+ background-color: var(--color-secondary-puple);
+}
+.btn-groupt-hidden{
+  display: block;
+}
+
+@media (max-width: 639px) { 
+  .btn-groupt-hidden{
+    display: none;
+  }
+
+  
+ }
