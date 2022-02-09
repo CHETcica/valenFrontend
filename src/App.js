@@ -4,6 +4,9 @@ import Navbar from "./component/Navbar";
 import Menubar from "./component/Menubar";
 import Homepage from "./pages/Homepage";
 import Chatpage from "./pages/Chatpage";
+import Columchat from "./component/Columchat";
+import Chatbox from "./component/Chatbox";
+
 function App() {
   return (
     <>
