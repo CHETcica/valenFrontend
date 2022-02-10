@@ -4,14 +4,16 @@ import Navbar from "./component/Navbar";
 import Menubar from "./component/Menubar";
 import Homepage from "./pages/Homepage";
 import Chatpage from "./pages/Chatpage";
-import Usersetting from "./component/Usersetting";
+import Footer from "./component/Footer";
+import  Profile  from "./pages/Profile";
 
 function App() {
   return (
     <>
       <Navbar/>
       <Menubar/>
-        <Homepage/>
+        <Profile/>
+      <Footer/>  
     </>
   );
 }
