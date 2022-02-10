@@ -50,9 +50,12 @@ const Carduser = () => {
               Rerum necessitatibus veritatis iure sapiente.
             </p>
             <hr className="text-color-black" />
-            <div className="lx:hidden card-actions ">
-              <div className="text-color-black card-actions-passion ">Game</div>
-              <div className="text-color-black card-actions-passion ">
+            <div className="lx:hidden card-actions grid grid-cols-3 text-center">
+              <div className="text-color-black card-actions-passion-primary">Game</div>
+              <div className="text-color-black card-actions-passion-primary">
+                Music
+              </div>
+              <div className="text-color-black card-actions-passion-secondary">
                 Music
               </div>
             </div>

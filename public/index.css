@@ -42,11 +42,18 @@
 .card-actions{
   margin: 0;
  }
-.card-actions-passion{
+.card-actions-passion-primary{
  background-color: var(--color-primary-pink);
- padding: 0.4rem 1.5rem;
+ border: solid  var(--color-primary-pink);
+ padding: auto;
  border-radius: 3rem;
 }
+.card-actions-passion-secondary{
+  background-color: var(--color-primary-white);
+  border: solid var(--color-primary-pink);
+  padding: auto;
+  border-radius: 3rem;
+ }
 .button_groupt:hover {
   cursor:pointer;
   background-color: var(--color-primary-black);
@@ -59,11 +66,23 @@
 .btn-groupt-hidden{
   display: block;
 }
+.modal-box{
+  max-width: 75%;
+}
+.btn-clost-description{
+  position: absolute;
+  top: 0rem;
+  
+}
+.user-description{
+  height: 100%;
+}
 
 @media (max-width: 639px) { 
   .btn-groupt-hidden{
     display: none;
   }
-
-  
+  .modal-box{
+    max-width: 100%;
+  }
  }
