@@ -2,7 +2,7 @@ import React from "react";
 
 export const BtnGroupt = () => {
   return (
-    <div className="mt-2 grid grid-cols-3">
+    <div className="mt-2 grid grid-cols-3 ">
       <div className="mx-auto button_groupt">
         <svg
           width="87"
@@ -102,6 +102,8 @@ export const BtnGroupt = () => {
           />
         </svg>
       </div>
+
     </div>
+    
   );
 };

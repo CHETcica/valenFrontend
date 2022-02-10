@@ -21,14 +21,14 @@ const Menubar = () => {
           </div>
           <div className="flex-initial lg:flex-none"></div>
           <div className="flex-initial lg:flex-none"></div>
-          <div className="flex">
+          <a href="/profile" className="flex ">
             <div className="avatar">
               <div className="rounded-full w-10 h-10 m-1">
                 <img src="https://i.pravatar.cc/500?img=32" />
               </div>
             </div>
             <h3 className="lg:flex my-auto ml-5 hidden">Chetsadakorn Mueangnam</h3>
-          </div>
+          </a>
           
         </div>
       </div>

@@ -5,13 +5,14 @@ import Menubar from "./component/Menubar";
 import Homepage from "./pages/Homepage";
 import Chatpage from "./pages/Chatpage";
 import Footer from "./component/Footer";
+import  Profile  from "./pages/Profile";
 
 function App() {
   return (
     <>
       <Navbar/>
       <Menubar/>
-        <Homepage/>
+        <Profile/>
       <Footer/>  
     </>
   );
