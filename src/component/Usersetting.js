@@ -53,7 +53,7 @@ const Usersetting = () => {
                 checked="checked"
                 className="toggle toggle-primary ml-auto"
               ></input>
-              <div className="mt-3 grid grid-flow-row grid-cols-2 gap-4 ">
+              <div className="mt-3 grid grid-flow-row grid-cols-2 gap-4 text-center">
                 <div className="text-color-black card-actions-passion-primary ">
                   Game
                 </div>

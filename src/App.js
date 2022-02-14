@@ -5,6 +5,7 @@ import Menubar from "./component/Menubar";
 import Footer from "./component/Footer";
 import Homepage from "./pages/Homepage";
 import Profile from "./pages/Profile";
+import Chatpage from "./pages/Chatpage"
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Homepage />} />
             <Route path="/profile" element={<Profile />} />
+            <Route path="/chat" element={<Chatpage />} />
           </Routes>
         <Footer/>
     </BrowserRouter>

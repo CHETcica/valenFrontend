@@ -85,7 +85,9 @@ const Description = () => {
             </svg>
           </label>
           <div className="modal-box mt-3 sm:h/4/5  grid lg:grid-cols-2  grid-cols-1">
+            
             <Carduser />
+
             <div className=" pt-5">
               <div className="grid grid-cols-2">
                 <h1 className="text-3xl ">kanomroo</h1>
@@ -100,20 +102,20 @@ const Description = () => {
               </div>
               <div className="text-3xl mt-3">
                 <h1 className="text-3xl mb-2">Passions</h1>
-                <div className="grid grid-cols-2 xl:grid-cols-4 gap-3">
-                  <div className="text-color-black text-xl card-actions-passion-primary p-auto text-center">
+                <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 text-center">
+                  <div className="text-color-black text-xl card-actions-passion-primary ">
                     Game
                   </div>
-                  <div className="text-color-black text-xl card-actions-passion-primary text-center">
+                  <div className="text-color-black text-xl card-actions-passion-primary ">
                     Music
                   </div>
-                  <div className="text-color-black text-xl card-actions-passion-primary text-center">
+                  <div className="text-color-black text-xl card-actions-passion-primary ">
                     Catlover
                   </div>
-                  <div className="text-color-black text-xl card-actions-passion-secondary text-center">
+                  <div className="text-color-black text-xl card-actions-passion-secondary ">
                     Doglover
                   </div>
-                  <div className="text-color-black text-xl card-actions-passion-secondary text-center">
+                  <div className="text-color-black text-xl card-actions-passion-secondary ">
                     Netflix
                   </div>
                 </div>
@@ -121,10 +123,26 @@ const Description = () => {
               <div className="text-3xl mt-3">
                 <h1 className="text-3xl mb-2">Album</h1>
                 <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-4 gap-3">
-                  <img src="https://cdn.discordapp.com/attachments/662893950687772684/938833115776974968/unknown.png" alt="..." className="bg-black user-description rounded-2xl"/>
-                  <img src="https://cdn.discordapp.com/attachments/662893950687772684/938833115776974968/unknown.png" alt="..." className="bg-black user-description rounded-2xl"/>
-                  <img src="https://cdn.discordapp.com/attachments/662893950687772684/938833115776974968/unknown.png" alt="..." className="bg-black user-description rounded-2xl"/>
-                  <img src="https://cdn.discordapp.com/attachments/662893950687772684/938833115776974968/unknown.png" alt="..." className="bg-black user-description rounded-2xl"/>
+                  <img
+                    src="https://cdn.discordapp.com/attachments/662893950687772684/938833115776974968/unknown.png"
+                    alt="..."
+                    className="bg-black user-description rounded-2xl"
+                  />
+                  <img
+                    src="https://cdn.discordapp.com/attachments/662893950687772684/938833115776974968/unknown.png"
+                    alt="..."
+                    className="bg-black user-description rounded-2xl"
+                  />
+                  <img
+                    src="https://cdn.discordapp.com/attachments/662893950687772684/938833115776974968/unknown.png"
+                    alt="..."
+                    className="bg-black user-description rounded-2xl"
+                  />
+                  <img
+                    src="https://cdn.discordapp.com/attachments/662893950687772684/938833115776974968/unknown.png"
+                    alt="..."
+                    className="bg-black user-description rounded-2xl"
+                  />
                 </div>
               </div>
             </div>

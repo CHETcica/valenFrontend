@@ -27,7 +27,7 @@ const Menubar = () => {
               <div className="my-auto ml-2 lg:flex hidden">Home</div>
             </div>
           </a>
-          <a href="#" className="flex-1 mx-4 text-2xl">
+          <a href="/chat" className="flex-1 mx-4 text-2xl">
             <div className="flex">
               <div className="flex-1">
                 <svg
