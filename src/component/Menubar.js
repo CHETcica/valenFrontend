@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 const Menubar = () => {
   return (
     
-      <div className="menubar navbar mb-2 shadow-lg text-neutral-content h-7">
+      <div className="menubar navbar shadow-lg text-neutral-content h-7">
         <div className="mx-auto">
           <a href="/" className="flex-1 mx-4 text-2xl">
             <div className="flex">
@@ -27,7 +27,7 @@ const Menubar = () => {
               <div className="my-auto ml-2 lg:flex hidden">Home</div>
             </div>
           </a>
-          <a href="#" className="flex-1 mx-4 text-2xl">
+          <a href="/chat" className="flex-1 mx-4 text-2xl">
             <div className="flex">
               <div className="flex-1">
                 <svg

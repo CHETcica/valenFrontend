@@ -8,7 +8,6 @@ const Chatpage = () => {
     <div className="container mx-auto grid grid-cols-3 w-2/4">
       <div className="col-span-1"><Columchat /></div>
       <div className="col-span-2 "><Chatbox /></div>
-      
     </div>
   );
 };

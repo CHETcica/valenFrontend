@@ -1,21 +1,25 @@
 import React from "react";
-// import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./component/Navbar";
 import Menubar from "./component/Menubar";
-import Homepage from "./pages/Homepage";
-import Chatpage from "./pages/Chatpage";
 import Footer from "./component/Footer";
-import  Profile  from "./pages/Profile";
+import Homepage from "./pages/Homepage";
+import Profile from "./pages/Profile";
+import Chatpage from "./pages/Chatpage"
 
-function App() {
+const App = () => {
   return (
-    <>
-      <Navbar/>
-      <Menubar/>
-        <Profile/>
-      <Footer/>  
-    </>
+    <BrowserRouter>
+        <Navbar />
+        <Menubar />
+          <Routes>
+            <Route path="/" element={<Homepage />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/chat" element={<Chatpage />} />
+          </Routes>
+        <Footer/>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
