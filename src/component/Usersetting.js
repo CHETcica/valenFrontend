@@ -54,19 +54,19 @@ const Usersetting = () => {
                 className="toggle toggle-primary ml-auto"
               ></input>
               <div className="mt-3 grid grid-flow-row grid-cols-2 gap-4 ">
-                <div className="text-color-black card-actions-passion ">
+                <div className="text-color-black card-actions-passion-primary ">
                   Game
                 </div>
-                <div className="text-color-black card-actions-passion ">
+                <div className="text-color-black card-actions-passion-primary ">
                   Game
                 </div>
-                <div className="text-color-black card-actions-passion ">
+                <div className="text-color-black card-actions-passion-primary ">
                   Game
                 </div>
-                <div className="text-color-black card-actions-passion ">
+                <div className="text-color-black card-actions-passion-secondary ">
                   Game
                 </div>
-                <div className="text-color-black card-actions-passion ">
+                <div className="text-color-black card-actions-passion-secondary ">
                   Game
                 </div>
               </div>
