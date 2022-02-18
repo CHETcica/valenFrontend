@@ -1,9 +1,20 @@
 import React from "react";
 
 export const BtnGroupt = () => {
+  const ShowBtnText = (btnname) => {
+    console.log(btnname);
+    var x = document.getElementById(btnname);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  };
   return (
     <div className="mt-2 grid grid-cols-3 ">
-      <div className="mx-auto button_groupt">
+      <div 
+      //onClick={ShowBtnText('unlike')} 
+      className="mx-auto button_groupt button_groupt-unlike ">
         <svg
           width="87"
           height="87"
@@ -36,7 +47,9 @@ export const BtnGroupt = () => {
           />
         </svg>
       </div>
-      <div className="mx-auto button_groupt">
+      <div 
+      // onClick={ShowBtnText('superlike')}  
+      className="mx-auto button_groupt button_groupt-superlike">
         <svg
           width="88"
           height="87"
@@ -82,8 +95,10 @@ export const BtnGroupt = () => {
             fill="#FFEF61"
           />
         </svg>
-      </div>
-      <div className="mx-auto button_groupt">
+      </div >
+      <div 
+      //onClick={ShowBtnText('like')} 
+      className="mx-auto button_groupt button_groupt-like">
         <svg
           width="87"
           height="87"
@@ -102,8 +117,6 @@ export const BtnGroupt = () => {
           />
         </svg>
       </div>
-
     </div>
-    
   );
 };

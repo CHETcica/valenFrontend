@@ -9,6 +9,7 @@
   --color-secondary-bluepasteil: #8ccef2;
   --color-secondary-puple: #c58cf2;
   --color-secondary-yellow: #ffef61;
+  --color-secondary-inherit: inherit;
 }
 * {
   margin: 0;
@@ -58,6 +59,43 @@
   cursor:pointer;
   background-color: var(--color-primary-black);
   border-radius: 50%;
+  background: #faf7f5;
+  box-shadow:  20px 20px 60px #d5d2d0,
+             -20px -20px 60px var(--color-primary-white);
+}
+.button_groupt:active {
+  cursor:pointer;
+  opacity: 0.6;
+  background: #faf7f5;
+  box-shadow: inset 20px 20px 0px #8f8d8c,
+            inset -20px -20px 0px #ffffff; 
+
+}
+.btn-effect-none{
+  display: none;
+
+}
+.background_radial-gradient{
+  width: 100%;
+  background-image: radial-gradient(var(--color-secondary-puple),var(--color-primary-white));
+}
+/* .button_groupt-unlike:active {
+  
+  
+}
+.button_groupt-superlike:active {
+  
+  
+}
+.button_groupt-like:active {
+  
+  
+} */
+.footer{
+  margin-top: auto;
+  position: relative;
+  bottom: 0rem;
+  height: auto;
   
 }
 .bg-footer {
