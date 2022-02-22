@@ -5,7 +5,7 @@ const Columchat = () => {
   return (
     
       <div className="w-full">
-        <table className="table w-full">
+        <table className="table w-full shadow-2xl">
           <thead>
             <tr>
               <th className="text-xl">Match </th>
@@ -42,8 +42,8 @@ const Columchat = () => {
             <tr>
               <td>
                 <div className="flex items-center space-x-3">
-                  <div className="avatar online">
-                    <div className="rounded-full w-14 h-14">
+                  <div className="avatar online ">
+                    <div className="rounded-full w-14 h-14 ">
                       <img
                         src="https://yt3.ggpht.com/ytc/AKedOLT8T2YiB1JqzuZ71lv_0v18oqPc_8Rckyeq1lar6Q=s900-c-k-c0x00ffffff-no-rj"
                         alt="Avatar Tailwind CSS Component "
@@ -51,8 +51,8 @@ const Columchat = () => {
                     </div>
                   </div>
                   <div>
-                    <div className="font-bold">Kanomroo </div>
-                    <div className="text-sm opacity-50">กำลังพิมพ์...</div>
+                    <div className="font-bold ">Kanomroo </div>
+                    <div className="text-sm opacity-50 ">กำลังพิมพ์...</div>
                   </div>
                 </div>
               </td>
