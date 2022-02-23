@@ -4,186 +4,182 @@ const Reagispage = () => {
   return (
     <>
       <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
-        <div className="sm:hidden md:block p-3 m-3 mx-auto bg-red h-full w-full "></div>
-        <div className=" p-3 m-3 mx-auto card  h-full w-full bg-base-100 shadow-xl ">
+        <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full "></div>
+        <div className=" p-3 m-3 mx-auto card  h-full w-full bg-white shadow-xl ">
           <form className="block mx-auto  w-2/4">
-            <h1 className="mt-4 text-3xl ">Register</h1>
-            <hr className="my-3"></hr>
-            <div className=" mb-3 w-full mx-auto flex border ">
-              <svg
-                className="flex-none"
-                width="54"
-                height="51"
-                viewBox="0 0 54 51"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M27.3419 27.625C39.4402 27.625 44.0362 35.8858 46.3405 42.0159C46.8198 43.2911 45.8472 44.625 44.4849 44.625H15.1759M27.3419 27.625C24.0239 27.625 16.2819 25.5 16.2819 17C16.2819 10.625 20.7059 6.375 27.3419 6.375C33.978 6.375 38.402 10.625 38.402 17C38.402 21.25 35.3052 27.625 27.3419 27.625ZM27.3419 27.625C16.2958 27.625 11.5038 34.5114 9 40.375"
-                  stroke="black"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+            <h1 className="my-4 text-3xl ">Register</h1>
+
+            <div className=" mb-3 w-full mx-auto flex border border-b-black  border-block-input">
+              <div className="w-12 p-1">
+                <svg
+                  width="39"
+                  height="40"
+                  viewBox="0 0 39 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M18.8058 22.0833C30.6337 22.0833 35.1475 30.137 37.4128 36.1417C37.8937 37.4163 36.9207 38.75 35.5584 38.75H6.87827M18.8058 22.0833C15.5528 22.0833 7.96259 20 7.96259 11.6667C7.96259 5.41667 12.2999 1.25 18.8058 1.25C25.3117 1.25 29.6489 5.41667 29.6489 11.6667C29.6489 15.8333 26.6129 22.0833 18.8058 22.0833ZM18.8058 22.0833C7.97626 22.0833 3.27819 28.8347 0.823485 34.5833"
+                    stroke="#808080"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
               <input
                 type="text"
-                className="form-control w-full border border-inherit bg-inherit"
+                className="form-control w-full  bg-inherit"
                 name="firstname"
                 placeholder="User name"
                 aria-describedby="firstname"
               />
             </div>
-            <hr className=""></hr>
-            <div className="mb-3 w-full mx-auto flex">
-              <svg
-                className="flex-none w-14 h-14"
-                width="51"
-                height="31"
-                viewBox="0 0 51 31"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M1 17.3333L1 3.21007C1 1.37436 3.60539 0.341757 5.3935 1.46877L18.8149 9.92799C22.747 12.4063 28.253 12.4063 32.1851 9.92799L45.6065 1.46877C47.3946 0.341759 50 1.37437 50 3.21007V27.3774C50 28.5957 48.7812 29.5833 47.2778 29.5833L3.72223 29.5833C2.21879 29.5833 1 28.5957 1 27.3774L1 23.4583"
-                  stroke="black"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
+
+            <div className="mb-3  mx-auto flex border border-b-black  border-block-input">
+              <div className="w-12 p-1">
+                <svg
+                  width="39"
+                  height="27"
+                  viewBox="0 0 39 27"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M1 15.2857L1 2.933C1 1.32743 2.99392 0.424278 4.36237 1.41L14.6338 8.80873C17.6431 10.9764 21.8569 10.9764 24.8662 8.80873L35.1376 1.41C36.5061 0.424279 38.5 1.32743 38.5 2.933V24.0706C38.5 25.1362 37.5673 26 36.4167 26L3.08334 26C1.93274 26 1 25.1362 1 24.0706L1 20.6429"
+                    stroke="#808080"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
 
               <label for="firstname" className="form-label"></label>
               <input
                 type="text"
-                className="form-control  w-full border border-b-black bg-inherit"
+                className="form-control w-full"
                 name="firstname"
                 placeholder="E-mail"
                 aria-describedby="E-mail"
               />
             </div>
-            <div className="mb-3 w-full mx-auto flex">
-              <svg
-                flex-none
-                w-14
-                h-14
-                width="44"
-                height="33"
-                viewBox="0 0 44 33"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g opacity="0.5">
-                  <path
-                    d="M13.3333 25.6638L17.4444 22.5805H21.5555L24.3511 20.4838C27.2087 21.2305 30.3195 21.2275 33.1746 20.4755C36.0296 19.7234 38.4597 18.2667 40.0671 16.3438C41.6745 14.421 42.364 12.1459 42.0227 9.89082C41.6815 7.63578 40.3297 5.5344 38.1887 3.93062C36.0476 2.32683 33.2441 1.31564 30.2369 1.06253C27.2298 0.809422 24.1972 1.3294 21.6354 2.53735C19.0736 3.7453 17.1344 5.56968 16.1352 7.71189C15.136 9.85411 15.1359 12.1873 16.135 14.3295L1 25.6638V31.8305H9.22222L13.3333 28.7472V25.6638Z"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M31.8334 10.2472C32.9687 10.2472 33.889 9.55693 33.889 8.70549C33.889 7.85405 32.9687 7.16382 31.8334 7.16382C30.6982 7.16382 29.7778 7.85405 29.7778 8.70549C29.7778 9.55693 30.6982 10.2472 31.8334 10.2472Z"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-              </svg>
-
-              <label for="firstname" className="form-label"></label>
+            <div className="mb-3  mx-auto flex border border-b-black  border-block-input">
+              <div className="w-12 p-1">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g opacity="0.5">
+                    <path
+                      d="M13.3333 30L16.6666 26.6667H19.9999L22.2666 24.4C24.5835 25.2072 27.1059 25.204 29.4208 24.391C31.7356 23.5779 33.706 22.0031 35.0093 19.9243C36.3126 17.8456 36.8716 15.386 36.5949 12.9481C36.3183 10.5102 35.2222 8.23848 33.4862 6.50466C31.7502 4.77084 29.4771 3.67765 27.0389 3.40402C24.6007 3.1304 22.1418 3.69253 20.0646 4.99842C17.9875 6.30432 16.4152 8.27662 15.605 10.5925C14.7949 12.9084 14.7948 15.4308 15.6049 17.7467L3.33325 30V36.6667H9.99992L13.3333 33.3334V30Z"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M28.3332 13.3333C29.2536 13.3333 29.9998 12.5871 29.9998 11.6667C29.9998 10.7462 29.2536 10 28.3332 10C27.4127 10 26.6665 10.7462 26.6665 11.6667C26.6665 12.5871 27.4127 13.3333 28.3332 13.3333Z"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                </svg>
+              </div>
               <input
                 type="password"
-                className="form-control w-full border border-b-black bg-inherit"
+                className="form-control w-full"
                 name="firstname"
                 placeholder="password"
                 aria-describedby="firstname"
               />
             </div>
-            <div className="mb-3 w-full mx-auto flex">
-              <label for="firstname" className="form-label"></label>
-              <svg
-                flex-none
-                w-14
-                h-14
-                width="44"
-                height="33"
-                viewBox="0 0 44 33"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g opacity="0.5">
-                  <path
-                    d="M13.3333 25.6638L17.4444 22.5805H21.5555L24.3511 20.4838C27.2087 21.2305 30.3195 21.2275 33.1746 20.4755C36.0296 19.7234 38.4597 18.2667 40.0671 16.3438C41.6745 14.421 42.364 12.1459 42.0227 9.89082C41.6815 7.63578 40.3297 5.5344 38.1887 3.93062C36.0476 2.32683 33.2441 1.31564 30.2369 1.06253C27.2298 0.809422 24.1972 1.3294 21.6354 2.53735C19.0736 3.7453 17.1344 5.56968 16.1352 7.71189C15.136 9.85411 15.1359 12.1873 16.135 14.3295L1 25.6638V31.8305H9.22222L13.3333 28.7472V25.6638Z"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M31.8334 10.2472C32.9687 10.2472 33.889 9.55696 33.889 8.70551C33.889 7.85406 32.9687 7.16382 31.8334 7.16382C30.6981 7.16382 29.7778 7.85406 29.7778 8.70551C29.7778 9.55696 30.6981 10.2472 31.8334 10.2472Z"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-              </svg>
+            <div className="mb-3 w-full mx-auto flex border border-b-black  border-block-input">
+              <div className="w-12 p-1">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g opacity="0.5">
+                    <path
+                      d="M13.3333 30L16.6666 26.6667H19.9999L22.2666 24.4C24.5835 25.2072 27.1059 25.204 29.4208 24.391C31.7356 23.5779 33.706 22.0031 35.0093 19.9243C36.3126 17.8456 36.8716 15.386 36.5949 12.9481C36.3183 10.5102 35.2222 8.23848 33.4862 6.50466C31.7502 4.77084 29.4771 3.67765 27.0389 3.40402C24.6007 3.1304 22.1418 3.69253 20.0646 4.99842C17.9875 6.30432 16.4152 8.27662 15.605 10.5925C14.7949 12.9084 14.7948 15.4308 15.6049 17.7467L3.33325 30V36.6667H9.99992L13.3333 33.3334V30Z"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M28.3332 13.3333C29.2536 13.3333 29.9998 12.5871 29.9998 11.6667C29.9998 10.7462 29.2536 10 28.3332 10C27.4127 10 26.6665 10.7462 26.6665 11.6667C26.6665 12.5871 27.4127 13.3333 28.3332 13.3333Z"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                </svg>
+              </div>
 
               <input
                 type="password"
-                className="form-control  w-full border border-b-black bg-inherit"
+                className="form-control w-full"
                 name="firstname"
                 placeholder="Confirm Password"
                 aria-describedby="firstname"
               />
             </div>
-            <div className="mb-3 w-full mx-auto flex">
-              <label for="firstname" className="form-label"></label>
-              <svg
-                className="flex-none w-14 h-14"
-                width="43"
-                height="43"
-                viewBox="0 0 43 43"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <g opacity="0.5">
-                  <path
-                    d="M32.2499 7.16675H10.7499C6.79188 7.16675 3.58325 10.3754 3.58325 14.3334V32.2501C3.58325 36.2081 6.79188 39.4167 10.7499 39.4167H32.2499C36.208 39.4167 39.4166 36.2081 39.4166 32.2501V14.3334C39.4166 10.3754 36.208 7.16675 32.2499 7.16675Z"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M14.3333 3.58337V10.75"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M28.6665 3.58337V10.75"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                  <path
-                    d="M3.58325 17.9167H39.4166"
-                    stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  />
-                </g>
-              </svg>
-
+            <div className="mb-3 w-full mx-auto flex border border-b-black  border-block-input">
+              <div className="w-12 p-1">
+                <svg
+                  width="40"
+                  height="40"
+                  viewBox="0 0 40 40"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g opacity="0.5">
+                    <path
+                      d="M29.9999 6.66675H9.99992C6.31802 6.66675 3.33325 9.65152 3.33325 13.3334V30.0001C3.33325 33.682 6.31802 36.6667 9.99992 36.6667H29.9999C33.6818 36.6667 36.6666 33.682 36.6666 30.0001V13.3334C36.6666 9.65152 33.6818 6.66675 29.9999 6.66675Z"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M13.3333 3.33337V10"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M26.6665 3.33337V10"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                    <path
+                      d="M3.33325 16.6667H36.6666"
+                      stroke="black"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </g>
+                </svg>
+              </div>
               <input
-                type="text"
-                className="form-control  w-full border border-b-black bg-inherit"
-                name="firstname"
+                type="date"
+                className="form-control w-full "
+                name="birthday"
                 placeholder="Born"
-                aria-describedby="firstname"
+                aria-describedby="birthday"
               />
             </div>
             <div className="">

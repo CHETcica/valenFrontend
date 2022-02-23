@@ -77,6 +77,10 @@
 .user-description{
   height: 100%;
 }
+.border-block-input{
+  border-color: var(--color-primary-white);
+  border-bottom-color: var(--color-primary-black);
+}
 
 @media (max-width: 639px) { 
   .btn-groupt-hidden{

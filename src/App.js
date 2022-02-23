@@ -19,7 +19,7 @@ const App = () => {
             <Route path="/profile" element={<Profile />} />
             <Route path="/chat" element={<Chatpage />} />
             <Route path="/register" element={<Regispage />} />
-            <Route path="/Login" element={<Login />} />
+            <Route path="/login" element={<Login />} />
           </Routes>
         <Footer/>
     </BrowserRouter>
