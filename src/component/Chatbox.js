@@ -6,7 +6,7 @@ const Chatbox = () => {
     <div>
       <div className="flex flex-col w-full">
         <div className="flex flex-col h-full">
-          <div className="grid grid-cols-3 h-20   card bg-rose-400 rounded-box place-items-center text-white font-bold ">
+          <div className="grid grid-cols-3 h-20 card bg-rose-400 rounded-none rounded-tr-2xl place-items-center text-white font-bold ">
             <div className="avatar online">
               <div className="rounded-full w-14 h-14">
                 <img
@@ -22,7 +22,7 @@ const Chatbox = () => {
           </div>
         </div>
       </div>
-      <div className="card text-center shadow-2xl">
+      <div className="card text-center ">
         <figure className="px-10 pt-10">
           <img src="" className="rounded-xl " />
         </figure>
@@ -56,21 +56,19 @@ const Chatbox = () => {
           </div>
         </div>
 
-      
-            <div className="relative">
-              <input
-                type="text"
-                placeholder="Massege"
-                className="w-full pr-16 input input-primary input-bordered"
-              />
-              <button className="absolute top-0 right-0 rounded-l-none btn btn-primary">
-                Enter
-              </button>
-              <div className="form-control"></div>
-            </div>
-          </div>
+        <div className="relative">
+          <input
+            type="text"
+            placeholder="Massege"
+            className="w-full pr-16 input input-primary input-bordered"
+          />
+          <button className="absolute top-0 right-0 rounded-l-none btn btn-primary">
+            Enter
+          </button>
+          <div className="form-control"></div>
         </div>
-    
+      </div>
+    </div>
   );
 };
 
