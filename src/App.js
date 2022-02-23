@@ -6,17 +6,17 @@ import Footer from "./component/Footer";
 import Homepage from "./pages/Homepage";
 import Profile from "./pages/Profile";
 import Chatpage from "./pages/Chatpage"
-import Alert from "./pages/Alert"
+import Alertpage from "./pages/Alertpage"
 const App = () => {
   return (
     <BrowserRouter>
         <Navbar />
         <Menubar />
           <Routes>
-            <Route path="/" element={<Homepage />} />
-            <Route path="/profile" element={<Profile />} />
-            <Route path="/chat" element={<Chatpage />} />
-            <Route path="/alert" element={<Alert />} />
+            <Route path="/" element={<Homepage/>} />
+            <Route path="/profile" element={<Profile/>} />
+            <Route path="/chat" element={<Chatpage/>} />
+            <Route path="/alert" element={<Alertpage/>} />
           </Routes>
         <Footer/>
     </BrowserRouter>
