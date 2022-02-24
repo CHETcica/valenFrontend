@@ -4,7 +4,7 @@ const Login = () => {
   return (
     <>
       <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
-        <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full "></div>
+        <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full bg-no-repeat bg-[url('https://i.pinimg.com/564x/ab/11/d2/ab11d2259be6bc12a112df7499026ed7.jpg')]"></div>
         <div className=" p-3 m-3 mx-auto card  h-full w-full bg-white shadow-xl ">
           <form className="block mx-auto  w-2/4">
             <h1 className="my-4 text-3xl ">Login</h1>
