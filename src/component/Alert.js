@@ -36,19 +36,7 @@ export const Alertmatch = () => {
       </div>
       <div className="ml-3 my-auto text-center text-xl">user match</div>
       <div className="ml-auto m-3">
-        <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="25" height="25" fill="white" />
-          <path
-            d="M24.2188 4.14063L20.8594 0.78125L12.5 9.14062L4.14063 0.78125L0.78125 4.14063L9.14062 12.5L0.78125 20.8594L4.14063 24.2188L12.5 15.8594L20.8594 24.2188L24.2188 20.8594L15.8594 12.5L24.2188 4.14063Z"
-            fill="#FF5A79"
-          />
-        </svg>
+        
       </div>
     </div>
   );
@@ -90,19 +78,7 @@ export const Alertwarning = () => {
       </div>
       <div className="mx-auto ml-3 my-auto text-center text-xl">warning</div>
       <div className="ml-auto m-3">
-        <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="25" height="25" fill="white" />
-          <path
-            d="M24.2188 4.14063L20.8594 0.78125L12.5 9.14062L4.14063 0.78125L0.78125 4.14063L9.14062 12.5L0.78125 20.8594L4.14063 24.2188L12.5 15.8594L20.8594 24.2188L24.2188 20.8594L15.8594 12.5L24.2188 4.14063Z"
-            fill="#FF5A79"
-          />
-        </svg>
+        
       </div>
     </div>
   );
@@ -133,19 +109,7 @@ export const Alertmicrophone = () => {
         microphone permission
       </div>
       <div className="ml-auto m-3">
-        <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="25" height="25" fill="white" />
-          <path
-            d="M24.2188 4.14063L20.8594 0.78125L12.5 9.14062L4.14063 0.78125L0.78125 4.14063L9.14062 12.5L0.78125 20.8594L4.14063 24.2188L12.5 15.8594L20.8594 24.2188L24.2188 20.8594L15.8594 12.5L24.2188 4.14063Z"
-            fill="#FF5A79"
-          />
-        </svg>
+        
       </div>
     </div>
   );
@@ -179,19 +143,7 @@ export const Alertcannotconnect = () => {
         internet Disconnect
       </div>
       <div className="ml-auto m-3">
-        <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="25" height="25" fill="white" />
-          <path
-            d="M24.2188 4.14063L20.8594 0.78125L12.5 9.14062L4.14063 0.78125L0.78125 4.14063L9.14062 12.5L0.78125 20.8594L4.14063 24.2188L12.5 15.8594L20.8594 24.2188L24.2188 20.8594L15.8594 12.5L24.2188 4.14063Z"
-            fill="#FF5A79"
-          />
-        </svg>
+        
       </div>
     </div>
   );
@@ -220,19 +172,7 @@ export const Alertcamera = () => {
         camera permission
       </div>
       <div className="ml-auto m-3">
-        <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="25" height="25" fill="white" />
-          <path
-            d="M24.2188 4.14063L20.8594 0.78125L12.5 9.14062L4.14063 0.78125L0.78125 4.14063L9.14062 12.5L0.78125 20.8594L4.14063 24.2188L12.5 15.8594L20.8594 24.2188L24.2188 20.8594L15.8594 12.5L24.2188 4.14063Z"
-            fill="#FF5A79"
-          />
-        </svg>
+       
       </div>
     </div>
   );
@@ -255,23 +195,9 @@ export const Alertsuccess = () => {
           />
         </svg>
       </div>
-      <div className="mx-auto ml-3 my-auto text-center text-xl">
-        camera permission
-      </div>
+      <div className="mx-auto ml-3 my-auto text-center text-xl">success</div>
       <div className="ml-auto m-3">
-        <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="25" height="25" fill="white" />
-          <path
-            d="M24.2188 4.14063L20.8594 0.78125L12.5 9.14062L4.14063 0.78125L0.78125 4.14063L9.14062 12.5L0.78125 20.8594L4.14063 24.2188L12.5 15.8594L20.8594 24.2188L24.2188 20.8594L15.8594 12.5L24.2188 4.14063Z"
-            fill="#FF5A79"
-          />
-        </svg>
+       
       </div>
     </div>
   );
@@ -299,19 +225,7 @@ export const Alertaccountisblock = () => {
         This account is block
       </div>
       <div className="ml-auto m-3">
-        <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="25" height="25" fill="white" />
-          <path
-            d="M24.2188 4.14063L20.8594 0.78125L12.5 9.14062L4.14063 0.78125L0.78125 4.14063L9.14062 12.5L0.78125 20.8594L4.14063 24.2188L12.5 15.8594L20.8594 24.2188L24.2188 20.8594L15.8594 12.5L24.2188 4.14063Z"
-            fill="#FF5A79"
-          />
-        </svg>
+        
       </div>
     </div>
   );
@@ -321,36 +235,50 @@ export const Alertmessage = () => {
   return (
     <div className="mx-auto bg-white m-6 h-20 w-full md:w-4/5 rounded-xl flex drop-shadow-lg">
       <div className="my-auto ml-3">
-      <svg 
-      width="50" 
-      height="50" 
-      viewBox="0 0 78 78" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg">
-<path d="M73.5 42C73.5 59.397 59.397 73.5 42 73.5C35.8013 73.5 30.0208 71.7095 25.1474 68.6175L10.5 73.5L15.3825 58.8526C12.2905 53.9792 10.5 48.1987 10.5 42C10.5 24.603 24.603 10.5 42 10.5C59.397 10.5 73.5 24.603 73.5 42Z" fill="#C58CF2"/>
-<path d="M25.1474 68.6175L25.6831 67.7732C25.4293 67.6121 25.1164 67.5738 24.8312 67.6689L25.1474 68.6175ZM10.5 73.5L9.55132 73.1838C9.43154 73.5431 9.52506 73.9393 9.79289 74.2071C10.0607 74.4749 10.4569 74.5685 10.8162 74.4487L10.5 73.5ZM15.3825 58.8526L16.3311 59.1688C16.4262 58.8836 16.3879 58.5707 16.2268 58.3169L15.3825 58.8526ZM42 74.5C59.9493 74.5 74.5 59.9493 74.5 42H72.5C72.5 58.8447 58.8447 72.5 42 72.5V74.5ZM24.6117 69.4619C29.6405 72.6525 35.606 74.5 42 74.5V72.5C35.9966 72.5 30.401 70.7665 25.6831 67.7732L24.6117 69.4619ZM24.8312 67.6689L10.1838 72.5513L10.8162 74.4487L25.4636 69.5662L24.8312 67.6689ZM11.4487 73.8162L16.3311 59.1688L14.4338 58.5364L9.55132 73.1838L11.4487 73.8162ZM9.5 42C9.5 48.394 11.3475 54.3595 14.5381 59.3883L16.2268 58.3169C13.2335 53.599 11.5 48.0034 11.5 42H9.5ZM42 9.5C24.0507 9.5 9.5 24.0507 9.5 42H11.5C11.5 25.1553 25.1553 11.5 42 11.5V9.5ZM74.5 42C74.5 24.0507 59.9493 9.5 42 9.5V11.5C58.8447 11.5 72.5 25.1553 72.5 42H74.5Z" fill="white"/>
-<path d="M56 42H56.007V42.007H56V42Z" fill="#C58CF2" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M42 42H42.007V42.007H42V42Z" fill="#C58CF2" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M28 42H28.007V42.007H28V42Z" fill="#C58CF2" stroke="white" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-      </div>
-      <div className="mx-auto ml-3 my-auto text-center text-xl">
-      message
-      </div>
-      <div className="ml-auto m-3">
         <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
+          width="50"
+          height="50"
+          viewBox="0 0 78 78"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect width="25" height="25" fill="white" />
           <path
-            d="M24.2188 4.14063L20.8594 0.78125L12.5 9.14062L4.14063 0.78125L0.78125 4.14063L9.14062 12.5L0.78125 20.8594L4.14063 24.2188L12.5 15.8594L20.8594 24.2188L24.2188 20.8594L15.8594 12.5L24.2188 4.14063Z"
-            fill="#FF5A79"
+            d="M73.5 42C73.5 59.397 59.397 73.5 42 73.5C35.8013 73.5 30.0208 71.7095 25.1474 68.6175L10.5 73.5L15.3825 58.8526C12.2905 53.9792 10.5 48.1987 10.5 42C10.5 24.603 24.603 10.5 42 10.5C59.397 10.5 73.5 24.603 73.5 42Z"
+            fill="#C58CF2"
+          />
+          <path
+            d="M25.1474 68.6175L25.6831 67.7732C25.4293 67.6121 25.1164 67.5738 24.8312 67.6689L25.1474 68.6175ZM10.5 73.5L9.55132 73.1838C9.43154 73.5431 9.52506 73.9393 9.79289 74.2071C10.0607 74.4749 10.4569 74.5685 10.8162 74.4487L10.5 73.5ZM15.3825 58.8526L16.3311 59.1688C16.4262 58.8836 16.3879 58.5707 16.2268 58.3169L15.3825 58.8526ZM42 74.5C59.9493 74.5 74.5 59.9493 74.5 42H72.5C72.5 58.8447 58.8447 72.5 42 72.5V74.5ZM24.6117 69.4619C29.6405 72.6525 35.606 74.5 42 74.5V72.5C35.9966 72.5 30.401 70.7665 25.6831 67.7732L24.6117 69.4619ZM24.8312 67.6689L10.1838 72.5513L10.8162 74.4487L25.4636 69.5662L24.8312 67.6689ZM11.4487 73.8162L16.3311 59.1688L14.4338 58.5364L9.55132 73.1838L11.4487 73.8162ZM9.5 42C9.5 48.394 11.3475 54.3595 14.5381 59.3883L16.2268 58.3169C13.2335 53.599 11.5 48.0034 11.5 42H9.5ZM42 9.5C24.0507 9.5 9.5 24.0507 9.5 42H11.5C11.5 25.1553 25.1553 11.5 42 11.5V9.5ZM74.5 42C74.5 24.0507 59.9493 9.5 42 9.5V11.5C58.8447 11.5 72.5 25.1553 72.5 42H74.5Z"
+            fill="white"
+          />
+          <path
+            d="M56 42H56.007V42.007H56V42Z"
+            fill="#C58CF2"
+            stroke="white"
+            stroke-width="12"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M42 42H42.007V42.007H42V42Z"
+            fill="#C58CF2"
+            stroke="white"
+            stroke-width="12"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M28 42H28.007V42.007H28V42Z"
+            fill="#C58CF2"
+            stroke="white"
+            stroke-width="12"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           />
         </svg>
+      </div>
+      <div className="mx-auto ml-3 my-auto text-center text-xl">message</div>
+      <div className="ml-auto m-3">
+        
       </div>
     </div>
   );
@@ -360,35 +288,39 @@ export const Alertinfo = () => {
   return (
     <div className="mx-auto bg-white m-6 h-20 w-full md:w-4/5 rounded-xl flex drop-shadow-lg">
       <div className="my-auto ml-3">
-      <svg 
-      width="50" 
-      height="50" 
-      viewBox="0 0 50 50" 
-      fill="none" 
-      xmlns="http://www.w3.org/2000/svg">
-<path d="M25 43.75C35.3553 43.75 43.75 35.3553 43.75 25C43.75 14.6447 35.3553 6.25 25 6.25C14.6447 6.25 6.25 14.6447 6.25 25C6.25 35.3553 14.6447 43.75 25 43.75Z" stroke="#182EF2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M25 22.9165V33.3332" stroke="#182EF2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M24.8965 16.6665H25.1048V16.8748H24.8965V16.6665Z" stroke="#182EF2" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-</svg>
-
-      </div>
-      <div className="mx-auto ml-3 my-auto text-center text-xl">
-      Info
-      </div>
-      <div className="ml-auto m-3">
         <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
+          width="50"
+          height="50"
+          viewBox="0 0 50 50"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"
         >
-          <rect width="25" height="25" fill="white" />
           <path
-            d="M24.2188 4.14063L20.8594 0.78125L12.5 9.14062L4.14063 0.78125L0.78125 4.14063L9.14062 12.5L0.78125 20.8594L4.14063 24.2188L12.5 15.8594L20.8594 24.2188L24.2188 20.8594L15.8594 12.5L24.2188 4.14063Z"
-            fill="#FF5A79"
+            d="M25 43.75C35.3553 43.75 43.75 35.3553 43.75 25C43.75 14.6447 35.3553 6.25 25 6.25C14.6447 6.25 6.25 14.6447 6.25 25C6.25 35.3553 14.6447 43.75 25 43.75Z"
+            stroke="#182EF2"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M25 22.9165V33.3332"
+            stroke="#182EF2"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M24.8965 16.6665H25.1048V16.8748H24.8965V16.6665Z"
+            stroke="#182EF2"
+            stroke-width="6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
           />
         </svg>
+      </div>
+      <div className="mx-auto ml-3 my-auto text-center text-xl">Info</div>
+      <div className="ml-auto m-3">
+       
       </div>
     </div>
   );
@@ -397,32 +329,163 @@ export const Alertinfo = () => {
 export const Alerterror = () => {
   return (
     <div className="mx-auto bg-white m-6 h-20 w-full md:w-4/5 rounded-xl flex drop-shadow-lg">
+      <div className="my-auto ml-3">
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 50 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M25 43.75C35.3553 43.75 43.75 35.3553 43.75 25C43.75 14.6447 35.3553 6.25 25 6.25C14.6447 6.25 6.25 14.6447 6.25 25C6.25 35.3553 14.6447 43.75 25 43.75Z"
+            stroke="#FF0505"
+            stroke-width="2"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M11.979 11.979L38.0207 38.0207"
+            stroke="#FF0505"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+
+      <div className="mx-auto ml-3 my-auto text-center text-xl">Error</div>
+      <div className="ml-auto m-3">
+        
+      </div>
+    </div>
+  );
+};
+
+export const Alertusernameorpassword = () => {
+  return (
+    <div className="mx-auto bg-white m-6 h-20 w-full md:w-4/5 rounded-xl flex drop-shadow-lg">
+      <div className="my-auto ml-3">
+        <svg
+          width="50"
+          height="50"
+          viewBox="0 0 50 50"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M25 43.75C35.3553 43.75 43.75 35.3553 43.75 25C43.75 14.6447 35.3553 6.25 25 6.25C14.6447 6.25 6.25 14.6447 6.25 25C6.25 35.3553 14.6447 43.75 25 43.75Z"
+            stroke="#FF0505"
+            stroke-width="2"
+            stroke-miterlimit="10"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M24.8965 32.1875H25.1048V32.3958H24.8965V32.1875Z"
+            stroke="#FF0505"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+          <path
+            d="M25 17.604V25.9373"
+            stroke="#FF0505"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          />
+        </svg>
+      </div>
+
+      <div className="mx-auto ml-3 my-auto text-center text-xl">
+        Invalid username or password
+      </div>
+      <div className="ml-auto m-3">
+        
+      </div>
+    </div>
+  );
+};
+
+export const AlertPasswordsnotmatch = () => {
+  return (
+    <div className="mx-auto bg-white m-6 h-20 w-full md:w-4/5 rounded-xl flex drop-shadow-lg">
+      <div className="my-auto ml-3">
       <svg 
-      width="50" 
+      width="51" 
+      height="50" 
+      viewBox="0 0 51 50" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg">
+<path d="M25.2524 43.75C35.7123 43.75 44.1918 35.3553 44.1918 25C44.1918 14.6447 35.7123 6.25 25.2524 6.25C14.7924 6.25 6.31299 14.6447 6.31299 25C6.31299 35.3553 14.7924 43.75 25.2524 43.75Z" stroke="#FF0505" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.9395 18.75L31.5654 31.2497" stroke="#FF0505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M18.9395 31.2502L31.5654 18.7505" stroke="#FF0505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+      </div>
+
+      <div className="mx-auto ml-3 my-auto text-center text-xl">
+      Passwords not match
+      </div>
+      <div className="ml-auto m-3">
+        
+      </div>
+    </div>
+  );
+};
+
+export const AlertPleaseenterpassword = () => {
+  return (
+    <div className="mx-auto bg-white m-6 h-20 w-full md:w-4/5 rounded-xl flex drop-shadow-lg">
+      <div className="my-auto ml-3">
+      <svg width="50" 
       height="50" 
       viewBox="0 0 50 50" 
       fill="none" 
       xmlns="http://www.w3.org/2000/svg">
-<path d="M25 43.75C35.3553 43.75 43.75 35.3553 43.75 25C43.75 14.6447 35.3553 6.25 25 6.25C14.6447 6.25 6.25 14.6447 6.25 25C6.25 35.3553 14.6447 43.75 25 43.75Z" stroke="#FF0505" stroke-width="2" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-<path d="M11.979 11.979L38.0207 38.0207" stroke="#FF0505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M37.5 12.5L12.5 37.5" stroke="#FF0505" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M12.5 12.5L37.5 37.5" stroke="#FF0505" stroke-width="2" stroke-linecap="square" stroke-linejoin="round"/>
 </svg>
+
+
+      </div>
+
       <div className="mx-auto ml-3 my-auto text-center text-xl">
-      Error
+      Please enter your password
       </div>
       <div className="ml-auto m-3">
-        <svg
-          width="25"
-          height="25"
-          viewBox="0 0 25 25"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect width="25" height="25" fill="white" />
-          <path
-            d="M24.2188 4.14063L20.8594 0.78125L12.5 9.14062L4.14063 0.78125L0.78125 4.14063L9.14062 12.5L0.78125 20.8594L4.14063 24.2188L12.5 15.8594L20.8594 24.2188L24.2188 20.8594L15.8594 12.5L24.2188 4.14063Z"
-            fill="#FF5A79"
-          />
-        </svg>
+        
+      </div>
+    </div>
+  );
+};
+
+export const Alertpassion = () => {
+  return (
+    <div className="mx-auto bg-white m-6 h-20 w-full md:w-4/5 rounded-xl flex drop-shadow-lg">
+      <div className="my-auto ml-3">
+      <svg width="50" 
+      height="50" 
+      viewBox="0 0 50 50" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg">
+<path d="M20.8335 35.4168L29.1668 27.0835" stroke="#FF0505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M20.8335 27.0835L29.1668 35.4168" stroke="#FF0505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M37.4998 43.75H12.4998C11.3492 43.75 10.4165 42.8173 10.4165 41.6667L10.4165 8.33333C10.4165 7.18274 11.3492 6.25 12.4998 6.25L28.2563 6.25C28.8366 6.25 29.3906 6.49207 29.7849 6.9179L39.0285 16.901C39.3851 17.2861 39.5832 17.7916 39.5832 18.3164L39.5832 41.6667C39.5832 42.8173 38.6504 43.75 37.4998 43.75Z" stroke="#FF0505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M39.5835 18.75L29.1668 18.75C28.0162 18.75 27.0835 17.8173 27.0835 16.6667L27.0835 6.25" stroke="#FF0505" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+
+
+      </div>
+
+      <div className="mx-auto ml-3 my-auto text-center text-xl">
+      Not passion
+      </div>
+      <div className="ml-auto m-3">
+        
       </div>
     </div>
   );
