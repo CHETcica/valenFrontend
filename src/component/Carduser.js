@@ -10,8 +10,12 @@ const Carduser = () => {
           </figure>
           <div className="justify-end card-body mt-80 ">
             <div className="">
-              <div id="unlike" className="background_radial-gradient btn-effect-none mx-auto">
-                <svg className="m-auto"
+              <div
+                id="unlike"
+                className="background_radial-gradient btn-effect-none mx-auto"
+              >
+                <svg
+                  className="m-auto"
                   width="181"
                   height="49"
                   viewBox="0 0 181 49"
