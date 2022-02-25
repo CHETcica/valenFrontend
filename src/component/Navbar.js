@@ -12,7 +12,6 @@ const Menubar = () => {
               src="https://cdn.discordapp.com/attachments/921282715888783410/938679327631998976/unknown.png"
             />
           </div>
-          
           <div className="flex-1 lg:flex hidden">
             <h1 className="text-2xl">Valen Matching</h1>
           </div>
@@ -21,15 +20,14 @@ const Menubar = () => {
           </div>
           <div className="flex-initial lg:flex-none"></div>
           <div className="flex-initial lg:flex-none"></div>
-          <a href="/profile" className="flex ">
-            <div className="avatar">
-              <div className="rounded-full w-10 h-10 m-1">
-                <img src="https://i.pravatar.cc/500?img=32" />
+            <a href="/profile" className="flex ">
+              <div className="avatar">
+                <div className="rounded-full w-10 h-10 m-1">
+                  <img src="https://i.pravatar.cc/500?img=32" />
+                </div>
               </div>
-            </div>
-            <h3 className="lg:flex my-auto ml-5 hidden">Chetsadakorn Mueangnam</h3>
-          </a>
-          
+              <h3 className="lg:flex my-auto ml-5 hidden">Chetsadakorn Mueangnam</h3>
+            </a>
         </div>
       </div>
     </>
