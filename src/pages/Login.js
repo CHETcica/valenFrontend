@@ -5,15 +5,15 @@ import { useDispatch, useSelector } from "react-redux";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const users = useSelector((state) => state.users);
   const disPatch = useDispatch();
   function validateForm() {
     return username.length > 0 && password.length > 0;
   }
-
   function handleSubmit(event) {
     event.preventDefault();
     disPatch(userLogin(username,password));
-    
+    console.log(username,password);
   }
   return (
     <>

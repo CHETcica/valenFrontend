@@ -15,7 +15,7 @@ const Menubar = () => {
           weigth: 54,
         },
         _id: "6213b95e3ee259b511fbcf3e",
-        username: "CHETcica",
+        username: "",
         email: "chetsadakozn2543@gmail.com",
         password:
           "$2a$12$l90I8YxiEP/1SzDvrx159.bTR1svAxWukjnH0USIig4mTVSPZv4tm",
@@ -71,13 +71,13 @@ const Menubar = () => {
             </a>
           ) : (
             <div className="flex ">
-              <a className="grid h-3/4 flex-grow text-2xl place-items-center">
+              <a href="/login" className="grid h-3/4 flex-grow text-2xl place-items-center">
                 Login
               </a>
               <div className="divider my-auto divider-horizontal">|</div>
-              <div className="grid h-3/4 flex-grow text-2xl place-items-center">
+              <a href="/register" className="grid h-3/4 flex-grow text-2xl place-items-center">
                 Sign up
-              </div>
+              </a>
             </div>
           )}
         </div>
