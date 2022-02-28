@@ -8,7 +8,6 @@ import Profile from "./pages/Profile";
 import Chatpage from "./pages/Chatpage"
 import Regispage from "./pages/Regispage"
 import Login from "./pages/Login"
-
 const App = () => {
   return (
     <BrowserRouter>
@@ -20,6 +19,7 @@ const App = () => {
             <Route path="/chat" element={<Chatpage />} />
             <Route path="/register" element={<Regispage />} />
             <Route path="/login" element={<Login />} />
+            {/* <Route path="/warn" element={<Login />} /> */}
           </Routes>
         <Footer/>
     </BrowserRouter>
