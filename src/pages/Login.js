@@ -13,7 +13,7 @@ const Login = () => {
   function handleSubmit(event) {
     event.preventDefault();
     disPatch(userLogin(username,password));
-    console.log(username,password);
+    
   }
   return (
     <>
@@ -48,6 +48,7 @@ const Login = () => {
                 aria-describedby="username"
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
+                required
               />
             </div>
             <div className="mb-3  mx-auto flex border border-b-black  border-block-input">
@@ -85,6 +86,7 @@ const Login = () => {
                 aria-describedby="password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </div>
             <div className="flex mx-auto">

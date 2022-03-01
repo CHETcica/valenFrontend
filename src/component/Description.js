@@ -6,6 +6,7 @@ import { fetchAllUser } from "../action";
 const Description = () => {
   const users = useSelector((state) => state.users);
   const disPatch = useDispatch();
+  
   useEffect(() => {
     disPatch(fetchAllUser());
   }, []);

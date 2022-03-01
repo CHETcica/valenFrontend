@@ -71,11 +71,11 @@ const Menubar = () => {
             </a>
           ) : (
             <div className="flex ">
-              <a href="/login" className="grid h-3/4 flex-grow text-2xl place-items-center">
+              <a href="/login" className="grid h-3/4 flex-grow text-lg place-items-center">
                 Login
               </a>
               <div className="divider my-auto divider-horizontal">|</div>
-              <a href="/register" className="grid h-3/4 flex-grow text-2xl place-items-center">
+              <a href="/register" className="grid h-3/4 flex-grow text-lg place-items-center">
                 Sign up
               </a>
             </div>

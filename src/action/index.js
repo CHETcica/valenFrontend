@@ -13,5 +13,6 @@ export const userLogin = (username, password) => async (dispatch) => {
   } );
   console.log(res.data)
   dispatch({ type: reduxType.FETCH_LOGIN_USER, payload: res.data });
+  
 };
 
