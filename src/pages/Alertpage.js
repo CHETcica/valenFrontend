@@ -1,5 +1,5 @@
 import React from "react";
-import { Alertmatch, Alertwarning, Alertmicrophone, Alertcannotconnect, Alertcamera, Alertsuccess, Alertaccountisblock, Alertmessage, Alertinfo, Alerterror } from "../component/Alert";
+import { Alertmatch, Alertwarning, Alertmicrophone, Alertcannotconnect, Alertcamera, Alertsuccess, Alertaccountisblock, Alertmessage, Alertinfo, Alerterror, Alertusernameorpassword, AlertPasswordsnotmatch, AlertPleaseenterpassword, Alertpassion } from "../component/Alert";
 
 const Alertpage = () => {
   return (
@@ -14,7 +14,10 @@ const Alertpage = () => {
       <Alertmessage/>
       <Alertinfo/>
       <Alerterror/>
-      
+      <Alertusernameorpassword/>
+      <AlertPasswordsnotmatch/>
+      <AlertPleaseenterpassword/>
+      <Alertpassion/>
     </div>
   );
 };
