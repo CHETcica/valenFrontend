@@ -1,16 +1,70 @@
-import React from "react";
-import BinGroupt, { BtnGroupt } from "./BtnGroupt";
+import React, { useEffect, useState } from "react";
+import { BtnGroupt } from "./BtnGroupt";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchAllUser } from "../action";
+
 const Carduser = () => {
+  //const users = useSelector((state) => state.users);
+  const [users, setUsers] = useState({
+    user: [
+      {
+        "user_details": {
+            "taste": [],
+            "likes": [],
+            "unlike": [],
+            "likesMe": [],
+            "higth": 170,
+            "weigth": 54
+        },
+        "_id": "6213b95e3ee259b511fbcf3e",
+        "username": "CHETcica",
+        "email": "chetsadakozn2543@gmail.com",
+        "password": "$2a$12$l90I8YxiEP/1SzDvrx159.bTR1svAxWukjnH0USIig4mTVSPZv4tm",
+        "gender": "man",
+        "born": "2000-08-17T00:00:00.000Z",
+        "phone": "0823636036",
+        "location": [
+            13.838598,
+            19.0398371
+        ],
+        "passion": [
+            "music",
+            "game",
+            "cooking"
+        ],
+        "interested": "woman",
+        "bio": "hello i like game",
+        "social": {
+            "Facebook": "Chet cica",
+            "Instagram": "Chet cica"
+        },
+        "userimageprofile": "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg",
+        "userimage": [
+            "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg"
+        ],
+        "frind_id": [],
+        "__v": 0
+      }
+    ],
+  });
+  const disPatch = useDispatch();
+  useEffect(() => {
+    disPatch(fetchAllUser());
+  }, []);
+
+  if (!users && Object.keys(users).length === 0) return;
   return (
     <>
       <div className=" m-auto md:w-80 my-6">
         <div className="card shadow-xl image-full border-card-solid border-solid border-2 text-color-black">
           <figure className="userimage">
-            <img src="https://cdn.discordapp.com/attachments/662893950687772684/938833115776974968/unknown.png" />
+            <img src={users.user[0].userimageprofile} />
           </figure>
           <div className="justify-end card-body mt-80 ">
             <div className="grid grid-cols-2 ">
-              <h2 className="card-title my-auto text-color-black">Kanomroo</h2>
+              <h2 className="card-title my-auto text-color-black">
+                {users.user[0].username}
+              </h2>
               <label
                 className="my-auto ml-auto modal-button"
                 htmlFor="modal-Description"
@@ -46,26 +100,32 @@ const Carduser = () => {
                 </svg>
               </label>
             </div>
-            <p className="text-color-black">
-              Rerum necessitatibus veritatis iure sapiente.
-            </p>
+            <p className="text-color-black">{users.user[0].bio}</p>
             <hr className="text-color-black" />
             <div className="lx:hidden card-actions grid grid-cols-3 text-center">
-              <div className="text-color-black card-actions-passion-primary">Game</div>
-              <div className="text-color-black card-actions-passion-primary">
-                Music
-              </div>
-              <div className="text-color-black card-actions-passion-secondary">
-                Music
-              </div>
+              { users.user[0].passion[0]?
+                <div className="text-color-black card-actions-passion-primary">
+                  {users.user[0].passion[0]}
+                </div>:""
+              }
+              { users.user[0].passion[1]?
+                <div className="text-color-black card-actions-passion-primary">
+                  {users.user[0].passion[1]}
+                </div>:""
+              }
+              { users.user[0].passion[2]?
+                <div className="text-color-black card-actions-passion-secondary">
+                  {users.user[0].passion[2]}
+                </div>:""
+              }
             </div>
             <div className="sm:card-actions md:hidden ">
-              <BtnGroupt/>
+              <BtnGroupt />
             </div>
           </div>
         </div>
         <div className="btn-groupt-hidden">
-          <BtnGroupt/>
+          <BtnGroupt />
         </div>
       </div>
     </>
