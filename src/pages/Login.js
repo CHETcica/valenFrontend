@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
+import { userLogin } from "../action";
+import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const users = useSelector((state) => state.users);
+  const disPatch = useDispatch();
+  function validateForm() {
+    return username.length > 0 && password.length > 0;
+  }
+  function handleSubmit(event) {
+    event.preventDefault();
+    disPatch(userLogin(username,password));
+    
+  }
   return (
     <>
       <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
         <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full bg-no-repeat bg-[url('https://i.pinimg.com/564x/ab/11/d2/ab11d2259be6bc12a112df7499026ed7.jpg')]"></div>
         <div className=" p-3 m-3 mx-auto card  h-full w-full bg-white shadow-xl ">
-          <form className="block mx-auto  w-2/4">
+          <form onSubmit={handleSubmit}  className="block mx-auto  w-2/4">
             <h1 className="my-4 text-3xl ">Login</h1>
             <div className=" mb-3 w-full mx-auto flex border border-b-black  border-block-input">
               <div className="w-12 p-1">
@@ -31,6 +45,9 @@ const Login = () => {
                 name="username"
                 placeholder="User name"
                 aria-describedby="username"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
               />
             </div>
             <div className="mb-3  mx-auto flex border border-b-black  border-block-input">
@@ -66,10 +83,15 @@ const Login = () => {
                 name="password"
                 placeholder="password"
                 aria-describedby="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
               />
             </div>
-            <div className="flex  mx-auto p-3 ">
-              <div className="h-20">
+
+            <div className="flex mx-auto p-3">
+              <button className="h-20" type="submit" disabled={!validateForm()}>
+
                 <svg
                   width="186"
                   height="61"
@@ -127,10 +149,14 @@ const Login = () => {
                     </filter>
                   </defs>
                 </svg>
-              </div>
+
+              </button>
               <div className="divider divider-vertical h-18"></div>
-              <div className="pt-3 ">
-                <button className=" text-xl">Register</button>
+              <div className="pt-3">
+                <a href="/register" className="text-xl">
+                  Register
+                </a>
+
               </div>
             </div>
             <div className="w-3/4 mx-auto ">

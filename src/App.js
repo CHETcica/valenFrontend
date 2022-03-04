@@ -6,6 +6,7 @@ import Footer from "./component/Footer";
 import Homepage from "./pages/Homepage";
 import Profile from "./pages/Profile";
 import Chatpage from "./pages/Chatpage"
+import Alertpage from "./pages/Alertpage"
 import Regispage from "./pages/Regispage"
 import Login from "./pages/Login"
 
@@ -20,6 +21,7 @@ const App = () => {
             <Route path="/chat" element={<Chatpage />} />
             <Route path="/register" element={<Regispage />} />
             <Route path="/login" element={<Login />} />
+            <Route path="/alert" element={<Alertpage/>} />  
           </Routes>
         <Footer/>
     </BrowserRouter>
