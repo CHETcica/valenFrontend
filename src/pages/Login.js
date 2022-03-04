@@ -22,7 +22,6 @@ const Login = () => {
         <div className=" p-3 m-3 mx-auto card  h-full w-full bg-white shadow-xl ">
           <form onSubmit={handleSubmit}  className="block mx-auto  w-2/4">
             <h1 className="my-4 text-3xl ">Login</h1>
-
             <div className=" mb-3 w-full mx-auto flex border border-b-black  border-block-input">
               <div className="w-12 p-1">
                 <svg
@@ -89,8 +88,10 @@ const Login = () => {
                 required
               />
             </div>
-            <div className="flex mx-auto">
-              <button type="submit" disabled={!validateForm()}>
+
+            <div className="flex mx-auto p-3">
+              <button className="h-20" type="submit" disabled={!validateForm()}>
+
                 <svg
                   width="186"
                   height="61"
@@ -148,16 +149,18 @@ const Login = () => {
                     </filter>
                   </defs>
                 </svg>
+
               </button>
-              <div className="divider divider-horizontal"></div>
-              <div className="">
-                <a href="/register" className="">
+              <div className="divider divider-vertical h-18"></div>
+              <div className="pt-3">
+                <a href="/register" className="text-xl">
                   Register
                 </a>
+
               </div>
             </div>
-            <div className="">
-              <div className="grid grid-cols-3 h-20 card bg-base-300 rounded-box place-items-center">
+            <div className="w-3/4 mx-auto ">
+              <div className="grid grid-cols-3 bg-blue-700 h-16 card bg-base-300 rounded-full place-items-center">
                 <div className="">
                   <svg
                     width="39"
@@ -176,11 +179,46 @@ const Login = () => {
                     />
                   </svg>
                 </div>
-                <div className="col-span-2 text-left ml-0">facebook</div>
+                <div className="col-span-2  text-white text-left ml-0">
+                  FACEBOOK
+                </div>
               </div>
               <div className="divider">OR</div>
-              <div className="grid h-20 card bg-base-300 rounded-box place-items-center">
-                google
+              <div className="grid grid-cols-3 base-100 h-16 card bg-base-300 rounded-full place-items-center">
+                <div className="">
+                  <svg
+                    width="39"
+                    height="42"
+                    viewBox="0 0 39 42"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <g clip-path="url(#clip0_164_670)">
+                      <path
+                        d="M38.6198 21.4837C38.6198 20.0562 38.5123 18.6209 38.283 17.2166H19.89V25.3033H30.4228C29.9857 27.9114 28.5814 30.2186 26.525 31.6847V36.9318H32.8088C36.4989 33.2742 38.6198 27.8728 38.6198 21.4837Z"
+                        fill="#4285F4"
+                      />
+                      <path
+                        d="M19.89 42.0014C25.1492 42.0014 29.5845 40.1418 32.8159 36.9318L26.5321 31.6847C24.7838 32.9656 22.5268 33.691 19.8971 33.691C14.8099 33.691 10.4964 29.9948 8.94877 25.0255H2.46429V30.4347C5.7746 37.526 12.517 42.0014 19.89 42.0014V42.0014Z"
+                        fill="#34A853"
+                      />
+                      <path
+                        d="M8.94163 25.0255C8.1248 22.4174 8.1248 19.5932 8.94163 16.9851V11.5759H2.46431C-0.301439 17.5098 -0.301439 24.5008 2.46431 30.4346L8.94163 25.0255V25.0255Z"
+                        fill="#FBBC04"
+                      />
+                      <path
+                        d="M19.89 8.31191C22.6701 8.26561 25.357 9.39219 27.3704 11.4602L32.9377 5.46458C29.4125 1.89963 24.7336 -0.0603155 19.89 0.00141517C12.517 0.00141517 5.7746 4.47689 2.46429 11.5759L8.94161 16.9851C10.4821 12.008 14.8027 8.31191 19.89 8.31191V8.31191Z"
+                        fill="#EA4335"
+                      />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_164_670">
+                        <rect width="39" height="42" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </div>
+                <div className=" col-span-2  text-left ml-0">GOOGLE</div>
               </div>
             </div>
           </form>
