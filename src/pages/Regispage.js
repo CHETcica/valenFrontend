@@ -1,12 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { userSignup } from "../action";
+import {
+  AlertPasswordsnotmatch,
+  AlertPleaseenterpassword,
+} from "../component/Alert";
 
 const Reagispage = () => {
+  const [submitted, setSubmitted] = useState(false);
+
+  const [username, setUsername] = useState("");
+  const [password1, setPassword1] = useState("");
+  const [password2, setPassword2] = useState("");
+  const [email, setEmail] = useState("");
+  const [birthday, setBirthday] = useState("");
+
+  const disPatch = useDispatch();
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    disPatch(userSignup(username, email, password1, birthday));
+    setSubmitted(true);
+  }
   return (
     <>
       <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
-        <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full bg-no-repeat bg-[url('https://i.pinimg.com/564x/ab/11/d2/ab11d2259be6bc12a112df7499026ed7.jpg')]"></div>
+        <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full bg-no-repeat bg-[url('https://i.pinimg.com/564x/ab/11/d2/ab11d2259be6bc12a112df7499026ed7.jpg')]">
+          {submitted? password1 !== password2 ? <AlertPasswordsnotmatch /> : "" : ""}
+          {password1 !== password2 ? <AlertPleaseenterpassword /> :""}
+        </div>
         <div className=" p-3 m-3 mx-auto card  h-full w-full bg-white shadow-xl ">
-          <form className="block mx-auto  w-2/4">
+          <form onSubmit={handleSubmit} className="block mx-auto  w-2/4">
             <h1 className="my-4 text-3xl ">Register</h1>
 
             <div className=" mb-3 w-full mx-auto flex border border-b-black  border-block-input">
@@ -32,9 +56,11 @@ const Reagispage = () => {
                 name="firstname"
                 placeholder="User name"
                 aria-describedby="firstname"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+                required
               />
             </div>
-
             <div className="mb-3  mx-auto flex border border-b-black  border-block-input">
               <div className="w-12 p-1">
                 <svg
@@ -52,14 +78,15 @@ const Reagispage = () => {
                   />
                 </svg>
               </div>
-
-              <label for="firstname" className="form-label"></label>
               <input
                 type="text"
                 className="form-control w-full"
                 name="firstname"
                 placeholder="E-mail"
                 aria-describedby="E-mail"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
             <div className="mb-3  mx-auto flex border border-b-black  border-block-input">
@@ -89,12 +116,16 @@ const Reagispage = () => {
                   </g>
                 </svg>
               </div>
+
               <input
                 type="password"
                 className="form-control w-full"
                 name="firstname"
                 placeholder="password"
                 aria-describedby="firstname"
+                value={password1}
+                onChange={(e) => setPassword1(e.target.value)}
+                required
               />
             </div>
             <div className="mb-3 w-full mx-auto flex border border-b-black  border-block-input">
@@ -131,6 +162,9 @@ const Reagispage = () => {
                 name="firstname"
                 placeholder="Confirm Password"
                 aria-describedby="firstname"
+                value={password2}
+                onChange={(e) => setPassword2(e.target.value)}
+                required
               />
             </div>
             <div className="mb-3 w-full mx-auto flex border border-b-black  border-block-input">
@@ -180,9 +214,12 @@ const Reagispage = () => {
                 name="birthday"
                 placeholder="Born"
                 aria-describedby="birthday"
+                value={birthday}
+                onChange={(e) => setBirthday(e.target.value)}
+                required
               />
             </div>
-            <div className="">
+            <div type="submit" className="">
               <button className="btn mt-3 mx-auto">Sign up</button>
             </div>
           </form>

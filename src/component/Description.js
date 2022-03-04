@@ -4,9 +4,48 @@ import Carduser from "./Carduser";
 import { fetchAllUser } from "../action";
 
 const Description = () => {
-  const users = useSelector((state) => state.users);
+  // const users = useSelector((state) => state.users);
+  const [users, setUsers] = useState({
+    user: [
+      {
+        user_details: {
+          taste: [],
+          likes: [],
+          unlike: [],
+          likesMe: [],
+          higth: 170,
+          weigth: 54,
+        },
+        _id: "6213b95e3ee259b511fbcf3e",
+        username: "CHETcica",
+        email: "chetsadakozn2543@gmail.com",
+        password:
+          "$2a$12$l90I8YxiEP/1SzDvrx159.bTR1svAxWukjnH0USIig4mTVSPZv4tm",
+        gender: "man",
+        born: "2000-08-17T00:00:00.000Z",
+        phone: "0823636036",
+        location: [13.838598, 19.0398371],
+        passion: ["music", "game"],
+        // passion: { music: "5", game: "5" },
+        interested: "woman",
+        bio: "hello i like game",
+        social: {
+          Facebook: "Chet cica",
+          Instagram: "Chet cica",
+        },
+        userimageprofile:
+          "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg",
+        userimage: [
+          "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg",
+        ],
+        frind_id: [],
+        __v: 0,
+      },
+    ],
+  });
+  const myObject = { 'a': 1, 'b': 2, 'c': 3 };
   const disPatch = useDispatch();
-  
+
   useEffect(() => {
     disPatch(fetchAllUser());
   }, []);
@@ -122,6 +161,15 @@ const Description = () => {
             <div className="text-3xl mt-3">
               <h1 className="text-3xl mb-2">Passions</h1>
               <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 text-center">
+                {/* {myObject.map(function (value, label) {
+                   value * value
+                })} */}
+                
+                {/* {users.user[0].passion.map((passion, frequency) => (
+                  <div className="text-color-black text-xl card-actions-passion-primary ">
+                    {frequency}
+                  </div>
+                ))} */}
                 {users.user[0].passion.map((el) => (
                   <div className="text-color-black text-xl card-actions-passion-primary ">
                     {el}

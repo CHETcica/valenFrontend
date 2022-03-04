@@ -6,6 +6,8 @@ const reducer = (state = {}, action) => {
       return action.payload;
     case reduxType.FETCH_LOGIN_USER:
       return action.payload;
+    case reduxType.FETCH_SIGNUP_USER:
+      return action.payload;
     default:
       return state;
   }
