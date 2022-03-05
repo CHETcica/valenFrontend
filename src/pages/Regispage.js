@@ -21,13 +21,14 @@ const Reagispage = () => {
     event.preventDefault();
     disPatch(userSignup(username, email, password1, birthday));
     setSubmitted(true);
+    window.location = "/";
   }
   return (
     <>
       <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
         <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full bg-no-repeat bg-[url('https://i.pinimg.com/564x/ab/11/d2/ab11d2259be6bc12a112df7499026ed7.jpg')]">
           {submitted? password1 !== password2 ? <AlertPasswordsnotmatch /> : "" : ""}
-          {password1 !== password2 ? <AlertPleaseenterpassword /> :""}
+          {!password1 || !password2 ? <AlertPleaseenterpassword /> :""}
         </div>
         <div className=" p-3 m-3 mx-auto card  h-full w-full bg-white shadow-xl ">
           <form onSubmit={handleSubmit} className="block mx-auto  w-2/4">
@@ -209,7 +210,6 @@ const Reagispage = () => {
                 </svg>
               </div>
               <input
-
                 type="date"
                 className="form-control w-full grid grid-cols-2 "
                 name="birthday"

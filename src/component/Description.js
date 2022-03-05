@@ -43,7 +43,7 @@ const Description = () => {
       },
     ],
   });
-  const myObject = { 'a': 1, 'b': 2, 'c': 3 };
+  
   const disPatch = useDispatch();
 
   useEffect(() => {

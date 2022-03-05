@@ -14,8 +14,7 @@ export const userSignup = (username, email, password, born) => async (dispatch) 
       born: born
   } );
   console.log(res.data)
-  dispatch({ type: reduxType.FETCH_LOGIN_USER, payload: res.data });
-  
+  dispatch({ type: reduxType.FETCH_SIGNUP_USER, payload: res.data });
 };
 
 export const userLogin = (username, password) => async (dispatch) => {
@@ -25,7 +24,6 @@ export const userLogin = (username, password) => async (dispatch) => {
   } );
   console.log(res.data)
   dispatch({ type: reduxType.FETCH_LOGIN_USER, payload: res.data });
-  
 };
 
 export const fetchUser = () => async (dispatch) => {

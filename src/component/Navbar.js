@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllUser } from "../action";
-
 const Menubar = () => {
+  // const users = useSelector((state) => state.signs);
   const [users, setUsers] = useState({
     user: [
       {
@@ -42,7 +42,6 @@ const Menubar = () => {
   });
 
   return (
-    <>
       <div className="mx-auto navbar shadow-lg text-neutral-content h-7">
         <div className="container mx-auto">
           <div className="flex-none hidden lg:flex"></div>
@@ -71,18 +70,23 @@ const Menubar = () => {
             </a>
           ) : (
             <div className="flex ">
-              <a href="/login" className="grid h-3/4 flex-grow text-lg place-items-center">
+              <a
+                href="/login"
+                className="grid h-3/4 flex-grow text-lg place-items-center"
+              >
                 Login
               </a>
               <div className="divider my-auto divider-horizontal">|</div>
-              <a href="/register" className="grid h-3/4 flex-grow text-lg place-items-center">
+              <a
+                href="/register"
+                className="grid h-3/4 flex-grow text-lg place-items-center"
+              >
                 Sign up
               </a>
             </div>
           )}
         </div>
       </div>
-    </>
   );
 };
 
