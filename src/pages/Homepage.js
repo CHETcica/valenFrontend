@@ -4,8 +4,7 @@ import Usersetting from "../component/Usersetting";
 import Userdescription from "../component/Description"
 
 const Homepage = () => {
-  const users = useSelector((state) => state.signs);
-  const disPatch = useDispatch();
+  
   return (
       <>
         <Usersetting/>

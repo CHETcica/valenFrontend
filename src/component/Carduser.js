@@ -49,12 +49,12 @@ const Carduser = () => {
   });
   const disPatch = useDispatch();
   useEffect(() => {
-    disPatch(fetchAllUser());
+    
   }, []);
 
   if (!users && Object.keys(users).length === 0) return;
   return (
-    <>
+    
       <div className=" m-auto md:w-80 my-6">
         <div className="card shadow-xl image-full border-card-solid border-solid border-2 text-color-black">
           <figure className="userimage">
@@ -128,7 +128,7 @@ const Carduser = () => {
           <BtnGroupt />
         </div>
       </div>
-    </>
+    
   );
 };
 

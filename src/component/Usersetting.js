@@ -21,8 +21,8 @@ const Usersetting = () => {
               <p className="ml-auto">40 km.</p>
               <input
                 type="range"
+                min="0"
                 max="100"
-                value="40"
                 className="range range-primary"
               />
             </li>
@@ -32,16 +32,16 @@ const Usersetting = () => {
               <p className="ml-auto">20 year</p>
               <input
                 type="range"
+                min="0"
                 max="100"
-                value="20"
                 className="range range-primary"
               />
               <h6>max Age</h6>
               <p className="ml-auto">25 year</p>
               <input
                 type="range"
+                min="0"
                 max="100"
-                value="25"
                 className="range range-primary"
               />
             </li>

@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+
 
 const Menubar = () => {
   return (
     
       <div className="menubar navbar shadow-lg text-neutral-content h-7">
         <div className="mx-auto">
-          <a href="/" className="flex-1 mx-4 text-2xl">
+          <Link to={"/"} className="flex-1 mx-4 text-2xl">
             <div className="flex">
               <div className="flex-1">
                 <svg
@@ -26,8 +28,8 @@ const Menubar = () => {
               </div>
               <div className="my-auto ml-2 lg:flex hidden">Home</div>
             </div>
-          </a>
-          <a href="/chat" className="flex-1 mx-4 text-2xl">
+          </Link>
+          <Link to={"/chat"} className="flex-1 mx-4 text-2xl">
             <div className="flex">
               <div className="flex-1">
                 <svg
@@ -52,7 +54,7 @@ const Menubar = () => {
               </div>
               <div className="my-auto ml-2 lg:flex hidden">Chat</div>
             </div>
-          </a>
+          </Link>
           <label herf="#" className="flex-1 mx-4 text-2xl drawer-button" htmlFor="my-drawer-4">
             <div className="flex">
               <div className="flex-1">

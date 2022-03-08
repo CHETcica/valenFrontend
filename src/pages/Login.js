@@ -2,12 +2,14 @@ import React, { useState } from "react";
 import { userLogin } from "../action";
 import { useDispatch, useSelector } from "react-redux";
 import { Alertsuccess } from "../component/Alert";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [submitted, setSubmitted] = useState(false);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const users = useSelector((state) => state.users);
+  const users = useSelector((state) => state.signs);
+  const navigate = useNavigate()
   const disPatch = useDispatch();
 
   function validateForm() {
@@ -16,11 +18,10 @@ const Login = () => {
   function handleSubmit(event) {
     event.preventDefault();
     disPatch(userLogin(username, password));
-    window.location = "/";
+    navigate("/")
     setSubmitted(true);
   }
   return (
-    <>
       <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
         <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full bg-no-repeat bg-[url('https://i.pinimg.com/564x/ab/11/d2/ab11d2259be6bc12a112df7499026ed7.jpg')]">
           {submitted?<Alertsuccess/>:""}
@@ -227,7 +228,6 @@ const Login = () => {
           </form>
         </div>
       </div>
-    </>
   );
 };
 

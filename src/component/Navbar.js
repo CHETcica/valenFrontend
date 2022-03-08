@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchAllUser } from "../action";
-const Menubar = () => {
-  // const users = useSelector((state) => state.signs);
+import { Link } from "react-router-dom";
+const Navbar = () => {
+
+  //const users = useSelector((state) => state.signs);
   const [users, setUsers] = useState({
     user: [
       {
@@ -40,7 +42,9 @@ const Menubar = () => {
       },
     ],
   });
-
+  useEffect(()=>{
+    
+  })
   return (
       <div className="mx-auto navbar shadow-lg text-neutral-content h-7">
         <div className="container mx-auto">
@@ -58,7 +62,7 @@ const Menubar = () => {
           <div className="flex-initial lg:flex-none"></div>
           <div className="flex-initial lg:flex-none"></div>
           {users.user[0].username ? (
-            <a href="/profile" className="flex ">
+            <Link to={"/profile"} className="flex">
               <div className="avatar">
                 <div className="rounded-full w-10 h-10 m-1">
                   <img src={users.user[0].userimageprofile} />
@@ -67,22 +71,22 @@ const Menubar = () => {
               <h3 className="lg:flex my-auto ml-5 text-xl hidden">
                 {users.user[0].username}
               </h3>
-            </a>
+            </Link>
           ) : (
-            <div className="flex ">
-              <a
-                href="/login"
+            <div className="flex">
+              <Link
+                to={"/login"}
                 className="grid h-3/4 flex-grow text-lg place-items-center"
               >
                 Login
-              </a>
-              <div className="divider my-auto divider-horizontal">|</div>
-              <a
-                href="/register"
+              </Link>
+              <div className="divider my-auto divider-vertical"></div>
+              <Link
+                to={"/register"}
                 className="grid h-3/4 flex-grow text-lg place-items-center"
               >
                 Sign up
-              </a>
+              </Link>
             </div>
           )}
         </div>
@@ -90,4 +94,4 @@ const Menubar = () => {
   );
 };
 
-export default Menubar;
+export default Navbar;

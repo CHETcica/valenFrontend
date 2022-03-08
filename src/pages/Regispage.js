@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { userSignup } from "../action";
+import { useNavigate } from "react-router-dom";
+
 import {
   AlertPasswordsnotmatch,
   AlertPleaseenterpassword,
@@ -14,6 +16,7 @@ const Reagispage = () => {
   const [password2, setPassword2] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
+  const navigate = useNavigate()
 
   const disPatch = useDispatch();
 
@@ -21,7 +24,7 @@ const Reagispage = () => {
     event.preventDefault();
     disPatch(userSignup(username, email, password1, birthday));
     setSubmitted(true);
-    window.location = "/";
+    navigate("/login")
   }
   return (
     <>
@@ -80,9 +83,9 @@ const Reagispage = () => {
                 </svg>
               </div>
               <input
-                type="text"
+                type="email"
                 className="form-control w-full"
-                name="firstname"
+                name="E-mail"
                 placeholder="E-mail"
                 aria-describedby="E-mail"
                 value={email}
