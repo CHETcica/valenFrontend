@@ -10,16 +10,13 @@ import {
 
 const Reagispage = () => {
   const [submitted, setSubmitted] = useState(false);
-
   const [username, setUsername] = useState("");
   const [password1, setPassword1] = useState("");
   const [password2, setPassword2] = useState("");
   const [email, setEmail] = useState("");
   const [birthday, setBirthday] = useState("");
-  const navigate = useNavigate()
-
+  const navigate = useNavigate();
   const disPatch = useDispatch();
-
   function handleSubmit(event) {
     event.preventDefault();
     disPatch(userSignup(username, email, password1, birthday));
@@ -27,7 +24,6 @@ const Reagispage = () => {
     navigate("/login")
   }
   return (
-    <>
       <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
         <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full bg-no-repeat bg-[url('https://i.pinimg.com/564x/ab/11/d2/ab11d2259be6bc12a112df7499026ed7.jpg')]">
           {submitted? password1 !== password2 ? <AlertPasswordsnotmatch /> : "" : ""}
@@ -287,7 +283,6 @@ const Reagispage = () => {
           </form>
         </div>
       </div>
-    </>
   );
 };
 

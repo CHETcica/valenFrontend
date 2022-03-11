@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BtnGroupt } from "./BtnGroupt";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllUser } from "../action";
+import { randomUser } from "../action";
 
 const Carduser = () => {
   //const users = useSelector((state) => state.users);
@@ -9,52 +9,50 @@ const Carduser = () => {
     user: [
       {
         "user_details": {
+            "unlikes": [],
             "taste": [],
             "likes": [],
             "unlike": [],
-            "likesMe": [],
-            "higth": 170,
-            "weigth": 54
+            "likesMe": []
         },
-        "_id": "6213b95e3ee259b511fbcf3e",
-        "username": "CHETcica",
-        "email": "chetsadakozn2543@gmail.com",
-        "password": "$2a$12$l90I8YxiEP/1SzDvrx159.bTR1svAxWukjnH0USIig4mTVSPZv4tm",
-        "gender": "man",
-        "born": "2000-08-17T00:00:00.000Z",
+        "_id": "6214a044e543ba936f58d2ea",
+        "username": "BOWcica",
+        "email": "supansa@gmail.com",
+        "password": "$2a$12$ZwJaLXxBevU9LJ90OWwb6eehgPVYDgDAVa96QA.4X6TMk13U4h9JW",
+        "gender": "woman",
+        "born": "2002-02-05T00:00:00.000Z",
         "phone": "0823636036",
         "location": [
             13.838598,
             19.0398371
         ],
-        "passion": [
-            "music",
-            "game",
-            "cooking"
-        ],
-        "interested": "woman",
-        "bio": "hello i like game",
-        "social": {
-            "Facebook": "Chet cica",
-            "Instagram": "Chet cica"
+        "passion": {
+            "music": "5",
+            "korean series": "5"
         },
-        "userimageprofile": "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg",
+        "interested": "man",
+        "bio": "𝐆𝐎𝐓 𝟕💚",
+        "social": {
+            "Facebook": "Bow Supansa",
+            "Instagram": "𝐛𝐨𝐰𝐥.𝐢𝐧𝐠𝟐𝟎𝟎𝟐"
+        },
+        "userimageprofile": "https://cdn.discordapp.com/attachments/792729018608648204/796720785279811614/135865438_224714649180167_1622948695454171292_n.jpg",
         "userimage": [
-            "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg"
+            "https://cdn.discordapp.com/attachments/792729018608648204/796720785279811614/135865438_224714649180167_1622948695454171292_n.jpg"
         ],
         "frind_id": [],
         "__v": 0
-      }
+    }
     ],
   });
+  
   const disPatch = useDispatch();
   useEffect(() => {
-    
-  }, []);
+    disPatch(randomUser("woman"));
+  });
 
   if (!users && Object.keys(users).length === 0) return;
   return (
-    
       <div className=" m-auto md:w-80 my-6">
         <div className="card shadow-xl image-full border-card-solid border-solid border-2 text-color-black">
           <figure className="userimage">
