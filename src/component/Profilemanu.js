@@ -51,10 +51,14 @@ const Profilemanu = () => {
           </div>
         </div>
         <div className="col-span-1 pl-10 w-3/4">
+
           <p className="truncate text-2xl my-9 pl-5">{users.user[0].username}</p>
+
+// <p className="truncate text-2xl my-9 pl-5"><a href="/EditPersonal.js" className="flex "> Chetsadakorn Mueangnam</a></p>
+
           <hr />
           <p className="text-lg my-3 pl-5">แก้ไขข้อมูลส่วนตัว</p>
-          <hr/>
+          <hr />
           <p className="text-lg my-3 pl-5">นโยบาย</p>
           <hr />
           <p className="text-lg my-3 pl-5">ข้อเสนอแนะ</p>
