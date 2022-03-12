@@ -1,10 +1,10 @@
-import React from 'react'
+import React from "react";
 import Profilemanu from "../component/Profilemanu";
 const Profile = () => {
   return (
     <>
-   <Profilemanu/>
+      <Profilemanu />
     </>
-  )
-}
-export default Profile
+  );
+};
+export default Profile;
