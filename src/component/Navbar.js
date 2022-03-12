@@ -17,7 +17,7 @@ const Navbar = () => {
           weigth: 54,
         },
         _id: "6213b95e3ee259b511fbcf3e",
-        username: "",
+        username: "Bowcica",
         email: "chetsadakozn2543@gmail.com",
         password:
           "$2a$12$l90I8YxiEP/1SzDvrx159.bTR1svAxWukjnH0USIig4mTVSPZv4tm",
@@ -80,7 +80,7 @@ const Navbar = () => {
               >
                 Login
               </Link>
-              <div className="divider my-auto divider-vertical"></div>
+                <div className="divider my-auto divider-vertical"></div>
               <Link
                 to={"/register"}
                 className="grid h-3/4 flex-grow text-lg place-items-center"

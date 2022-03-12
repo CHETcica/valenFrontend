@@ -10,8 +10,6 @@ import Chatpage from "./pages/Chatpage"
 import Alertpage from "./pages/Alertpage"
 import Regispage from "./pages/Regispage"
 import Login from "./pages/Login"
-
-import Profile from "./pages/Profile";
 import EditPersonal from "./pages/EditPersonal";
 import Liking from "./pages/Liking";
 
@@ -24,7 +22,7 @@ const App = () => {
         <Menubar />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile/>} />
             <Route path="/chat" element={<Chatpage />} />
             <Route path="/register" element={<Regispage />} />
             <Route path="/login" element={<Login />} />
@@ -34,16 +32,6 @@ const App = () => {
           </Routes>
         <Footer/>
     </BrowserRouter>
-
-    <>
-      <Navbar />
-      <Menubar />
-      <EditPersonal />
-      <Footer />
-        <Liking />
-      <Footer />
-    </>
-
   );
 };
 export default App;
