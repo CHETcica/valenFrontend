@@ -43,7 +43,7 @@ const Description = () => {
       },
     ],
   });
-  
+
   const disPatch = useDispatch();
 
   useEffect(() => {
@@ -142,20 +142,33 @@ const Description = () => {
           <Carduser />
           <div className=" pt-5">
             <div className="grid grid-cols-2">
-              <h1 className="text-3xl ">{users.user[0].username}</h1>
+              <h1 className="text-3xl ">
+                {users.user[0].username ? users.user[0].username : "-"}
+              </h1>
               <h1 className="text-3xl ml-auto">Age {calculateAge()}</h1>
             </div>
             <hr />
             <div className="my-3">
               <h3 className="text-xl ">
-                higth : {users.user[0].user_details.higth} cm.
+                higth :{" "}
+                {users.user[0].user_details.higth
+                  ? users.user[0].user_details.higth
+                  : "-"}
+                cm.
               </h3>
               <h3 className="text-xl ">
-                weigth : {users.user[0].user_details.weigth} kg.
+                weigth :{" "}
+                {users.user[0].user_details.weigth
+                  ? users.user[0].user_details.weigth
+                  : "-"}
+                kg.
               </h3>
-              <h3 className="text-xl ">gender : {users.user[0].gender}</h3>
               <h3 className="text-xl ">
-                interested : {users.user[0].interested}
+                gender : {users.user[0].gender ? users.user[0].gender : "-"}
+              </h3>
+              <h3 className="text-xl ">
+                interested :{" "}
+                {users.user[0].interested ? users.user[0].interested : "-"}
               </h3>
             </div>
             <div className="text-3xl mt-3">
@@ -164,21 +177,24 @@ const Description = () => {
                 {/* {myObject.map(function (value, label) {
                    value * value
                 })} */}
-                
+
                 {/* {users.user[0].passion.map((passion, frequency) => (
                   <div className="text-color-black text-xl card-actions-passion-primary ">
                     {frequency}
                   </div>
                 ))} */}
-                {users.user[0].passion.map((el) => (
+                {users.user[0].passion?
+                users.user[0].passion.map((el) => (
                   <div className="text-color-black text-xl card-actions-passion-primary ">
                     {el}
                   </div>
-                ))}
+                )):""
+                }
               </div>
             </div>
             <div className="text-3xl mt-3">
               <h1 className="text-3xl mb-2">Album</h1>
+              
               <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-4 gap-3">
                 {users.user[0].userimage[0] ? (
                   <img
