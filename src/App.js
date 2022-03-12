@@ -11,9 +11,11 @@ import Alertpage from "./pages/Alertpage"
 import Regispage from "./pages/Regispage"
 import Login from "./pages/Login"
 
+
 import Profile from "./pages/Profile";
 import EditPersonal from "./pages/EditPersonal";
 import Liking from "./pages/Liking";
+
 
 
 const App = () => {
@@ -31,19 +33,10 @@ const App = () => {
             <Route path="/alert" element={<Alertpage/>} />
             <Route path="/editpersonal" element={<EditPersonal/>} />
             <Route path="/liking" element={<Liking/>} /> 
+            <Route path="/warn" element={<Login />} />
           </Routes>
         <Footer/>
     </BrowserRouter>
-
-    <>
-      <Navbar />
-      <Menubar />
-      <EditPersonal />
-      <Footer />
-        <Liking />
-      <Footer />
-    </>
-
   );
 };
 export default App;

@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 
 const Menubar = () => {
   return (
-    
-      <div className="menubar navbar shadow-lg text-neutral-content h-7">
+    <div className="menubar navbar shadow-lg text-neutral-content h-7">
         <div className="mx-auto">
           <Link to={"/"} className="flex-1 mx-4 text-2xl">
             <div className="flex">
@@ -132,30 +131,68 @@ const Menubar = () => {
               </div>
               <div className="my-auto ml-2 lg:flex hidden">Setting</div>
             </div>
-          </label>
-          <a herf="#" className="flex-1 mx-4 text-2xl">
-            <div className="flex">
-              <div className="flex-1">
-                <svg
-                  width="43"
-                  height="43"
-                  viewBox="0 0 43 43"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M37.2222 27.0599V27.5053L37.5533 27.8032L41.6311 31.4732L41.6324 31.4744C41.7571 31.5863 41.8496 31.7134 41.9104 31.8453C41.971 31.9768 42.0002 32.1135 42 32.2484V32.25V34.4C42 34.669 41.8822 34.9512 41.6313 35.177C41.377 35.4059 41.0115 35.55 40.6111 35.55H2.38889C1.98852 35.55 1.623 35.4059 1.36866 35.177C1.11779 34.9512 1 34.669 1 34.4L1 32.25L1 32.2484C0.999784 32.1135 1.02904 31.9768 1.08961 31.8453C1.15036 31.7134 1.24287 31.5863 1.36757 31.4744L1.36891 31.4732L5.44674 27.8032L5.77778 27.5053V27.0599V17.2C5.77778 10.8209 10.604 5.33895 17.3094 3.67527L17.7855 3.55714L17.9835 3.10831C18.5103 1.9141 19.8413 1 21.5 1C23.1587 1 24.4896 1.9141 25.0165 3.10831L25.2145 3.5573L25.6909 3.67534C32.3958 5.33686 37.2222 10.8207 37.2222 17.2V27.0599ZM21.5011 42H21.4989C20.2038 42.0015 18.9489 41.6393 17.9091 40.9751C17.3509 40.6185 16.8718 40.1861 16.4852 39.7H26.5148C26.1282 40.1861 25.6491 40.6185 25.0909 40.9751C24.0511 41.6393 22.7962 42.0015 21.5011 42Z"
-                    stroke="#C58CF2"
-                    stroke-width="2"
-                  />
-                </svg>
-              </div>
-              <div className="my-auto ml-2 lg:flex hidden">Warn</div>
+            <div className="my-auto ml-2 lg:flex hidden">Setting</div>
+          </div>
+        </label>
+        <div className="dropdown flex-1 mx-4 text-2xl ">
+          <label className="flex" tabindex="0">
+            <div className="flex-1">
+              <svg
+                width="43"
+                height="43"
+                viewBox="0 0 43 43"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M37.2222 27.0599V27.5053L37.5533 27.8032L41.6311 31.4732L41.6324 31.4744C41.7571 31.5863 41.8496 31.7134 41.9104 31.8453C41.971 31.9768 42.0002 32.1135 42 32.2484V32.25V34.4C42 34.669 41.8822 34.9512 41.6313 35.177C41.377 35.4059 41.0115 35.55 40.6111 35.55H2.38889C1.98852 35.55 1.623 35.4059 1.36866 35.177C1.11779 34.9512 1 34.669 1 34.4L1 32.25L1 32.2484C0.999784 32.1135 1.02904 31.9768 1.08961 31.8453C1.15036 31.7134 1.24287 31.5863 1.36757 31.4744L1.36891 31.4732L5.44674 27.8032L5.77778 27.5053V27.0599V17.2C5.77778 10.8209 10.604 5.33895 17.3094 3.67527L17.7855 3.55714L17.9835 3.10831C18.5103 1.9141 19.8413 1 21.5 1C23.1587 1 24.4896 1.9141 25.0165 3.10831L25.2145 3.5573L25.6909 3.67534C32.3958 5.33686 37.2222 10.8207 37.2222 17.2V27.0599ZM21.5011 42H21.4989C20.2038 42.0015 18.9489 41.6393 17.9091 40.9751C17.3509 40.6185 16.8718 40.1861 16.4852 39.7H26.5148C26.1282 40.1861 25.6491 40.6185 25.0909 40.9751C24.0511 41.6393 22.7962 42.0015 21.5011 42Z"
+                  stroke="#C58CF2"
+                  stroke-width="2"
+                />
+              </svg>
             </div>
-          </a>
+            <div className="my-auto ml-2 lg:flex hidden">Warn</div>
+          </label>
+
+          <ul tabindex="0" className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-96">
+            <li><a>
+              <div className="avatar online">
+                <div className="w-12 rounded-full">
+                  <img src="https://api.lorem.space/image/face?hash=28212" />
+                </div>
+              </div>
+              <div className="">
+                <p className="text-xl">Successful Match</p>
+                <p className="text-xs">kanomroo match</p>
+              </div>
+            </a></li>
+            <li><a>
+              <div className="avatar online">
+                <div className="w-12 rounded-full">
+                  <img src="https://api.lorem.space/image/face?hash=28212" />
+                </div>
+              </div>
+              <div className="">
+                <p className="text-xl">Successful Match</p>
+                <p className="text-xs">LittleBeam match</p>
+              </div>
+            </a></li>
+            <li><a>
+              <div className="avatar online">
+                <div className="w-12 rounded-full">
+                  <img src="https://api.lorem.space/image/face?hash=28212" />
+                </div>
+              </div>
+              <div className="">
+                <p className="text-xl">SuperLike</p>
+                <p className="text-xs">Meijimill</p>
+              </div>
+            </a></li>
+          </ul>
         </div>
       </div>
-    
+    </div>
+
   );
 };
 
