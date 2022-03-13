@@ -6,7 +6,7 @@ export const fetchAllUser = () => async (dispatch) => {
   dispatch({ type: reduxType.FETCH_SEARCH_USER, payload: res.data });
 };
 
-export const userSignup = (username, email, password, born) => async (dispatch) => {
+export const userSignup = ({username, email, password, born}) => async (dispatch) => {
     const res = await api.post("/user/signUp", {
       username: username,
       email: email,
@@ -17,7 +17,7 @@ export const userSignup = (username, email, password, born) => async (dispatch) 
     dispatch({ type: reduxType.FETCH_SIGNUP_USER, payload: res.data });
 };
 
-export const userLogin = (username, password) => async (dispatch) => {
+export const userLogin = ({username, password}) => async (dispatch) => {
   // let signs = localStorage.getItem("signs");
   // if (!signs) {
     const res = await api.post("/user/signIn", {
