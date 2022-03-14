@@ -6,7 +6,9 @@ const Usersetting = () => {
   const [distance, setDistance] = useState(10)
   const [MinAge, setMinAge] = useState(18)
   const [MaxAge, setMaxAge] = useState(25)
+  
   return (
+    
       <div className="rounded-lg  drawer drawer-end h-auto">
         <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
         <div className="flex flex-col items-center justify-center drawer-content">
