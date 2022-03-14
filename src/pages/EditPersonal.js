@@ -15,31 +15,15 @@ const EditPersonal = () => {
           likes: [],
           unlike: [],
           likesMe: [],
+          vacen:["asstra ","sinovac ","sinofram "]
         },
         _id: "6214a044e543ba936f58d2ea",
         username: "BOWcica",
         email: "supansa@gmail.com",
-        password:
-          "$2a$12$ZwJaLXxBevU9LJ90OWwb6eehgPVYDgDAVa96QA.4X6TMk13U4h9JW",
-        gender: "woman",
-        born: "2002-02-05T00:00:00.000Z",
-        phone: "0823636036",
-        location: [13.838598, 19.0398371],
-        passion: {
-          music: "5",
-          koreanseries: "5",
-        },
-        interested: "man",
-        bio: "𝐆𝐎𝐓 𝟕💚",
-        social: {
-          Facebook: "Bow Supansa",
-          Instagram: "𝐛𝐨𝐰𝐥.𝐢𝐧𝐠𝟐𝟎𝟎𝟐",
-        },
-        userimageprofile:
-          "https://cdn.discordapp.com/attachments/792729018608648204/796720785279811614/135865438_224714649180167_1622948695454171292_n.jpg",
-        userimage: [
-          "https://cdn.discordapp.com/attachments/792729018608648204/796720785279811614/135865438_224714649180167_1622948695454171292_n.jpg",
-        ],
+        
+        
+        
+        
         frind_id: [],
         __v: 0,
       }
@@ -75,17 +59,17 @@ const EditPersonal = () => {
                 </div>
 
             </div>
-      <EditPersonalmanu title="ชื่อ" value={users.user[0].username}/>
-      <EditPersonalmanu title="2" value="3"/>
-      {/* <EditPersonalmanu title="วันเกิด" value={calculateAge()}/>
+      {/* <EditPersonalmanu title="username" value={users.user[0].username}/>
+      <EditPersonalmanu title="username1" value="3"/>
+      <EditPersonalmanu title="วันเกิด" value={calculateAge()}/>
       <EditPersonalmanu title="มาจาก"/>
       <EditPersonalmanu title="อาชีพ"/>
       <EditPersonalmanu title="ส่วนสูง"/>
       <EditPersonalmanu title="สูบบุหรี่"/>
       <EditPersonalmanu title="ดื่มเหล้า"/>
-      <EditPersonalmanu title="เพศที่สนใจ"/>
-      <EditPersonalmanu title="วัคซีนโควิด"/>
-      <EditPersonalmanu title="รสนิยม"/> */}
+      <EditPersonalmanu title="เพศที่สนใจ"/> */}
+      <EditPersonalmanu title="วัคซีนโควิด" value={users.user[0].user_details.vacen}/>
+      <EditPersonalmanu title="รสนิยม"/>
     </>
   )
 }
