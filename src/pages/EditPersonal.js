@@ -21,7 +21,7 @@ const EditPersonal = () => {
             smoke: ["ไม่สูบ"],
             height: [181],
             address: ["ดำเนิน"],
-            myGoal:["หาเพื่อน"],
+            myGoal: ["หาเพื่อน"],
           },
           _id: "6214a044e543ba936f58d2ea",
           username: "CHETcica",
@@ -44,10 +44,10 @@ const EditPersonal = () => {
           },
           userimageprofile:
             ["https://cdn.discordapp.com/attachments/883000576416309262/898471943261528074/241884812_1242965226201537_5005935356375341774_n.jpg",
-            "https://cdn.discordapp.com/attachments/883000576416309262/898471943261528074/241884812_1242965226201537_5005935356375341774_n.jpg",
-            "https://cdn.discordapp.com/attachments/883000576416309262/952715910538469386/157305040_1121514778346583_6956340794524202543_n.png",
-            "https://cdn.discordapp.com/attachments/883000576416309262/952716268165799957/243716903_1255232604974799_349286942364335730_n.png",
-            "https://cdn.discordapp.com/attachments/883000576416309262/952716308175257670/34536741_399448503886551_8344643044015865856_n.png"],
+              "https://cdn.discordapp.com/attachments/883000576416309262/898471943261528074/241884812_1242965226201537_5005935356375341774_n.jpg",
+              "https://cdn.discordapp.com/attachments/883000576416309262/952715910538469386/157305040_1121514778346583_6956340794524202543_n.png",
+              "https://cdn.discordapp.com/attachments/883000576416309262/952716268165799957/243716903_1255232604974799_349286942364335730_n.png",
+              "https://cdn.discordapp.com/attachments/883000576416309262/952716308175257670/34536741_399448503886551_8344643044015865856_n.png"],
           userimage: [
             "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg",
           ],
@@ -67,6 +67,7 @@ const EditPersonal = () => {
     }
     return age;
   };
+
   return (
     <>
       <div align="center" className='text-xl my-5'> <p>แก้ไขข้อมูลส่วนตัว</p></div>
@@ -75,28 +76,30 @@ const EditPersonal = () => {
         <div class="row-span-1">
           <div className="grid justify-items-center grid-flow-row grid-cols-4 gap-4 mb-5">
             <EditPersonalImg value={users.user[0].userimageprofile[0]} />
-            <EditPersonalImg value={users.user[0].userimageprofile[1]}/>
+            <EditPersonalImg value={users.user[0].userimageprofile[1]} />
             <EditPersonalImg value={users.user[0].userimageprofile[2]} />
-            <EditPersonalImg value={users.user[0].userimageprofile[3]}/>
+            <EditPersonalImg value={users.user[0].userimageprofile[3]} />
             <EditPersonalImg value={users.user[0].userimageprofile[4]} />
-            <EditPersonalImg value={users.user[0].userimageprofile[5]}/>
+            <EditPersonalImg value={users.user[0].userimageprofile[5]} />
             <EditPersonalImg value={users.user[0].userimageprofile[6]} />
-            <EditPersonalImg value={users.user[0].userimageprofile[7]}/>
+            <EditPersonalImg value={users.user[0].userimageprofile[7]} />
 
           </div>
         </div>
-
+        <p id="demo"></p>
+    
       </div>
-      <EditPersonalmanu title="ชื่อ" value={users.user[0].username} />
-      <EditPersonalmanu title="วันเกิด" value={calculateAge()} />
-      <EditPersonalmanu title="ที่อยู่" value={users.user[0].user_details.address}/>
-      <EditPersonalmanu title="อาชีพ"  value={users.user[0].user_details.job} />
-      <EditPersonalmanu title="ส่วนสูง"  value={users.user[0].user_details.height}/>
-      <EditPersonalmanu title="สูบบุหรี่" value={users.user[0].user_details.smoke}/>
-      <EditPersonalmanu title="ดื่มเหล้า"  value={users.user[0].user_details.LGho}/>
-      <EditPersonalmanu title="เพศที่สนใจ" value={users.user[0].interested} />
-      <EditPersonalmanu title="วัคซีนโควิด"   value={users.user[0].user_details.Vaccine}/>
-      <EditPersonalmanu title="เป้าหมาย" value={users.user[0].user_details.myGoal}/>
+ 
+      <EditPersonalmanu title="username" value={users.user[0].username} />
+      <EditPersonalmanu title="age" value={calculateAge()} />
+      <EditPersonalmanu title="address" value={users.user[0].user_details.address}/>
+      <EditPersonalmanu title="job"  value={users.user[0].user_details.job} />
+      <EditPersonalmanu title="height"  value={users.user[0].user_details.height}/>
+      <EditPersonalmanu title="smoke" value={users.user[0].user_details.smoke}/>
+      <EditPersonalmanu title="LGho"  value={users.user[0].user_details.LGho}/>
+      <EditPersonalmanu title="interested" value={users.user[0].interested} />
+      <EditPersonalmanu title="Vaccine"   value={users.user[0].user_details.Vaccine}/>
+  <EditPersonalmanu title="myGoal" value={users.user[0].user_details.myGoal}/>
 
 
     </>

@@ -1,95 +1,23 @@
-
-import React from "react";
+import React, { useState } from 'react'
 
 export const EditModal = (props) => {
-    const { title1, value } = props;
+    const { title, value } = props;
+
     return (
         <div>
-            <input type="checkbox" id={title1} className="modal-toggle" />
+            <input type="checkbox" id={title} className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box w-96">
                     <h3 className="font-bold text-lg">
-                        {title1}
+                        {title}
                     </h3>
                     <p className="py-4">
                         {value}
                     </p>
 
                     <div className="modal-action">
-                        <label htmlFor={title1} className="btn btn-outline btn-secondary modal-button text-x">
+                        <label htmlFor={title} className="btn btn-outline btn-secondary modal-button text-x">
                             กลับ
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-export const EditModal1 = (props) => {
-    const { title1, value } = props;
-    return (
-        <div>
-            <input type="checkbox" id={title1} className="modal-toggle" />
-            <div className="modal">
-                <div className="modal-box w-96">
-                    <h3 className="font-bold text-lg">
-                        {title1}
-                    </h3>
-                    <p className="py-4">
-                        {value}
-                    </p>
-                    <div className="modal-action">
-                        <label htmlFor={title1} className="btn btn-outline btn-secondary modal-button text-x">
-                            แก้ไข
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-export const EditModal2 = (props) => {
-    const { title1, value } = props;
-    return (
-        <div>
-            <input type="checkbox" id={title1} className="modal-toggle" />
-            <div className="modal">
-                <div className="modal-box w-96">
-                    <h3 className="font-bold text-lg">
-                        {title1}
-                    </h3>
-                    <p className="py-4">
-                        {value}
-                    </p>
-                    <div className="modal-action">
-                        <label htmlFor={title1} className="btn btn-outline btn-secondary modal-button text-x">
-                            กลับ
-                        </label>
-                    </div>
-                </div>
-            </div>
-        </div>
-    );
-};
-
-export const EditModal3 = (props) => {
-    const { title1, value } = props;
-    return (
-        <div>
-            <input type="checkbox" id={title1} className="modal-toggle" />
-            <div className="modal">
-                <div className="modal-box w-96">
-                    <h3 className="font-bold text-lg">
-                        {title1}
-                    </h3>
-                    <p className="py-4">
-                        {value}
-                    </p>
-                    <div className="modal-action">
-                        <label htmlFor={title1} className="btn btn-outline btn-secondary modal-button text-x">
-                            แก้ไข
                         </label>
                     </div>
                 </div>
@@ -99,14 +27,15 @@ export const EditModal3 = (props) => {
 };
 
 export const EditModal4 = (props) => {
-    const { title1, value } = props;
+    const { title, value } = props;
+
     return (
         <div>
-            <input type="checkbox" id="ส่วนสูง" className="modal-toggle" />
+            <input type="checkbox" id={title} className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box w-96">
-                    <h3 className="font-bold text-lg">
-                        {title1}
+                    <h3  className="font-bold text-lg">
+                    {title}
                     </h3>
                     <p className="py-4">
                         {value}
@@ -118,7 +47,7 @@ export const EditModal4 = (props) => {
                     />
 
                     <div className="modal-action">
-                        <label htmlFor={title1} className="btn btn-outline btn-secondary modal-button text-x">
+                        <label htmlFor={title} className="btn btn-outline btn-secondary modal-button text-x">
                             แก้ไข
                         </label>
                     </div>
@@ -129,14 +58,14 @@ export const EditModal4 = (props) => {
 };;
 
 export const EditModal5 = (props) => {
-    const { title1, value } = props;
+    const { title, value } = props;
     return (
         <div>
-            <input type="checkbox" id={title1} className="modal-toggle" />
+            <input type="checkbox" id={title} className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box w-96">
                     <h3 className="font-bold text-lg">
-                        {title1}
+                        {title}
                     </h3>
                     <p className="py-4">
                         {value}
@@ -179,7 +108,7 @@ export const EditModal5 = (props) => {
                     </div>
 
                     <div className="modal-action">
-                        <label htmlFor={title1} className="btn btn-outline btn-secondary modal-button text-x">
+                        <label htmlFor={title} className="btn btn-outline btn-secondary modal-button text-x">
                             แก้ไข
                         </label>
                     </div>
@@ -191,14 +120,14 @@ export const EditModal5 = (props) => {
 
 export const EditModal6 = (props) => {
 
-    const { title1, value } = props;
+    const { title, value } = props;
     return (
         <div>
-            <input type="checkbox" id={title1} className="modal-toggle" />
+            <input type="checkbox" id={title} className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box w-96">
                     <h3 className="font-bold text-lg">
-                        {title1}
+                        {title}
                     </h3>
                     <p className="py-4">
                         {value}
@@ -241,7 +170,7 @@ export const EditModal6 = (props) => {
                     </div>
 
                     <div className="modal-action">
-                        <label htmlFor={title1} className="btn btn-outline btn-secondary modal-button text-x">
+                        <label htmlFor={title} className="btn btn-outline btn-secondary modal-button text-x">
                             แก้ไข
                         </label>
                     </div>
@@ -253,14 +182,14 @@ export const EditModal6 = (props) => {
 };;
 
 export const EditModal7 = (props) => {
-    const { title1, value } = props;
+    const { title, value } = props;
     return (
         <div>
-            <input type="checkbox" id="เพศที่สนใจ" className="modal-toggle" />
+            <input type="checkbox" id={title} className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box w-96">
                     <h3 className="font-bold text-lg">
-                        {title1}
+                        {title}
                     </h3>
                     <p className="py-4">
                         {value}
@@ -291,7 +220,7 @@ export const EditModal7 = (props) => {
                     </div>
 
                     <div className="modal-action">
-                        <label htmlFor="เพศที่สนใจ" className="btn btn-outline btn-secondary modal-button text-x">
+                        <label htmlFor= {title} className="btn btn-outline btn-secondary modal-button text-x">
                             แก้ไข
                         </label>
                     </div>
@@ -302,14 +231,16 @@ export const EditModal7 = (props) => {
 };;
 
 export const EditModal8 = (props) => {
-    const { title1, value } = props;
+    const { title , value } = props;
+    
     return (
         <div>
-            <input type="checkbox" id="วัคซีนโควิด" className="modal-toggle" />
+            <input type="checkbox" id={title} className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box w-96">
                     <h3 className="font-bold text-lg">
-                        {title1}
+                        {title}
+                        
                     </h3>
                     <p className="py-4">
                         {value}
@@ -376,7 +307,7 @@ export const EditModal8 = (props) => {
                     </div>
 
                     <div className="modal-action">
-                        <label htmlFor={title1} className="btn btn-outline btn-secondary modal-button text-x">
+                        <label htmlFor={title} className="btn btn-outline btn-secondary modal-button text-x">
                             แก้ไข
                         </label>
                     </div>
@@ -387,14 +318,14 @@ export const EditModal8 = (props) => {
 };;
 
 export const EditModal9 = (props) => {
-    const { title1, value } = props;
+    const { title, value } = props;
     return (
         <div>
-            <input type="checkbox" id="เป้าหมาย" className="modal-toggle" />
+            <input type="checkbox" id={title} className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box w-96">
                     <h3 className="font-bold text-lg">
-                        {title1}
+                        {title}
                     </h3>
                     <p className="py-4">
                         {value}
@@ -438,7 +369,7 @@ export const EditModal9 = (props) => {
 
 
                     <div className="modal-action">
-                        <label htmlFor={title1} className="btn btn-outline btn-secondary modal-button text-x">
+                        <label htmlFor={title} className="btn btn-outline btn-secondary modal-button text-x">
                             แก้ไข
                         </label>
                     </div>
