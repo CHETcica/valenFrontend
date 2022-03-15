@@ -16,7 +16,6 @@ const Reagispage = () => {
   const onSubmit = (data) => {
     console.log(data);
     if(data.password===data.confirmpassword){
-      
       disPatch(userSignup(data))
       navigate("/login")
     }

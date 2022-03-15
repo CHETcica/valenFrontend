@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import Carduser from "./Carduser";
 
 
-const Usersetting = () => {
+const Usersetting = (props) => {
+  const users = props.users;
+  console.log(users)
   const [distance, setDistance] = useState(10)
   const [MinAge, setMinAge] = useState(18)
   const [MaxAge, setMaxAge] = useState(25)
@@ -12,7 +14,7 @@ const Usersetting = () => {
         <div className="flex flex-col items-center justify-center drawer-content">
           <div className="container mx-auto">
             <div className="grid">
-              <Carduser />
+              <Carduser users={users}/>
             </div>
           </div>
         </div>

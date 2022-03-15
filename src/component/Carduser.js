@@ -1,55 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { BtnGroupt } from "./BtnGroupt";
 import { useDispatch, useSelector } from "react-redux";
-import { randomUser } from "../action";
 
-const Carduser = () => {
+
+const Carduser = (props) => {
   //const users = useSelector((state) => state.users);
-  const [users, setUsers] = useState({
-    user: [
-      {
-        user_details: {
-          unlikes: [],
-          taste: [],
-          likes: [],
-          unlike: [],
-          likesMe: [],
-        },
-        _id: "6214a044e543ba936f58d2ea",
-        username: "BOWcica",
-        email: "supansa@gmail.com",
-        password:
-          "$2a$12$ZwJaLXxBevU9LJ90OWwb6eehgPVYDgDAVa96QA.4X6TMk13U4h9JW",
-        gender: "woman",
-        born: "2002-02-05T00:00:00.000Z",
-        phone: "0823636036",
-        location: [13.838598, 19.0398371],
-        passion: {
-          music: "5",
-          koreanseries: "5",
-        },
-        interested: "man",
-        bio: "𝐆𝐎𝐓 𝟕💚",
-        social: {
-          Facebook: "Bow Supansa",
-          Instagram: "𝐛𝐨𝐰𝐥.𝐢𝐧𝐠𝟐𝟎𝟎𝟐",
-        },
-        userimageprofile:
-          "https://cdn.discordapp.com/attachments/792729018608648204/796720785279811614/135865438_224714649180167_1622948695454171292_n.jpg",
-        userimage: [
-          "https://cdn.discordapp.com/attachments/792729018608648204/796720785279811614/135865438_224714649180167_1622948695454171292_n.jpg",
-        ],
-        frind_id: [],
-        __v: 0,
-      },
-    ],
-  });
-
-  const disPatch = useDispatch();
-  useEffect(() => {
-    disPatch(randomUser("woman"));
-  });
-
+  const users = props.users;
+  console.log(users)
+  
   if (!users && Object.keys(users).length === 0) return;
   return (
     <div className=" m-auto md:w-80 my-6">
@@ -57,8 +15,8 @@ const Carduser = () => {
         <figure className="userimage">
           <img
             src={
-              users.user[0].userimageprofile
-                ? users.user[0].userimageprofile
+              users.user.userimageprofile
+                ? users.user.userimageprofile
                 : "https://cdn.discordapp.com/attachments/792729018608648204/800269761069711370/profile1.jpg"
             }
           />
@@ -66,7 +24,7 @@ const Carduser = () => {
         <div className="justify-end card-body mt-80 ">
           <div className="grid grid-cols-2 ">
             <h2 className="card-title my-auto text-color-black">
-              {users.user[0].username ? users.user[0].username : "unknowuser"}
+              {users.user.username ? users.user.username : "unknowuser"}
             </h2>
             <label
               className="my-auto ml-auto modal-button"
@@ -104,28 +62,28 @@ const Carduser = () => {
             </label>
           </div>
           <p className="text-color-black">
-            {users.user[0].bio ? users.user[0].bio : ""}
+            {users.user.bio ? users.user.bio : ""}
           </p>
           <hr className="text-color-black" />
-          {users.user[0].passion ? (
+          {users.user.passion ? (
             <div className="lx:hidden card-actions grid grid-cols-3 text-center">
-              {users.user[0].passion[0] ? (
+              {users.user.passion[0] ? (
                 <div className="text-color-black card-actions-passion-primary">
-                  {users.user[0].passion[0]}
+                  {users.user.passion[0]}
                 </div>
               ) : (
                 ""
               )}
-              {users.user[0].passion[1] ? (
+              {users.user.passion[1] ? (
                 <div className="text-color-black card-actions-passion-primary">
-                  {users.user[0].passion[1]}
+                  {users.user.passion[1]}
                 </div>
               ) : (
                 ""
               )}
-              {users.user[0].passion[2] ? (
+              {users.user.passion[2] ? (
                 <div className="text-color-black card-actions-passion-secondary">
-                  {users.user[0].passion[2]}
+                  {users.user.passion[2]}
                 </div>
               ) : (
                 ""

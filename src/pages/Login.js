@@ -12,6 +12,7 @@ const Login = () => {
   const { register, handleSubmit } = useForm();
   const onSubmit = (data) => {
     disPatch(userLogin(data));
+    console.log("Login");
     navigate("/");
   };
   return (
@@ -81,7 +82,6 @@ const Login = () => {
               {...register("password")}
             />
           </div>
-
           <div className="flex mx-auto p-3">
             <button className="h-20" type="submit">
               <svg
