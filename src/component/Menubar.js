@@ -135,7 +135,7 @@ const Menubar = () => {
             <div className="my-auto ml-2 lg:flex hidden">Setting</div>
           </div>
         </label>
-        <div className="dropdown flex-1 mx-4 text-2xl ">
+        <div className="dropdown  dropdown-end flex-1 mx-4 text-2xl ">
           <label className="flex" tabindex="0">
             <div className="flex-1">
               <svg
