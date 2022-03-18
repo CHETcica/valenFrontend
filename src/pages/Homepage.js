@@ -5,8 +5,9 @@ import Userdescription from "../component/Description"
 import { randomUser } from "../action";
 
 const Homepage = () => {
-  const users = useSelector((state) => state.users);
   const usersignin = useSelector((state) => state.signs);
+  const users = useSelector((state) => state.users);
+  
   // const [users, setUsers] = useState({
   //   "user": {
   //     "user_details": {
@@ -50,8 +51,9 @@ const Homepage = () => {
   // });
   
   const disPatch = useDispatch();
-  // console.log(usersignin.user.passion[0]);
-  const value = [usersignin.user.interested,usersignin.user.passion[0]]
+  const value = [usersignin.user.interested,usersignin.user.passion[0],usersignin.user.frind_id]
+  //const value = ["man","music"]
+
   useEffect(() => {
     disPatch(randomUser(value));
     console.log("randomUser")

@@ -38,10 +38,11 @@ export const fetchUser = () => async (dispatch) => {
   dispatch({ type: reduxType.FETCH_SEARCH_USER, payload: res.data });
 };
 
-export const randomUser = (gender,passion) => async (dispatch) => {
+export const randomUser = (gender,passion,frind_id) => async (dispatch) => {
   const res = await api.post("/user/randomuser", {
     gender: gender,
-    passion: passion
+    passion: passion,
+    _id : { $nin:frind_id }
   });
   dispatch({ type: reduxType.FETCH_RANDOM_USER, payload: res.data });
 };

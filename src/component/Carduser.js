@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 
 const Carduser = (props) => {
-  //const users = useSelector((state) => state.users);
+  
   const users = props.users;
   
   if (!users && Object.keys(users).length === 0) return;
