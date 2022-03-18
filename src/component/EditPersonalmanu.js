@@ -1,27 +1,24 @@
 import React, { useState } from 'react'
 
-import { EditModal, EditModal1, EditModal2, EditModal3, EditModal4, EditModal5, EditModal6, EditModal7, EditModal8, EditModal9 } from "../component/EditModal";
+import { EditModal, EditModal4, EditModal5, EditModal6, EditModal7, EditModal8, EditModal9 } from "../component/EditModal";
 
 
 const EditPersonalmanu = (props) => {
   const { title, value } = props;
   //console.log(title);
-
-
-
-  const [users, setUsers] = useState(
+  const [users] = useState(
     {
       user: [
         {
           user_details: {
             Vaccine: ["AstraZinica ", "AstraZinica"],
             job: ["นักศึกษา"],
-            LGho: ["กินบ้าง"],
+            LGho: ["ดื่มบ้าง"],
             smoke: ["ไม่สูบ"],
             height: [181],
             address: ["ดำเนิน"],
             myGoal: ["หาเพื่อน"],
-            username: "CHETcica",
+            username: "Aum",
             gender: "man",
            
           },
@@ -32,7 +29,6 @@ const EditPersonalmanu = (props) => {
 
       ],
     });
-
     const calculateAge = () => {
       var today = new Date();
       var birthDate = new Date(users.user[0].born);
@@ -43,7 +39,6 @@ const EditPersonalmanu = (props) => {
       }
       return age;
     };
-
  /* function checkAdult(age) {
     return age == [title];
   }
@@ -63,11 +58,9 @@ const EditPersonalmanu = (props) => {
     console.log(title)
     let typei = (title)
     console.log(typei)
-  };*/
- //typei: ["username", "age", "address", "job", "height", "smoke", "LGho", "interested", "Vaccine", "myGoal"]
-  //cars = ["username", "age", "address", "job", "height", "smoke", "LGho", "interested", "Vaccine", "myGoal"];
-
- 
+  };
+typei: ["username", "age", "address", "job", "height", "smoke", "LGho", "interested", "Vaccine", "myGoal"]
+ cars = ["username", "age", "address", "job", "height", "smoke", "LGho", "interested", "Vaccine", "myGoal"];*/
   return (
     <>
       <div className="container mx-auto">
@@ -97,7 +90,6 @@ const EditPersonalmanu = (props) => {
         <EditModal6 title="LGho" value={users.user[0].user_details.LGho} />
         <EditModal7 title="interested" value={users.user[0].user_details.interested} />
         <EditModal8 title="Vaccine" value={users.user[0].user_details.Vaccine} />
-
         <EditModal9 title="myGoal" value={users.user[0].user_details.myGoal} />
 
       </div>

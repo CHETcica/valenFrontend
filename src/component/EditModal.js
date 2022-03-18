@@ -26,6 +26,45 @@ export const EditModal = (props) => {
     );
 };
 
+export const EditModal1 = (props) => {
+    const { hobby, chosen } = props;
+
+    return (
+        <div>
+            <input type="checkbox" id={hobby} className="modal-toggle" />
+            <div className="modal">
+                <div className="modal-box w-96">
+                    <h3 className="font-bold text-lg">
+                        {hobby}
+                    </h3>
+
+
+                    <div className="grid grid-cols-2 gap-4">
+                    <div className="form-control">
+                            <label className="label cursor-pointer">
+                                <span className="label-text border-l-4"> {chosen}</span>
+                                <input type="checkbox" defaultChecked="checked" className="checkbox" />
+                            </label>
+                        </div>
+                       
+
+                    </div>
+
+
+
+
+
+                    <div className="modal-action">
+                        <label htmlFor={hobby} className="btn btn-outline btn-secondary modal-button text-x">
+                            กลับ
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+};
+
 export const EditModal4 = (props) => {
     const { title, value } = props;
 
@@ -34,8 +73,8 @@ export const EditModal4 = (props) => {
             <input type="checkbox" id={title} className="modal-toggle" />
             <div className="modal">
                 <div className="modal-box w-96">
-                    <h3  className="font-bold text-lg">
-                    {title}
+                    <h3 className="font-bold text-lg">
+                        {title}
                     </h3>
                     <p className="py-4">
                         {value}
@@ -220,7 +259,7 @@ export const EditModal7 = (props) => {
                     </div>
 
                     <div className="modal-action">
-                        <label htmlFor= {title} className="btn btn-outline btn-secondary modal-button text-x">
+                        <label htmlFor={title} className="btn btn-outline btn-secondary modal-button text-x">
                             แก้ไข
                         </label>
                     </div>
@@ -231,8 +270,8 @@ export const EditModal7 = (props) => {
 };;
 
 export const EditModal8 = (props) => {
-    const { title , value } = props;
-    
+    const { title, value } = props;
+
     return (
         <div>
             <input type="checkbox" id={title} className="modal-toggle" />
@@ -240,7 +279,7 @@ export const EditModal8 = (props) => {
                 <div className="modal-box w-96">
                     <h3 className="font-bold text-lg">
                         {title}
-                        
+
                     </h3>
                     <p className="py-4">
                         {value}
@@ -332,42 +371,42 @@ export const EditModal9 = (props) => {
                     </p>
 
                     <div className="form-control">
-                        <label className="cursor-pointer label">
-                            
+                        <label className="label cursor-pointer">
+
                             <input
-                                type="checkbox"
+                                type="radio"
+                                name="radio-6"
+                                className="radio checked:bg-pink-400"
                                 defaultChecked=""
-                                className="checkbox checkbox-secondary"
                             />
-                            <span className="label-text mr-52">หาเพื่อน</span>
+                            <span className="label-text mr-44">หาเพื่อน</span>
+                        </label>
+                    </div>
+                    <div className="form-control">
+                        <label className="label cursor-pointer">
+
+                            <input
+                                type="radio"
+                                name="radio-6"
+                                className="radio checked:bg-pink-400"
+                                defaultChecked=""
+                            />
+                            <span className="label-text mr-44">ออกเดท</span>
                         </label>
                     </div>
 
                     <div className="form-control">
-                        <label className="cursor-pointer label">
-                            
+                        <label className="label cursor-pointer">
+
                             <input
-                                type="checkbox"
+                                type="radio"
+                                name="radio-6"
+                                className="radio checked:bg-pink-400"
                                 defaultChecked=""
-                                className="checkbox checkbox-secondary"
                             />
-                            <span className="label-text mr-52">ออกเดท</span>
+                            <span className="label-text mr-44">คู่ครอง</span>
                         </label>
                     </div>
-
-                    <div className="form-control">
-                        <label className="cursor-pointer label">
-                            
-                            <input
-                                type="checkbox"
-                                defaultChecked=""
-                                className="checkbox checkbox-secondary"
-                            />
-                            <span className="label-text mr-52">คู่ครอง</span>
-                        </label>
-                    </div>
-
-
                     <div className="modal-action">
                         <label htmlFor={title} className="btn btn-outline btn-secondary modal-button text-x">
                             แก้ไข
