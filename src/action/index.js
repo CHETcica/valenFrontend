@@ -46,3 +46,20 @@ export const randomUser = (gender,passion,frind_id) => async (dispatch) => {
   });
   dispatch({ type: reduxType.FETCH_RANDOM_USER, payload: res.data });
 };
+export const likeUser = () => async (dispatch) => {
+  const res = await api.post("/user/randomuser", {
+    
+  });
+  dispatch({ type: reduxType.FETCH_RANDOM_USER, payload: res.data });
+};
+export const superlikeUser = () => async (dispatch) => {
+  const res = await api.post("/user/randomuser", {
+    
+  });
+};
+export const unlikeUser = () => async (dispatch) => {
+  const res = await api.post("/user/randomuser", {
+    
+  });
+  
+};

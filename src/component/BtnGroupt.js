@@ -1,20 +1,21 @@
 import React from "react";
 
-export const BtnGroupt = () => {
-  const ShowBtnText = (btnname) => {
-    console.log(btnname);
-    var x = document.getElementById(btnname);
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
+export const BtnGroupt = (props) => {
+  const users = props.users;
+  console.log("data", users);
+  const ShowBtnText = (btnname, users) => {
+    console.log(btnname, users);
+    var button = document.getElementById(btnname);
+    button.style.display === "none"
+      ? (button.style.display = "block")
+      : (button.style.display = "none");
   };
   return (
     <div className="mt-2 grid grid-cols-3 ">
-      <div 
-      //onClick={ShowBtnText('unlike')} 
-      className="mx-auto button_groupt button_groupt-unlike ">
+      <div
+        onClick={(e) => ShowBtnText("unlike", users)}
+        className="mx-auto button_groupt button_groupt-unlike "
+      >
         <svg
           width="87"
           height="87"
@@ -47,9 +48,10 @@ export const BtnGroupt = () => {
           />
         </svg>
       </div>
-      <div 
-      // onClick={ShowBtnText('superlike')}  
-      className="mx-auto button_groupt button_groupt-superlike">
+      <div
+        onClick={(e) => ShowBtnText("superlike", users)}
+        className="mx-auto button_groupt button_groupt-superlike"
+      >
         <svg
           width="88"
           height="87"
@@ -95,10 +97,11 @@ export const BtnGroupt = () => {
             fill="#FFEF61"
           />
         </svg>
-      </div >
-      <div 
-      //onClick={ShowBtnText('like')} 
-      className="mx-auto button_groupt button_groupt-like">
+      </div>
+      <div
+        onClick={(e) => ShowBtnText("like", users)}
+        className="mx-auto button_groupt button_groupt-like"
+      >
         <svg
           width="87"
           height="87"
