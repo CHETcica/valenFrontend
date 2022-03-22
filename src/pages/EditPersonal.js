@@ -59,7 +59,7 @@ const EditPersonal = () => {
     });
 
  
-  });
+  
 
   const calculateAge = () => {
     var today = new Date();
