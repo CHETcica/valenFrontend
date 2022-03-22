@@ -6,6 +6,7 @@ const EditPersonal = () => {
 
   const [users] = useState(
     {
+
       user: [
         {
           user_details: {
@@ -56,6 +57,10 @@ const EditPersonal = () => {
 
       ],
     });
+
+ 
+  });
+
   const calculateAge = () => {
     var today = new Date();
     var birthDate = new Date(users.user[0].born);

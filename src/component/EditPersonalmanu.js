@@ -1,10 +1,14 @@
-import React, { useState } from 'react'
+
+import React,{ useState } from "react";
+import CheckboxEditManu from "../component/CheckboxEditManu";
+import { Modalusername, Modalusername1 } from "./ModalForm";
 
 import { EditModal, EditModal4, EditModal5, EditModal6, EditModal7, EditModal8, EditModal9 } from "../component/EditModal";
 
 
 const EditPersonalmanu = (props) => {
   const { title, value } = props;
+
   //console.log(title);
   const [users] = useState(
     {
@@ -94,6 +98,7 @@ typei: ["username", "age", "address", "job", "height", "smoke", "LGho", "interes
 
       </div>
     </>
+
 
   );
 

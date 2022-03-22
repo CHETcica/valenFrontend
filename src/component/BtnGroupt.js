@@ -1,20 +1,42 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { likeUser, superlikeUser, unlikeUser } from "../action";
 
-export const BtnGroupt = () => {
+export const BtnGroupt = (props) => {
+  const usersignin = useSelector((state) => state.signs);
+  
+  const id = props.user.user._id;
+  const disPatch = useDispatch();
+
   const ShowBtnText = (btnname) => {
-    console.log(btnname);
-    var x = document.getElementById(btnname);
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
+    console.log(btnname, id);
+    var button = document.getElementById(btnname);
+    button.style.display === "none"
+      ? (button.style.display = "block")
+      : (button.style.display = "none");
   };
+
+  useEffect((btnname) => {
+    if (btnname === "like") {
+      disPatch(likeUser(id));
+      console.log("like",id);
+
+    } else if (btnname === "superlike") {
+      disPatch(superlikeUser(id));
+      console.log("superlike",id);
+
+    } else if (btnname === "unlike") {
+      disPatch(unlikeUser(id));
+      console.log("unlike",id);
+    }
+  }, []);
+
   return (
     <div className="mt-2 grid grid-cols-3 ">
-      <div 
-      //onClick={ShowBtnText('unlike')} 
-      className="mx-auto button_groupt button_groupt-unlike ">
+      <div
+        onClick={(e) => ShowBtnText("unlike")}
+        className="mx-auto button_groupt button_groupt-unlike "
+      >
         <svg
           width="87"
           height="87"
@@ -47,9 +69,10 @@ export const BtnGroupt = () => {
           />
         </svg>
       </div>
-      <div 
-      // onClick={ShowBtnText('superlike')}  
-      className="mx-auto button_groupt button_groupt-superlike">
+      <div
+        onClick={(e) => ShowBtnText("superlike")}
+        className="mx-auto button_groupt button_groupt-superlike"
+      >
         <svg
           width="88"
           height="87"
@@ -95,10 +118,11 @@ export const BtnGroupt = () => {
             fill="#FFEF61"
           />
         </svg>
-      </div >
-      <div 
-      //onClick={ShowBtnText('like')} 
-      className="mx-auto button_groupt button_groupt-like">
+      </div>
+      <div
+        onClick={(e) => ShowBtnText("like")}
+        className="mx-auto button_groupt button_groupt-like"
+      >
         <svg
           width="87"
           height="87"
