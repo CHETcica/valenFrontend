@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllUser } from "../action";
 import { useNavigate, Link } from "react-router-dom";
 const Navbar = () => {
-  const users = useSelector((state) => state.signs);
+  const usersignin = useSelector((state) => state.signs);
   return (
       <div className="mx-auto navbar shadow-lg text-neutral-content h-7">
         <div className="container mx-auto">
@@ -20,15 +20,15 @@ const Navbar = () => {
           <div className="flex-1 lg:flex "></div>
           <div className="flex-initial lg:flex-none"></div>
           <div className="flex-initial lg:flex-none"></div>
-          {users.user? (
+          {usersignin.user? (
             <Link to={"/profile"} className="flex">
               <div className="avatar">
                 <div className="rounded-full w-10 h-10 m-1">
-                  <img src={users.user.userimageprofile} />
+                  <img src={usersignin.user.userimageprofile} />
                 </div>
               </div>
               <h3 className="lg:flex my-auto ml-5 text-xl hidden">
-                {users.user.username}
+                {usersignin.user.username}
               </h3>
             </Link>
           ) : (
