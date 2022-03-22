@@ -46,16 +46,16 @@ const Homepage = () => {
   const disPatch = useDispatch();
   useEffect(() => {
     disPatch(
-      randomUser(
-        usersignin.user.interested,
-        usersignin.user.passion[0],
-        usersignin.user.frind_id
-      )
       // randomUser(
-      //   "woman",
-      //   "game",
-      //   ["6214a044e543ba936f58d2ea"]
+      //   usersignin.user.interested,
+      //   usersignin.user.passion[0],
+      //   usersignin.user.frind_id
       // )
+      randomUser(
+        "woman",
+        "game",
+        ["6214a044e543ba936f58d2ea"]
+      )
     );
 
     
