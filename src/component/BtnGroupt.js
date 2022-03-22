@@ -1,19 +1,40 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { likeUser, superlikeUser, unlikeUser } from "../action";
 
 export const BtnGroupt = (props) => {
-  const users = props.users;
-  console.log("data", users);
-  const ShowBtnText = (btnname, users) => {
-    console.log(btnname, users);
+  const usersignin = useSelector((state) => state.signs);
+  
+  const id = props.user.user._id;
+  const disPatch = useDispatch();
+
+  const ShowBtnText = (btnname) => {
+    console.log(btnname, id);
     var button = document.getElementById(btnname);
     button.style.display === "none"
       ? (button.style.display = "block")
       : (button.style.display = "none");
   };
+
+  useEffect((btnname) => {
+    if (btnname === "like") {
+      disPatch(likeUser(id));
+      console.log("like",id);
+
+    } else if (btnname === "superlike") {
+      disPatch(superlikeUser(id));
+      console.log("superlike",id);
+
+    } else if (btnname === "unlike") {
+      disPatch(unlikeUser(id));
+      console.log("unlike",id);
+    }
+  }, []);
+
   return (
     <div className="mt-2 grid grid-cols-3 ">
       <div
-        onClick={(e) => ShowBtnText("unlike", users)}
+        onClick={(e) => ShowBtnText("unlike")}
         className="mx-auto button_groupt button_groupt-unlike "
       >
         <svg
@@ -49,7 +70,7 @@ export const BtnGroupt = (props) => {
         </svg>
       </div>
       <div
-        onClick={(e) => ShowBtnText("superlike", users)}
+        onClick={(e) => ShowBtnText("superlike")}
         className="mx-auto button_groupt button_groupt-superlike"
       >
         <svg
@@ -99,7 +120,7 @@ export const BtnGroupt = (props) => {
         </svg>
       </div>
       <div
-        onClick={(e) => ShowBtnText("like", users)}
+        onClick={(e) => ShowBtnText("like")}
         className="mx-auto button_groupt button_groupt-like"
       >
         <svg

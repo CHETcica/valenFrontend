@@ -83,6 +83,7 @@
 }
 .btn-effect-none{
   display: none;
+  transition-delay: 2s;
 
 }
 .background_radial-gradient{
