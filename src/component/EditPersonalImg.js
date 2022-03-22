@@ -1,13 +1,16 @@
 import React from "react";
 
 function EditPersonalImg(props) {
-    const { title } = props;
+    const { value } = props;
     return (
-        <div className="container mx-auto">
+        <>
+            <div className="avatar w-40 h-52 ">
 
-            <div className='w-24 h-36 bg-gray-800'>01</div>
+                <img src={value} />
 
-        </div>
+            </div>
+
+        </>
     );
 };
 export default EditPersonalImg;

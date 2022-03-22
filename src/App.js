@@ -21,7 +21,7 @@ const App = () => {
         <Menubar />
           <Routes>
             <Route path="/" element={<Homepage />} />
-            <Route path="/profile" element={<Profile />} />
+            <Route path="/profile" element={<Profile/>} />
             <Route path="/chat" element={<Chatpage />} />
             <Route path="/register" element={<Regispage />} />
             <Route path="/login" element={<Login />} />

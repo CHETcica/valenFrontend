@@ -3,45 +3,49 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchAllUser } from "../action";
 import { useNavigate, Link } from "react-router-dom";
 const Navbar = () => {
-  const navigate = useNavigate();
-  const users = useSelector((state) => state.signs);
-  // const [users, setUsers] = useState({
-  //   user: 
-  //     {
-  //       user_details: {
-  //         taste: [],
-  //         likes: [],
-  //         unlike: [],
-  //         likesMe: [],
-  //         higth: 170,
-  //         weigth: 54,
-  //       },
-  //       _id: "6213b95e3ee259b511fbcf3e",
-  //       username: "CHETcica",
-  //       email: "chetsadakozn2543@gmail.com",
-  //       password:
-  //         "$2a$12$l90I8YxiEP/1SzDvrx159.bTR1svAxWukjnH0USIig4mTVSPZv4tm",
-  //       gender: "man",
-  //       born: "2000-08-17T00:00:00.000Z",
-  //       phone: "0823636036",
-  //       location: [13.838598, 19.0398371],
-  //       passion: ["music", "game", "cooking"],
-  //       interested: "woman",
-  //       bio: "hello i like game",
-  //       social: {
-  //         Facebook: "Chet cica",
-  //         Instagram: "Chet cica",
-  //       },
-  //       userimageprofile:
-  //         "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg",
-  //       userimage: [
-  //         "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg",
-  //       ],
-  //       frind_id: [],
-  //       __v: 0,
-  //     },
-    
-  // });
+
+
+  //const users = useSelector((state) => state.signs);
+  const [users, setUsers] = useState({
+    user: [
+      {
+        user_details: {
+          taste: [],
+          likes: [],
+          unlike: [],
+          likesMe: [],
+          higth: 170,
+          weigth: 54,
+        },
+        _id: "6213b95e3ee259b511fbcf3e",
+        username: "Bowcica",
+        email: "chetsadakozn2543@gmail.com",
+        password:
+          "$2a$12$l90I8YxiEP/1SzDvrx159.bTR1svAxWukjnH0USIig4mTVSPZv4tm",
+        gender: "man",
+        born: "2000-08-17T00:00:00.000Z",
+        phone: "0823636036",
+        location: [13.838598, 19.0398371],
+        passion: ["music", "game", "cooking"],
+        interested: "woman",
+        bio: "hello i like game",
+        social: {
+          Facebook: "Chet cica",
+          Instagram: "Chet cica",
+        },
+        userimageprofile:
+          "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg",
+        userimage: [
+          "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg",
+        ],
+        frind_id: [],
+        __v: 0,
+      },
+    ],
+  });
+  useEffect(()=>{
+
+  });
   
   return (
       <div className="mx-auto navbar shadow-lg text-neutral-content h-7">
@@ -78,7 +82,7 @@ const Navbar = () => {
               >
                 Login
               </Link>
-              <div className="divider my-auto divider-vertical"></div>
+                <div className="divider my-auto divider-vertical"></div>
               <Link
                 to={"/register"}
                 className="grid h-3/4 flex-grow text-lg place-items-center"
