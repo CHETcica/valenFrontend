@@ -44,7 +44,7 @@ export const randomUser = (gender, passion, frind_id, likes, unlikes) => async (
     passion: passion,
     _id:frind_id,
     likes:likes,
-    unlikes;
+    unlikes:unlikes
   });
 
   dispatch({ type: reduxType.FETCH_RANDOM_USER, payload: res.data });
