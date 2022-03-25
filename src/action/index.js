@@ -42,7 +42,9 @@ export const randomUser = (gender, passion, frind_id, likes, unlikes) => async (
   const res = await api.post("/user/randomuser", {
     gender: gender,
     passion: passion,
-    _id:frind_id
+    _id:frind_id,
+    likes:likes,
+    unlikes;
   });
 
   dispatch({ type: reduxType.FETCH_RANDOM_USER, payload: res.data });
