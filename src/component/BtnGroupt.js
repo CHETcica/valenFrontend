@@ -45,7 +45,7 @@ export const BtnGroupt = (props) => {
   }, []);
 
   // const Newrandom = () => {
-    disPatch(randomUser("woman", "game", ["6214a044e543ba936f58d2ea"]));
+    // disPatch(randomUser("woman", "game", ["6214a044e543ba936f58d2ea"]));
   // };
   // disPatch(randomUser(
   //   "woman",

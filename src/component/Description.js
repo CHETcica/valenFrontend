@@ -111,15 +111,15 @@ const Description = (props) => {
             <div className="my-3">
               <h3 className="text-xl ">
                 higth :
-                {users.user.user_details.higth
-                  ? users.user.user_details.higth
+                {users.user.userDetails.higth
+                  ? users.user.userDetails.higth
                   : "-"}
                 cm.
               </h3>
               <h3 className="text-xl ">
                 weigth :
-                {users.user.user_details.weigth
-                  ? users.user.user_details.weigth
+                {users.user.userDetails.weigth
+                  ? users.user.userDetails.weigth
                   : "-"}
                 kg.
               </h3>
