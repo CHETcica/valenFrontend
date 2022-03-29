@@ -132,6 +132,54 @@
 .chat_columchat--chatdetail{
   display: block;
 }
+.bg-image {
+ 
+  /* Add the blur effect */
+  filter: blur(1px);
+  -webkit-filter: blur(1px);
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.bg-blur{
+
+  filter: blur(1px);
+  -webkit-filter: blur(1.5px);
+}
+.content-on-bg-blur{
+  position: absolute;
+  text-align: center;
+}
+
+.btn-groupt-call{
+  position:absolute;
+  top: 16rem;
+ 
+}
+
+.btn-micophorn{
+  position:absolute;
+  left: -6rem;
+  
+  
+}
+.btn-speaker{
+  position:absolute;
+  left: -1rem;
+}
+.btn-camera{
+  position:absolute;
+  left: 4rem;
+  
+}
+.btn-discall{
+  position:absolute;
+  left: 9rem;
+  
+}
 
 @media (max-width: 639px) { 
   .btn-groupt-hidden{
