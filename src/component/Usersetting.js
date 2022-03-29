@@ -4,7 +4,6 @@ import Carduser from "./Carduser";
 
 const Usersetting = (props) => {
   const users = props.users;
-  console.log(users)
   const [distance, setDistance] = useState(10)
   const [MinAge, setMinAge] = useState(18)
   const [MaxAge, setMaxAge] = useState(25)

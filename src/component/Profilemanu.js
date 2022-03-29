@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllUser } from "../action";
+import { logout } from "../action";
+
 import { Link } from "react-router-dom";
 const Profilemanu = () => {
   const users = useSelector((state) => state.signs);
-  
+
   return (
     <div className="container mx-auto">
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 my-40">
@@ -16,44 +17,38 @@ const Profilemanu = () => {
           </div>
         </div>
         <div className="col-span-1 pl-10 w-3/4">
-          <p className="truncate text-2xl my-9 pl-5">{users.user.username}</p>
-
-
           <p className="truncate text-2xl my-9 pl-5">
-            <link to={"/editpersonal"} className="flex ">
-              {users.user[0].username}
-            </link>
+            {users.user.username}
           </p>
 
           <hr />
           <p className="text-lg my-3 pl-5">
-            <Link className="link-hover"
-              to={"/EditPersonal"}
-            >
+            <Link className="link-hover" to={"/editPersonal"}>
               แก้ไขข้อมูลส่วนตัว
-            </Link></p>
+            </Link>
+          </p>
           <hr />
           <p className="text-lg my-3 pl-5">
-            <Link className="link-hover"
-              to={"/Liking"}
-            >
+            <Link className="link-hover" to={"/Liking"}>
               ความชอบ
-            </Link></p>
+            </Link>
+          </p>
           <hr />
           <p className="text-lg my-3 pl-5">
-            <Link className="link-hover"
-              to={"/Liking"}
-            >
+            <Link className="link-hover" to={"/Liking"}>
               นโยบาย
-            </Link></p>
+            </Link>
+          </p>
           <hr />
           <p className="text-lg my-3 pl-5">
-            <Link className="link-hover"
-              to={"/Liking"}
-            >
+            <Link className="link-hover" to={"/Liking"}>
               ข้อเสนอแนะ
-            </Link></p>
-         
+            </Link>
+          </p>
+          <hr />
+          <button onClick={(e) => logout()} className="text-lg my-3 pl-5">
+              ออกจากระบบ
+          </button>
         </div>
       </div>
     </div>
