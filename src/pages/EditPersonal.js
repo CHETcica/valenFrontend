@@ -6,7 +6,6 @@ const EditPersonal = () => {
 
   const [users] = useState(
     {
-
       user: [
         {
           user_details: {
@@ -56,7 +55,8 @@ const EditPersonal = () => {
         }
 
       ],
-    });
+    }
+    );
 
  
   

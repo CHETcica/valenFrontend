@@ -103,7 +103,7 @@ const Description = (props) => {
               <h1 className="text-3xl ">
                 {users.user.username ? users.user.username : "-"}
               </h1>
-              <h1 className="text-3xl ml-auto">Age 
+              <h1 className="text-3xl ml-auto">Age  
               {calculateAge()}
               </h1>
             </div>
@@ -151,7 +151,7 @@ const Description = (props) => {
                   <img
                     src={users.user.userimage[0]}
                     alt="+"
-                    className="user-description rounded-2xl"
+                    className="avatar rounded-2xl"
                   />
                 ) : (
                   ""
@@ -160,7 +160,7 @@ const Description = (props) => {
                   <img
                     src={users.user.userimage[1]}
                     alt="+"
-                    className="user-description rounded-2xl"
+                    className="avatar rounded-2xl"
                   />
                 ) : (
                   ""
@@ -170,7 +170,7 @@ const Description = (props) => {
                   <img
                     src={users.user.userimage[2]}
                     alt="+"
-                    className="user-description rounded-2xl"
+                    className="avatar rounded-2xl"
                   />
                 ) : (
                   ""
@@ -179,7 +179,7 @@ const Description = (props) => {
                   <img
                     src={users.user.userimage[3]}
                     alt="+"
-                    className="user-description rounded-2xl"
+                    className="avatar rounded-2xl"
                   />
                 ) : (
                   ""

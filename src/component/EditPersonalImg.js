@@ -5,9 +5,7 @@ function EditPersonalImg(props) {
     return (
         <>
             <div className="avatar w-40 h-52 ">
-
                 <img src={value} />
-
             </div>
 
         </>
