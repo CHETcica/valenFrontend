@@ -7,16 +7,18 @@ import Homepage from "./pages/Homepage";
 import Profile from "./pages/Profile";
 import Chatpage from "./pages/Chatpage"
 import Alertpage from "./pages/Alertpage"
+import Sex from "./component/Sex"
 const App = () => {
   return (
     <BrowserRouter>
         <Navbar />
         <Menubar />
           <Routes>
-            <Route path="/" element={<Homepage/>} />
+            <Route path="/" element={<Sex/>} />
             <Route path="/profile" element={<Profile/>} />
             <Route path="/chat" element={<Chatpage/>} />
             <Route path="/alert" element={<Alertpage/>} />
+           
           </Routes>
         <Footer/>
     </BrowserRouter>
