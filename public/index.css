@@ -82,6 +82,8 @@
 
 }
 .btn-effect-none{
+  position: absolute;
+  top:-20rem;
   display: none;
   transition-delay: 2s;
 

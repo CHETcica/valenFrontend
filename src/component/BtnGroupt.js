@@ -20,7 +20,7 @@ export const BtnGroupt = (props) => {
   // };
 
   const ShowBtnText = (btnname) => {
-    console.log(btnname, id);
+    // console.log(btnname, id);
     var button = document.getElementById(btnname);
     button.style.display === "none"
       ? (button.style.display = "block").setTimeout(() => {
@@ -32,26 +32,40 @@ export const BtnGroupt = (props) => {
   };
 
   useEffect((btnname) => {
-    // if (btnname === "like") {
-    //   disPatch(likeUser(id));
-    //   console.log("like", id);
-    // } else if (btnname === "superlike") {
-    //   disPatch(superlikeUser(id));
-    //   console.log("superlike", id);
-    // } else if (btnname === "unlike") {
-    //   disPatch(unlikeUser(id));
-    //   console.log("unlike", id);
-    // }
-  }, []);
+    if (btnname === "like") {
+      disPatch(likeUser(id));
+      console.log("like", id);
+      NewRandom()
+    } else if (btnname === "superlike") {
+      disPatch(superlikeUser(id));
+      console.log("superlike", id);
+    } else if (btnname === "unlike") {
+      disPatch(unlikeUser(id));
+      console.log("unlike", id);
+    }
+  });
 
-  // const Newrandom = () => {
-    // disPatch(randomUser("woman", "game", ["6214a044e543ba936f58d2ea"]));
-  // };
-  // disPatch(randomUser(
-  //   "woman",
-  //   "game",
-  //   ["6214a044e543ba936f58d2ea"]
-  // ))
+  const NewRandom = () => {
+    disPatch(
+      randomUser(
+        "man",
+        ["coding", "gaming", "dance"],
+        [
+          "6213b95e3ee259b511fbcf3e",
+          "6216ef7c968ef32ce2e2b49c",
+          "6218562be73c780fb58669c1",
+          "623e90c8c457f7c2b1b747e1",
+        ]
+      )
+      // randomUser(
+      // usersignin.user.interested,
+      // usersignin.user.passion,
+      // usersignin.user.friendId,
+      // usersignin.user.userDetails.likes,
+      // usersignin.user.userDetails.unlike
+      // )
+    );
+  };
 
   return (
     <div className="mt-2 grid grid-cols-3 ">
@@ -164,7 +178,7 @@ export const BtnGroupt = (props) => {
         </svg>
       </div>
       {/* <div
-        onClick={(e) => Newrandom()}
+        onClick={(e) => NewRandom()}
         className="mx-auto button_groupt button_groupt-like"
       >
         <svg

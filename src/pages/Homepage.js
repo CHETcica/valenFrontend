@@ -12,32 +12,31 @@ const Homepage = () => {
     user: {
       userDetails: {
         unlikes: [],
-        vacen: [],
         taste: [],
         likes: [],
         unlike: [],
         likesMe: [],
       },
-      _id: "6214a044e543ba936f58d2ea",
-      username: "BOWcica",
-      password: "$2a$12$ZwJaLXxBevU9LJ90OWwb6eehgPVYDgDAVa96QA.4X6TMk13U4h9JW",
-      gender: "woman",
-      born: "2002-02-05T00:00:00.000Z",
+      _id: "6214a395e543ba936f58d2ed",
+      username: "ฺkany",
+      email: "kanzaza@gmail.com",
+      password: "$2a$12$tqlhdJ4a7Pmor28MGCHkYuLdt/kH8ACIwvfy4iWqX8Qqu3d/gnV3u",
+      gender: "gayqueen",
+      born: "2000-09-09T00:00:00.000Z",
       phone: "0823636036",
       location: [13.838598, 19.0398371],
       passion: ["music", "series"],
-      interested: "man",
-      bio: "𝐆𝐎𝐓 𝟕💚",
+      interested: "gayking",
+      bio: "love wow",
       social: {
-        Facebook: "Bow Supansa",
-        Instagram: "𝐛𝐨𝐰𝐥.𝐢𝐧𝐠𝟐𝟎𝟎𝟐",
+        Facebook: "kanzaza",
       },
       userimageprofile:
-        "https://cdn.discordapp.com/attachments/792729018608648204/796720785279811614/135865438_224714649180167_1622948695454171292_n.jpg",
+        "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
       userimage: [
-        "https://cdn.discordapp.com/attachments/792729018608648204/796720785279811614/135865438_224714649180167_1622948695454171292_n.jpg",
+        "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
       ],
-      friendId: ["6213b95e3ee259b511fbcf3e"],
+      friendId: [],
       __v: 0,
     },
   });
@@ -63,9 +62,8 @@ const Homepage = () => {
           "623e90c8c457f7c2b1b747e1",
         ]
       )
-
     );
-  },[]);
+  }, []);
 
   return (
     <>
