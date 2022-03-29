@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllUser } from "../action";
+import { logout } from "../action";
+
 import { Link } from "react-router-dom";
 const Profilemanu = () => {
   const users = useSelector((state) => state.signs);
@@ -44,6 +45,10 @@ const Profilemanu = () => {
               ข้อเสนอแนะ
             </Link>
           </p>
+          <hr />
+          <button onClick={(e) => logout()} className="text-lg my-3 pl-5">
+              ออกจากระบบ
+          </button>
         </div>
       </div>
     </div>
