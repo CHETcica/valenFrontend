@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 export const Chatbox = () => {
   return (
@@ -72,16 +73,48 @@ export const Chatbox = () => {
 };
 
 export const Call = () => {
+  const [users, setUsers] = useState({
+    user: {
+      userDetails: {
+        unlikes: [],
+        taste: [],
+        likes: [],
+        unlike: [],
+        likesMe: [],
+      },
+      _id: "6214a395e543ba936f58d2ed",
+      username: "ฺkany",
+      email: "kanzaza@gmail.com",
+      password: "$2a$12$tqlhdJ4a7Pmor28MGCHkYuLdt/kH8ACIwvfy4iWqX8Qqu3d/gnV3u",
+      gender: "gayqueen",
+      born: "2000-09-09T00:00:00.000Z",
+      phone: "0823636036",
+      location: [13.838598, 19.0398371],
+      passion: ["music", "series"],
+      interested: "gayking",
+      bio: "love wow",
+      social: {
+        Facebook: "kanzaza",
+      },
+      userimageprofile:
+        "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
+      userimage: [
+        "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
+      ],
+      friendId: [],
+      __v: 0,
+    },
+  });
   return (
     <div className="sm:h-full  md:h-3/4 w-3/4 bg-base-100 shadow-xl mt-3 mx-auto  bg-[url('https://api.lorem.space/image')]">
       <div className="card shadow-xl image-full  border-solid border-2 text-color-black">
         <div className="avatar mx-auto mt-9 userimage">
           <div className="w-24 h-24 rounded-full opacity-100">
-            <img src="https://api.lorem.space/image/face?hash=92310" />
+            <img src={users.user.userimageprofile} />
           </div>
         </div>
         <div className="justify-end card-body  mt-60 ">
-          <h1 className="text-2xl userimage mx-auto">Kanomroo</h1>
+          <h1 className="text-2xl userimage mx-auto">{users.user.username}</h1>
           <h3 className="text-md userimage mx-auto ">กำลังเชื่อมต่อ...</h3>
           <div className="grid grid-cols-3 mx-auto mt-9 opacity-100">
             <div className="mx-auto">
@@ -255,18 +288,52 @@ export const Call = () => {
 };
 
 export const Calling = () => {
+  const [users, setUsers] = useState({
+    user: {
+      userDetails: {
+        unlikes: [],
+        taste: [],
+        likes: [],
+        unlike: [],
+        likesMe: [],
+      },
+      _id: "6214a395e543ba936f58d2ed",
+      username: "ฺkany",
+      email: "kanzaza@gmail.com",
+      password: "$2a$12$tqlhdJ4a7Pmor28MGCHkYuLdt/kH8ACIwvfy4iWqX8Qqu3d/gnV3u",
+      gender: "gayqueen",
+      born: "2000-09-09T00:00:00.000Z",
+      phone: "0823636036",
+      location: [13.838598, 19.0398371],
+      passion: ["music", "series"],
+      interested: "gayking",
+      bio: "love wow",
+      social: {
+        Facebook: "kanzaza",
+      },
+      userimageprofile:
+        "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
+      userimage: [
+        "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
+      ],
+      friendId: [],
+      __v: 0,
+    },
+  });
   return (
     <div>
       <div className="artboard phone-1 artboard-demo bg-base-100 shadow-xl mt-3 mx-auto image-full rounded-xl ">
-        <div className="w-full h-full bg-blur bg-[url('https://api.lorem.space/image')]"></div>
+        <div className="w-full h-full bg-blur  bg-[url({users.user.userimageprofile})]"></div>
 
         <div className="content-on-bg-blur">
           <div className="avatar mx-auto">
             <div className="w-24 h-24 rounded-full">
-              <img src="https://api.lorem.space/image/face?hash=92310" />
+              <img src={users.user.userimageprofile} />
             </div>
           </div>
-          <h1 className="text-2xl text-white userimage mx-auto">Kanomroo</h1>
+          <h1 className="text-2xl text-white userimage mx-auto">
+            {users.user.username}
+          </h1>
           <h3 className="text-md text-white  userimage mx-auto ">10:11:11</h3>
           <div className="btn-groupt-call">
             <div className="grid grid-cols-4 mx-auto mt-9 opacity-100 ">
@@ -622,7 +689,7 @@ export const Calling = () => {
                   <input type="checkbox" />
                   {/* volume on icon */}
                   <svg
-                  className="swap-on"
+                    className="swap-on"
                     width="58"
                     height="58"
                     viewBox="0 0 58 58"
