@@ -82,7 +82,10 @@
 
 }
 .btn-effect-none{
+  position: absolute;
+  top:-20rem;
   display: none;
+  transition-delay: 2s;
 
 }
 .background_radial-gradient{
@@ -122,9 +125,7 @@
   top: 0rem;
   
 }
-.user-description{
-  height: 100%;
-}
+
 .border-block-input{
   border-color: var(--color-primary-white);
   border-bottom-color: var(--color-primary-black);
