@@ -13,31 +13,66 @@ import {
 
 const EditPersonalmanu = (props) => {
   const { title, value } = props;
-
-  //console.log(title);
-  const [users] = useState({
-    user: [
-      {
-        user_details: {
-          Vaccine: ["AstraZinica ", "AstraZinica"],
-          job: ["นักศึกษา"],
-          LGho: ["ดื่มบ้าง"],
-          smoke: ["ไม่สูบ"],
-          height: [181],
-          address: ["ดำเนิน"],
-          myGoal: ["หาเพื่อน"],
-          username: "Aum",
-          gender: "man",
-        },
-        born: "2000-08-17T00:00:00.000Z",
-        frind_id: [],
-        __v: 0,
+  // const usersignin = useSelector((state) => state.signs);
+  const [usersignin, setUsers] = useState({
+    user: {
+      userDetails: {
+        Vaccine: ["AstraZinica ", "AstraZinica"],
+               job: ["นักศึกษา"],
+                LGho: ["ดื่มบ้าง"],
+                smoke: ["ไม่สูบ"],
+                height: [181],
+                address: ["ดำเนิน"],
+                myGoal: ["หาเพื่อน"],
+                gender: "gayqueen",
       },
-    ],
+      _id: "6214a395e543ba936f58d2ed",
+      username: "ฺkany",
+      email: "kanzaza@gmail.com",
+      password: "$2a$12$tqlhdJ4a7Pmor28MGCHkYuLdt/kH8ACIwvfy4iWqX8Qqu3d/gnV3u",
+      gender: "gayqueen",
+      born: "2000-09-09T00:00:00.000Z",
+      phone: "0823636036",
+      location: [13.838598, 19.0398371],
+      passion: ["music", "series"],
+      interested: "gayking",
+      bio: "love wow",
+      social: {
+        Facebook: "kanzaza",
+      },
+      userimageprofile:
+        "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
+      userimage: [
+        "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
+      ],
+      friendId: [],
+      __v: 0,
+    },
   });
+  //console.log(title);
+  // const [usersignin] = useState({
+  //   user: [
+  //     {
+  //       user_details: {
+  //         Vaccine: ["AstraZinica ", "AstraZinica"],
+  //         job: ["นักศึกษา"],
+  //         LGho: ["ดื่มบ้าง"],
+  //         smoke: ["ไม่สูบ"],
+  //         height: [181],
+  //         address: ["ดำเนิน"],
+  //         myGoal: ["หาเพื่อน"],
+  //         username: "Aum",
+  //         gender: "man",
+  //       },
+  //       born: "2000-08-17T00:00:00.000Z",
+  //       frind_id: [],
+  //       __v: 0,
+  //     },
+  //   ],
+  // });
   const calculateAge = () => {
     var today = new Date();
-    var birthDate = new Date(users.user[0].born);
+    var birthDate = new Date(usersignin.user.born);
     var age = today.getFullYear() - birthDate.getFullYear();
     var m = today.getMonth() - birthDate.getMonth();
     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
@@ -88,23 +123,26 @@ typei: ["username", "age", "address", "job", "height", "smoke", "LGho", "interes
 
         <EditModal
           title="username"
-          value={users.user[0].user_details.username}
+          value={usersignin.user.username}
         />
         <EditModal title="age" value={calculateAge()} />
-        <EditModal title="address" value={users.user[0].user_details.address} />
-        <EditModal4 title="job" value={users.user[0].user_details.job} />
-        <EditModal4 title="height" value={users.user[0].user_details.height} />
-        <EditModal5 title="smoke" value={users.user[0].user_details.smoke} />
-        <EditModal6 title="LGho" value={users.user[0].user_details.LGho} />
+        <EditModal
+          title="address"
+          value={usersignin.user.userDetails.address}
+        />
+        <EditModal4 title="job" value={usersignin.user.userDetails.job} />
+        <EditModal4 title="height" value={usersignin.user.userDetails.height} />
+        <EditModal5 title="smoke" value={usersignin.user.userDetails.smoke} />
+        <EditModal6 title="LGho" value={usersignin.user.userDetails.LGho} />
         <EditModal7
           title="interested"
-          value={users.user[0].user_details.interested}
+          value={usersignin.user.userDetails.interested}
         />
         <EditModal8
           title="Vaccine"
-          value={users.user[0].user_details.Vaccine}
+          value={usersignin.user.userDetails.Vaccine}
         />
-        <EditModal9 title="myGoal" value={users.user[0].user_details.myGoal} />
+        <EditModal9 title="myGoal" value={usersignin.user.userDetails.myGoal} />
       </div>
     </>
   );
