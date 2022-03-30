@@ -7,6 +7,7 @@ import Homepage from "./pages/Homepage";
 import Profile from "./pages/Profile";
 import Chatpage from "./pages/Chatpage"
 import Alertpage from "./pages/Alertpage"
+import Sex from "./component/Sex"
 import Regispage from "./pages/Regispage"
 import Login from "./pages/Login"
 import EditPersonal from "./pages/EditPersonal";
