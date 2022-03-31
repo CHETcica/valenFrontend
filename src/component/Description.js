@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Carduser from "./Carduser";
 import { fetchAllUser } from "../action";
+import { getDistance } from "geolib";
 
 const Description = (props) => {
   const users = props.users;
@@ -18,7 +19,12 @@ const Description = (props) => {
     }
     return age;
   };
-  
+  const distance = getDistance(
+    // { latitude: 13.838598, longitude: 19.0398371 },
+    { latitude: users.user.location[0], longitude: users.user.location[1] },
+    { latitude: 13.838962, longitude: 19.0398375 }
+  );
+  console.log(users.user.location[0]);  
   return (
     <div>
       <input type="checkbox" id="modal-Description" className="modal-toggle" />
@@ -97,14 +103,15 @@ const Description = (props) => {
           </svg>
         </label>
         <div className="modal-box mt-3 sm:h/4/5  grid lg:grid-cols-2  grid-cols-1">
-          <Carduser users={users}/>
+          <Carduser users={users} />
           <div className=" pt-5">
             <div className="grid grid-cols-2">
               <h1 className="text-3xl ">
                 {users.user.username ? users.user.username : "-"}
               </h1>
-              <h1 className="text-3xl ml-auto">Age  
-              {calculateAge()}
+              <h1 className="text-3xl ml-auto">
+                Age
+                {calculateAge()}
               </h1>
             </div>
             <hr />
@@ -130,22 +137,34 @@ const Description = (props) => {
                 interested :
                 {users.user.interested ? users.user.interested : "-"}
               </h3>
+              <h3>
+                <div className=" flex distance-seccsion mt-2">
+                  <h1 className="pl-3 pt-1 text-xl mb-2">distance :</h1>
+                  <div className="ml-3 text-lg my-auto">{distance} Km</div>
+                </div>
+              </h3>
             </div>
+            {/* <div className="text-3xl mt-3 ">
+              <div className=" flex distance-seccsion">
+                <h1 className="pl-3 text-3xl mb-2">distance</h1>
+                <div className="ml-3 text-2xl my-auto">{distance}</div>
+              </div>
+            </div> */}
             <div className="text-3xl mt-3">
               <h1 className="text-3xl mb-2">Passions</h1>
               <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 text-center">
-                {users.user.passion?
-                users.user.passion.map((el) => (
-                  <div className="text-color-black text-xl card-actions-passion-primary ">
-                    {el}
-                  </div>
-                )):""
-                }
+                {users.user.passion
+                  ? users.user.passion.map((el) => (
+                      <div className="text-color-black text-xl card-actions-passion-primary ">
+                        {el}
+                      </div>
+                    ))
+                  : ""}
               </div>
             </div>
             <div className="text-3xl mt-3">
               <h1 className="text-3xl mb-2">Album</h1>
-              
+
               <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-4 gap-3">
                 {users.user.userimage ? (
                   <img

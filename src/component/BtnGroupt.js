@@ -155,7 +155,7 @@ export const BtnGroupt = (props) => {
           />
         </svg>
       </div>
-      <div
+      {/* <div
         onClick={(e) => ShowBtnText("like")}
         className="mx-auto button_groupt button_groupt-like"
       >
@@ -176,8 +176,8 @@ export const BtnGroupt = (props) => {
             fill="#C58CF2"
           />
         </svg>
-      </div>
-      {/* <div
+      </div> */}
+      <div
         onClick={(e) => NewRandom()}
         className="mx-auto button_groupt button_groupt-like"
       >
@@ -198,7 +198,7 @@ export const BtnGroupt = (props) => {
             fill="#C58CF2"
           />
         </svg>
-      </div> */}
+      </div>
     </div>
   );
 };

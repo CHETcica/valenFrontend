@@ -182,6 +182,12 @@
   
 }
 
+.distance-seccsion{
+  background-color: var(--color-secondary-oceanblue);
+  border-radius: 2rem;
+  width: 25%;
+}
+
 @media (max-width: 639px) { 
   .btn-groupt-hidden{
     display: none;
