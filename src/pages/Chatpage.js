@@ -10,7 +10,7 @@ const Chatpage = () => {
       </div>
 
       <div className="sm:col-span-3 md:col-span-2 ">
-        <Call />
+        <Calling />
       </div>
     </div>
   );

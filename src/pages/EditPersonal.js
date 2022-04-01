@@ -1,45 +1,47 @@
-import React, { useState } from 'react'
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import EditPersonalImg from "../component/EditPersonalImg";
 import EditPersonalmanu from "../component/EditPersonalmanu";
 
 const EditPersonal = () => {
-// const usersignin = useSelector((state) => state.signs);
-const [usersignin, setUsers] = useState({
-  user: {
-    userDetails: {
-      Vaccine: ["AstraZinica ", "AstraZinica"],
-               job: ["นักศึกษา"],
-                LGho: ["ดื่มบ้าง"],
-                smoke: ["ไม่สูบ"],
-                height: [181],
-                address: ["ดำเนิน"],
-                myGoal: ["หาเพื่อน"],
-      
-                gender: "gayqueen",
-    },
-    _id: "6214a395e543ba936f58d2ed",
-    username: "ฺkany",
-    email: "kanzaza@gmail.com",
-    password: "$2a$12$tqlhdJ4a7Pmor28MGCHkYuLdt/kH8ACIwvfy4iWqX8Qqu3d/gnV3u",
-    gender: "gayqueen",
-    born: "2000-09-09T00:00:00.000Z",
-    phone: "0823636036",
-    location: [13.838598, 19.0398371],
-    passion: ["music", "series"],
-    interested: "gayking",
-    bio: "love wow",
-    social: {
-      Facebook: "kanzaza",
-    },
-    userimageprofile:
-      "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
-    userimage: [
-      "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
-    ],
-    friendId: [],
-    __v: 0,
-  },
-});
+  const usersignin = useSelector((state) => state.signs);
+  // const [usersignin, setUsers] = useState({
+  //   user: {
+  //     userDetails: {
+  //       Vaccine: ["AstraZinica ", "AstraZinica"],
+  //       job: ["นักศึกษา"],
+  //       LGho: ["ดื่มบ้าง"],
+  //       smoke: ["ไม่สูบ"],
+  //       height: [181],
+  //       address: ["ดำเนิน"],
+  //       myGoal: ["หาเพื่อน"],
+
+  //       gender: "gayqueen",
+  //     },
+  //     _id: "6214a395e543ba936f58d2ed",
+  //     username: "ฺkany",
+  //     email: "kanzaza@gmail.com",
+  //     password: "$2a$12$tqlhdJ4a7Pmor28MGCHkYuLdt/kH8ACIwvfy4iWqX8Qqu3d/gnV3u",
+  //     gender: "gayqueen",
+  //     born: "2000-09-09T00:00:00.000Z",
+  //     phone: "0823636036",
+  //     location: [13.838598, 19.0398371],
+  //     passion: ["music", "series"],
+  //     interested: "gayking",
+  //     bio: "love wow",
+  //     social: {
+  //       Facebook: "kanzaza",
+  //     },
+  //     userimageprofile:
+  //       "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
+  //     userimage: [
+  //       "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
+  //     ],
+  //     friendId: [],
+  //     __v: 0,
+  //   },
+  // });
+
   // const [usersignin] = useState(
   //   {
   //     user: [
@@ -94,9 +96,6 @@ const [usersignin, setUsers] = useState({
   //   }
   //   );
 
- 
-  
-
   const calculateAge = () => {
     var today = new Date();
     var birthDate = new Date(usersignin.user.born);
@@ -110,40 +109,59 @@ const [usersignin, setUsers] = useState({
 
   return (
     <>
-      <div align="center" className='text-xl my-5'> <p>แก้ไขข้อมูลส่วนตัว</p></div>
+      <div align="center" className="text-xl my-5">
+        <p>แก้ไขข้อมูลส่วนตัว</p>
+      </div>
       <div className="grid justify-items-center grid-rows-1 gap-4">
-
         <div class="row-span-1">
           <div className="grid justify-items-center grid-flow-row grid-cols-4 gap-4 mb-5">
             <EditPersonalImg value={usersignin.user.userimageprofile} />
-            <EditPersonalImg value={usersignin.user.userimage[0]?usersignin.user.userimage[0]:""
-            } />
-             <EditPersonalImg value={usersignin.user.userimage[1]?usersignin.user.userimage[1]:""} />
+            <EditPersonalImg
+              value={
+                usersignin.user.userimage[0] ? usersignin.user.userimage[0] : ""
+              }
+            />
+            <EditPersonalImg
+              value={
+                usersignin.user.userimage[1] ? usersignin.user.userimage[1] : ""
+              }
+            />
             <EditPersonalImg value={usersignin.user.userimage[2]} />
             <EditPersonalImg value={usersignin.user.userimage[3]} />
             <EditPersonalImg value={usersignin.user.userimage[4]} />
             <EditPersonalImg value={usersignin.user.userimage[5]} />
-            <EditPersonalImg value={usersignin.user.userimage[6]} /> 
-
+            <EditPersonalImg value={usersignin.user.userimage[6]} />
           </div>
         </div>
         <p id="demo"></p>
-
       </div>
 
       <EditPersonalmanu title="username" value={usersignin.user.username} />
       <EditPersonalmanu title="age" value={calculateAge()} />
-      <EditPersonalmanu title="address" value={usersignin.user.userDetails.address} />
+      <EditPersonalmanu
+        title="address"
+        value={usersignin.user.userDetails.address}
+      />
       <EditPersonalmanu title="job" value={usersignin.user.userDetails.job} />
-      <EditPersonalmanu title="height" value={usersignin.user.userDetails.height} />
-      <EditPersonalmanu title="smoke" value={usersignin.user.userDetails.smoke} />
+      <EditPersonalmanu
+        title="height"
+        value={usersignin.user.userDetails.height}
+      />
+      <EditPersonalmanu
+        title="smoke"
+        value={usersignin.user.userDetails.smoke}
+      />
       <EditPersonalmanu title="LGho" value={usersignin.user.userDetails.LGho} />
       <EditPersonalmanu title="interested" value={usersignin.user.interested} />
-      <EditPersonalmanu title="Vaccine" value={usersignin.user.userDetails.Vaccine} />
-      <EditPersonalmanu title="myGoal" value={usersignin.user.userDetails.myGoal} />
-
-
+      <EditPersonalmanu
+        title="Vaccine"
+        value={usersignin.user.userDetails.Vaccine}
+      />
+      <EditPersonalmanu
+        title="myGoal"
+        value={usersignin.user.userDetails.myGoal}
+      />
     </>
-  )
-}
-export default EditPersonal
+  );
+};
+export default EditPersonal;

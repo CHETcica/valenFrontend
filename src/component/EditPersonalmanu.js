@@ -18,13 +18,13 @@ const EditPersonalmanu = (props) => {
     user: {
       userDetails: {
         Vaccine: ["AstraZinica ", "AstraZinica"],
-               job: ["นักศึกษา"],
-                LGho: ["ดื่มบ้าง"],
-                smoke: ["ไม่สูบ"],
-                height: [181],
-                address: ["ดำเนิน"],
-                myGoal: ["หาเพื่อน"],
-                gender: "gayqueen",
+        job: ["นักศึกษา"],
+        LGho: ["ดื่มบ้าง"],
+        smoke: ["ไม่สูบ"],
+        height: [181],
+        address: ["ดำเนิน"],
+        myGoal: ["หาเพื่อน"],
+        gender: "gayqueen",
       },
       _id: "6214a395e543ba936f58d2ed",
       username: "ฺkany",
@@ -120,11 +120,7 @@ typei: ["username", "age", "address", "job", "height", "smoke", "LGho", "interes
             </label>
           </div>
         </div>
-
-        <EditModal
-          title="username"
-          value={usersignin.user.username}
-        />
+        <EditModal title="username" value={usersignin.user.username} />
         <EditModal title="age" value={calculateAge()} />
         <EditModal
           title="address"

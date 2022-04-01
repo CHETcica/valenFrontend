@@ -138,9 +138,10 @@ const Description = (props) => {
                 {users.user.interested ? users.user.interested : "-"}
               </h3>
               <h3>
-                <div className=" flex distance-seccsion mt-2">
-                  <h1 className="pl-3 pt-1 text-xl mb-2">distance :</h1>
-                  <div className="ml-3 text-lg my-auto">{distance} Km</div>
+                <div className="py-1 mt-2">
+                  <h3 className="distance-seccsion text-xl">distance : {distance} Km</h3>
+                  {/* <h1 className="pl-3 pt-1 text-xl mb-2">distance :</h1>
+                  <div className="ml-3 text-lg my-auto">{distance} Km</div> */}
                 </div>
               </h3>
             </div>
