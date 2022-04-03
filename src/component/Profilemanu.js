@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../action";
-
-import { Link } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 const Profilemanu = () => {
+  const disPatch = useDispatch();
+  const navigate = useNavigate();
+  const Logout = () => {
+    disPatch(logout());
+    navigate("/login");
+  };
+
   const usersignin = useSelector((state) => state.signs);
   //const [usersignin, setUsers] = useState({
   //   user: {
@@ -37,6 +43,7 @@ const Profilemanu = () => {
   //     __v: 0,
   //   },
   // });
+
   return (
     <div className="container mx-auto">
       <div className="grid sm:grid-cols-2 grid-cols-1 gap-4 my-40">
@@ -77,8 +84,8 @@ const Profilemanu = () => {
             </Link>
           </p>
           <hr />
-          <button onClick={(e) => logout()} className="text-lg my-3 pl-5">
-              ออกจากระบบ
+          <button onClick={(e) => Logout()} className="text-lg my-3 pl-5">
+            ออกจากระบบ
           </button>
         </div>
       </div>

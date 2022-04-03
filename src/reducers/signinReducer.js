@@ -7,7 +7,7 @@ const reducer = (state = {}, action) => {
     case reduxType.FETCH_SIGNUP_USER:
       return action.payload;
     case reduxType.FETCH_LOGOUT_USER:
-      return null;
+      return {};
     default:
       return state;
   }

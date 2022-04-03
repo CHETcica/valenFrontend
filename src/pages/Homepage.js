@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import Usersetting from "../component/Usersetting";
+import Usersetting from "../component/Randomsetting";
 import Userdescription from "../component/Description";
 import { randomUser } from "../action";
 

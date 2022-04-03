@@ -37,7 +37,7 @@ export const userLogin =
   };
 
 export const logout = () => (dispatch) => {
-  dispatch({ type: reduxType.FETCH_LOGOUT_USER, payload: null });
+  dispatch({ type: reduxType.FETCH_LOGOUT_USER, payload: {} });
 };
 
 export const fetchUser = () => async (dispatch) => {
