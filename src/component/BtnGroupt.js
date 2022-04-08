@@ -48,14 +48,17 @@ export const BtnGroupt = (props) => {
   const NewRandom = () => {
     disPatch(
       randomUser(
-        "man",
-        ["coding", "gaming", "dance"],
+        // "man",
+        // ["coding", "gaming", "dance"],
         [
           "6213b95e3ee259b511fbcf3e",
           "6216ef7c968ef32ce2e2b49c",
           "6218562be73c780fb58669c1",
-          "623e90c8c457f7c2b1b747e1",
-        ]
+          // "623e90c8c457f7c2b1b747e1",
+
+        ],
+        // [100.060139, 13.566704],
+        // 50000
       )
       // randomUser(
       // usersignin.user.interested,

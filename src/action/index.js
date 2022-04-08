@@ -46,13 +46,13 @@ export const fetchUser = () => async (dispatch) => {
 };
 
 export const randomUser =
-  (gender, passion, frind_id, likes, unlikes) => async (dispatch) => {
+  (gender, passion, frind_id, location, MaxDistance) => async (dispatch) => {
     const res = await api.post("/user/randomuser", {
       gender: gender,
       passion: passion,
       _id: frind_id,
-      // likes:likes,
-      // unlikes:unlikes
+      location:location,
+      MaxDistance:MaxDistance
     });
 
     dispatch({ type: reduxType.FETCH_RANDOM_USER, payload: res.data });

@@ -6,8 +6,6 @@ import { getDistance } from "geolib";
 
 const Description = (props) => {
   const users = props.users;
-  // console.log(users)
-  // console.log(users.user.username)
 
   const calculateAge = () => {
     var today = new Date();
@@ -21,10 +19,10 @@ const Description = (props) => {
   };
   const distance = getDistance(
     // { latitude: 13.838598, longitude: 19.0398371 },
-    { latitude: users.user.location[0], longitude: users.user.location[1] },
-    { latitude: 13.838962, longitude: 19.0398375 }
+    { latitude: users.user.location.coordinates[1], longitude: users.user.location.coordinates[0] },
+    { latitude: 13.566704, longitude: 100.060139 }
   );
-  console.log(users.user.location[0]);  
+  let distanceKM = distance * 0.001;
   return (
     <div>
       <input type="checkbox" id="modal-Description" className="modal-toggle" />
@@ -139,18 +137,11 @@ const Description = (props) => {
               </h3>
               <h3>
                 <div className="py-1 mt-2">
-                  <h3 className="distance-seccsion text-xl">distance : {distance} Km</h3>
-                  {/* <h1 className="pl-3 pt-1 text-xl mb-2">distance :</h1>
-                  <div className="ml-3 text-lg my-auto">{distance} Km</div> */}
+                  <h3 className="distance-seccsion text-xl">distance : {distanceKM} Km</h3>
+                  
                 </div>
               </h3>
             </div>
-            {/* <div className="text-3xl mt-3 ">
-              <div className=" flex distance-seccsion">
-                <h1 className="pl-3 text-3xl mb-2">distance</h1>
-                <div className="ml-3 text-2xl my-auto">{distance}</div>
-              </div>
-            </div> */}
             <div className="text-3xl mt-3">
               <h1 className="text-3xl mb-2">Passions</h1>
               <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 text-center">
