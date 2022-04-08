@@ -18,8 +18,10 @@ const Description = (props) => {
     return age;
   };
   const distance = getDistance(
-    // { latitude: 13.838598, longitude: 19.0398371 },
-    { latitude: users.user.location.coordinates[1], longitude: users.user.location.coordinates[0] },
+    {
+      latitude: users.user.location.coordinates[1],
+      longitude: users.user.location.coordinates[0],
+    },
     { latitude: 13.566704, longitude: 100.060139 }
   );
   let distanceKM = distance * 0.001;
@@ -137,8 +139,9 @@ const Description = (props) => {
               </h3>
               <h3>
                 <div className="py-1 mt-2">
-                  <h3 className="distance-seccsion text-xl">distance : {distanceKM} Km</h3>
-                  
+                  <h3 className="distance-seccsion text-xl">
+                    distance : {distanceKM.toFixed(1)} Km
+                  </h3>
                 </div>
               </h3>
             </div>
