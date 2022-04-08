@@ -19,8 +19,8 @@ const Description = (props) => {
   };
   const distance = getDistance(
     {
-      latitude: users.user.location.coordinates[1],
-      longitude: users.user.location.coordinates[0],
+      latitude: users?.user?.location?users.user.location.coordinates[1]:13.566704,
+      longitude: users?.user?.location?users.user.location.coordinates[0]:100.060139,
     },
     { latitude: 13.566704, longitude: 100.060139 }
   );
