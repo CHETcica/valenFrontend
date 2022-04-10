@@ -32,7 +32,7 @@ const App = () => {
             <Route path="/warn" element={<Login />} />
             <Route path="/sexul" element={<Sex/>} />
           </Routes>
-        <Footer/>
+        {/* <Footer/> */}
     </BrowserRouter>
   );
 };

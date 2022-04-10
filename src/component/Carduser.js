@@ -5,6 +5,7 @@ import { RandomNull } from "./RandomNull";
 
 const Carduser = (props) => {
   const users = props.users;
+  // console.log(props);
   if (!users && Object.keys(users).length === 0) return <RandomNull />;
   return (
     <div className=" m-auto md:w-80 my-6">
