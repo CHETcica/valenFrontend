@@ -22,18 +22,18 @@ export const userSignup =
 export const userLogin =
   ({ username, password }) =>
   async (dispatch) => {
-    // let signs = localStorage.getItem("signs");
-    // if (!signs) {
+    let signs = localStorage.getItem("signs");
+    if (!signs) {
     const res = await api.post("/user/signIn", {
       username: username,
       password: password,
     });
-    // localStorage.setItem("signs", JSON.stringify(res.data));
-    // signs = localStorage.getItem("signs");
-    // console.log(signs);
-    // }
-    // dispatch({ type: reduxType.FETCH_LOGIN_USER, payload: JSON.parse(signs) });
-    dispatch({ type: reduxType.FETCH_LOGIN_USER, payload: res.data });
+    localStorage.setItem("signs", JSON.stringify(res.data));
+    signs = localStorage.getItem("signs");
+    console.log(signs);
+    }
+    dispatch({ type: reduxType.FETCH_LOGIN_USER, payload: JSON.parse(signs) });
+    // dispatch({ type: reduxType.FETCH_LOGIN_USER, payload: res.data });
   };
 
 export const logout = () => (dispatch) => {
