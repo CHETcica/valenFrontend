@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Modalusername, Modalusername1 } from "./ModalForm";
 
 import {
@@ -13,42 +14,42 @@ import {
 
 const EditPersonalmanu = (props) => {
   const { title, value } = props;
-  // const usersignin = useSelector((state) => state.signs);
-  const [usersignin, setUsers] = useState({
-    user: {
-      userDetails: {
-        Vaccine: ["AstraZinica ", "AstraZinica"],
-        job: ["นักศึกษา"],
-        LGho: ["ดื่มบ้าง"],
-        smoke: ["ไม่สูบ"],
-        height: [181],
-        address: ["ดำเนิน"],
-        myGoal: ["หาเพื่อน"],
-        gender: "gayqueen",
-      },
-      _id: "6214a395e543ba936f58d2ed",
-      username: "ฺkany",
-      email: "kanzaza@gmail.com",
-      password: "$2a$12$tqlhdJ4a7Pmor28MGCHkYuLdt/kH8ACIwvfy4iWqX8Qqu3d/gnV3u",
-      gender: "gayqueen",
-      born: "2000-09-09T00:00:00.000Z",
-      phone: "0823636036",
-      location: [13.838598, 19.0398371],
-      passion: ["music", "series"],
-      interested: "gayking",
-      bio: "love wow",
-      social: {
-        Facebook: "kanzaza",
-      },
-      userimageprofile:
-        "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
-      userimage: [
-        "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
-      ],
-      friendId: [],
-      __v: 0,
-    },
-  });
+  const usersignin = useSelector((state) => state.signs);
+  // const [usersignin, setUsers] = useState({
+  //   user: {
+  //     userDetails: {
+  //       Vaccine: ["AstraZinica ", "AstraZinica"],
+  //       job: ["นักศึกษา"],
+  //       LGho: ["ดื่มบ้าง"],
+  //       smoke: ["ไม่สูบ"],
+  //       height: [181],
+  //       address: ["ดำเนิน"],
+  //       myGoal: ["หาเพื่อน"],
+  //       gender: "gayqueen",
+  //     },
+  //     _id: "6214a395e543ba936f58d2ed",
+  //     username: "ฺkany",
+  //     email: "kanzaza@gmail.com",
+  //     password: "$2a$12$tqlhdJ4a7Pmor28MGCHkYuLdt/kH8ACIwvfy4iWqX8Qqu3d/gnV3u",
+  //     gender: "gayqueen",
+  //     born: "2000-09-09T00:00:00.000Z",
+  //     phone: "0823636036",
+  //     location: [13.838598, 19.0398371],
+  //     passion: ["music", "series"],
+  //     interested: "gayking",
+  //     bio: "love wow",
+  //     social: {
+  //       Facebook: "kanzaza",
+  //     },
+  //     userimageprofile:
+  //       "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
+  //     userimage: [
+  //       "https://cdn.discordapp.com/attachments/792729018608648204/800269786050592838/profile7.jpg",
+  //     ],
+  //     friendId: [],
+  //     __v: 0,
+  //   },
+  // });
   //console.log(title);
   // const [usersignin] = useState({
   //   user: [
@@ -122,9 +123,13 @@ typei: ["username", "age", "address", "job", "height", "smoke", "LGho", "interes
         </div>
         <EditModal title="username" value={usersignin.user.username} />
         <EditModal title="age" value={calculateAge()} />
-        <EditModal
+        <EditModal4
           title="address"
-          value={usersignin.user.userDetails.address}
+          value={
+            usersignin?.user?.userDetails?.address
+              ? usersignin.user.userDetails.address
+              : "null"
+          }
         />
         <EditModal4 title="job" value={usersignin.user.userDetails.job} />
         <EditModal4 title="height" value={usersignin.user.userDetails.height} />

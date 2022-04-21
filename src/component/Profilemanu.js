@@ -50,18 +50,18 @@ const Profilemanu = () => {
         <div className="col-span-1 mx-auto">
           <div className="avatar online">
             <div className="rounded-full w-24 h-24">
-              <img src={usersignin.user.userimageprofile} />
+              <img src={usersignin?.user?.userimageprofile? usersignin.user.userimageprofile: "null"} />
             </div>
           </div>
         </div>
         <div className="col-span-1 pl-10 w-3/4">
           <p className="truncate text-2xl my-9 pl-5">
-            {usersignin.user.username}
+            {usersignin?.user?.username? usersignin.user.username: "null"}
           </p>
 
           <hr />
           <p className="text-lg my-3 pl-5">
-            <Link className="link-hover" to={"/editPersonal"}>
+            <Link className="link-hover" to={"/editpersonal"}>
               แก้ไขข้อมูลส่วนตัว
             </Link>
           </p>

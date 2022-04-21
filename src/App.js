@@ -29,7 +29,6 @@ const App = () => {
             <Route path="/alert" element={<Alertpage/>} />
             <Route path="/editpersonal" element={<EditPersonal/>} />
             <Route path="/liking" element={<Liking/>} /> 
-            <Route path="/warn" element={<Login />} />
             <Route path="/sexul" element={<Sex/>} />
           </Routes>
         {/* <Footer/> */}

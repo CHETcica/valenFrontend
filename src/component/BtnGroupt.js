@@ -4,7 +4,8 @@ import { randomUser, likeUser, superlikeUser, unlikeUser } from "../action";
 
 export const BtnGroupt = (props) => {
   const usersignin = useSelector((state) => state.signs);
-  const id = props.user.user._id;
+  const taketid = props.user.user._id;
+  const myid = usersignin.user._id;
   const disPatch = useDispatch();
 
   // var timeLeft = 3;
@@ -26,47 +27,51 @@ export const BtnGroupt = (props) => {
       ? (button.style.display = "block").setTimeout(() => {
           button.style.display = "none";
           console.log("ปิดการแสดงปุ่ม");
-        }, 3000)
+        }, 300)
       : // ,countdown(btnname)
         (button.style.display = "none");
   };
 
-  useEffect((btnname) => {
-    if (btnname === "like") {
-      disPatch(likeUser(id));
-      console.log("like", id);
-      NewRandom()
-    } else if (btnname === "superlike") {
-      disPatch(superlikeUser(id));
-      console.log("superlike", id);
-    } else if (btnname === "unlike") {
-      disPatch(unlikeUser(id));
-      console.log("unlike", id);
-    }
-  });
-
   const NewRandom = () => {
+    let likes = usersignin.user.userDetails.likes;
+    if (!likes.fill(taketid)) {
+      likes.push(taketid);
+    }
+    console.log(likes);
     disPatch(
+      // randomUser(
+      //   usersignin.user.interested,
+      //   usersignin.user.passion,
+      //   usersignin.user.friendId,
+      //   likes,
+      // usersignin.user.userDetails.unlikes,
+      //   usersignin.user.location.coordinates,
+      //   usersignin.user.userSetting.MaxDistance * 1000
+      // ),
       randomUser(
-        // "man",
-        // ["coding", "gaming", "dance"],
+        // interested
+        "women",
+        // passion
+        ["gaming", "coding"],
+        // firend
+        ["6214a044e543ba936f58d2ea"],
+        // likes
         [
           "6213b95e3ee259b511fbcf3e",
           "6216ef7c968ef32ce2e2b49c",
           "6218562be73c780fb58669c1",
-          // "623e90c8c457f7c2b1b747e1",
-
+          "6216ee00968ef32ce2e2b49a",
+          taketid,
         ],
-        // [100.060139, 13.566704],
-        // 50000
-      )
-      // randomUser(
-      // usersignin.user.interested,
-      // usersignin.user.passion,
-      // usersignin.user.friendId,
-      // usersignin.user.userDetails.likes,
-      // usersignin.user.userDetails.unlike
-      // )
+        // unlikes,
+        ["6214a044e543ba936f58d2ea"],
+        // location
+        [100.060139, 13.566704],
+        // distance
+        1000 * 50
+      ),
+      likeUser(likes, myid),
+      ShowBtnText("like")
     );
   };
 
@@ -158,6 +163,7 @@ export const BtnGroupt = (props) => {
           />
         </svg>
       </div>
+
       {/* <div
         onClick={(e) => ShowBtnText("like")}
         className="mx-auto button_groupt button_groupt-like"
@@ -180,6 +186,7 @@ export const BtnGroupt = (props) => {
           />
         </svg>
       </div> */}
+
       <div
         onClick={(e) => NewRandom()}
         className="mx-auto button_groupt button_groupt-like"

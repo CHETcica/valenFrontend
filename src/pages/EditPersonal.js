@@ -140,26 +140,26 @@ const EditPersonal = () => {
       <EditPersonalmanu title="age" value={calculateAge()} />
       <EditPersonalmanu
         title="address"
-        value={usersignin.user.userDetails.address}
+        value={usersignin?.user?.userDetails?.address?usersignin.user.userDetails.address:null}
       />
-      <EditPersonalmanu title="job" value={usersignin.user.userDetails.job} />
+      <EditPersonalmanu title="job" value={usersignin?.user?.userDetails?.job?usersignin.user.userDetails.job:null} />
       <EditPersonalmanu
         title="height"
-        value={usersignin.user.userDetails.height}
+        value={usersignin?.user?.userDetails?.height?usersignin.user.userDetails.height:null}
       />
       <EditPersonalmanu
         title="smoke"
-        value={usersignin.user.userDetails.smoke}
+        value={usersignin?.user?.userDetails?.smoke?usersignin.user.userDetails.smoke:null}
       />
-      <EditPersonalmanu title="LGho" value={usersignin.user.userDetails.LGho} />
-      <EditPersonalmanu title="interested" value={usersignin.user.interested} />
+      <EditPersonalmanu title="LGho" value={usersignin?.user?.userDetails?.LGho?usersignin.user.userDetails.LGho:null} />
+      <EditPersonalmanu title="interested" value={usersignin?.user?.interested?usersignin.user.interested:null} />
       <EditPersonalmanu
         title="Vaccine"
-        value={usersignin.user.userDetails.Vaccine}
+        value={usersignin?.user?.userDetails?.Vaccine?usersignin.user.userDetails.Vaccine:null}
       />
       <EditPersonalmanu
         title="myGoal"
-        value={usersignin.user.userDetails.myGoal}
+        value={usersignin?.user?.userDetails?.myGoal?usersignin.user.userDetails.myGoal:null}
       />
     </>
   );
