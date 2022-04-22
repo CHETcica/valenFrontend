@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import RandomSetting from "../component/Randomsetting";
 import Userdescription from "../component/Description";
+import { RandomNull } from "../component/RandomNull";
 import { randomUser } from "../action";
 
 const Homepage = () => {
@@ -45,48 +46,56 @@ const Homepage = () => {
   const disPatch = useDispatch();
   useEffect(() => {
     disPatch(
-      // randomUser(
-      //   usersignin.user.interested,
-      //   usersignin.user.passion,
-      //   usersignin.user.friendId,
-      //   usersignin.user.userDetails.likes,
-      //   usersignin.user.userDetails.unlikes,
-      //   usersignin.user.location.coordinates,
-      //   usersignin.user.userSetting.MaxDistance * 1000
-      // )
-      
       randomUser(
-        // interested
-        "women",
-        // passion
-        ["gaming", "coding"],
-        // firend
-        ["6214a044e543ba936f58d2ea"],
-        // likes
-        [
-          "6213b95e3ee259b511fbcf3e",
-          "6216ef7c968ef32ce2e2b49c",
-          "6218562be73c780fb58669c1",
-          "6216ee00968ef32ce2e2b49a",
-        ],
-        // unlikes,
-        ["6214a044e543ba936f58d2ea"],
-        // location
-        [100.060139, 13.566704],
-        // distance
-        1000 * 50
+        usersignin?.user?.interested ? usersignin.user.interested : "women",
+        usersignin?.user?.passion ? usersignin.user.passion : [],
+        usersignin?.user?.friendId ? usersignin.user.friendId : [],
+        usersignin?.user?.userDetails?.likes
+          ? usersignin.user.userDetails.likes
+          : [],
+        usersignin?.user?.userDetails?.unlikes
+          ? usersignin.user.userDetails.unlikes
+          : [],
+        usersignin?.user?.userDetails?.superlikes
+          ? usersignin.user.userDetails.superlikes
+          : [],
+        usersignin?.user?.location?.coordinates
+          ? usersignin.user.location.coordinates
+          : [],
+        usersignin?.user?.userSetting.MaxDistance
+          ? usersignin.user.userSetting.MaxDistance * 1000
+          : 10 * 1000
       )
 
-        
+      // randomUser(
+      //   // interested
+      //   "women",
+      //   // passion
+      //   ["gaming", "coding"],
+      //   // firend
+      //   ["6214a044e543ba936f58d2ea"],
+      //   // likes
+      //   [
+      //     "6213b95e3ee259b511fbcf3e",
+      //     "6216ef7c968ef32ce2e2b49c",
+      //     "6218562be73c780fb58669c1",
+      //     "6216ee00968ef32ce2e2b49a",
+      //   ],
+      //   // unlikes,
+      //   ["6214a044e543ba936f58d2ea"],
+      //   // superlikes
+      //   // ["6214a044e543ba936f58d2ea"],
 
+      //   // location
+      //   [100.060139, 13.566704],
+      //   // distance
+      //   1000 * 50
+      // )
     );
-  },[]);
+  }, []);
 
   return (
-    <>
-      <RandomSetting users={users} />
-      
-    </>
+    <>{users.user == null ? <RandomNull /> : <RandomSetting users={users} />}</>
   );
 };
 
