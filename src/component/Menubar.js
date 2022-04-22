@@ -5,7 +5,7 @@ const Menubar = () => {
   return (
     <div className="menubar navbar shadow-lg text-neutral-content h-7">
       <div className="mx-auto">
-        <Link to={"/"} className="flex-1 mx-4 text-2xl">
+        <Link to={"/home"} className="flex-1 mx-4 text-2xl">
           <div className="flex">
             <div className="flex-1">
               <svg

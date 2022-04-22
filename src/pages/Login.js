@@ -13,7 +13,7 @@ const Login = () => {
   const onSubmit = (data) => {
     disPatch(userLogin(data));
     console.log("Login");
-    navigate("/");
+    navigate("/home");
   };
   return (
     <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
