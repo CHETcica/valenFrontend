@@ -22,10 +22,10 @@ export const userSignup =
 export const userLogin =
   ({ username, password }) =>
   async (dispatch) => {
-      const res = await api.post("/user/signIn", {
-        username: username,
-        password: password,
-      });
+    const res = await api.post("/user/signIn", {
+      username: username,
+      password: password,
+    });
     dispatch({ type: reduxType.FETCH_LOGIN_USER, payload: res.data });
   };
 
@@ -102,4 +102,14 @@ export const updateUser =
     const res = await api.patch("/user/updateuser" + myid, {
       value,
     });
+  };
+
+
+  export const checkMatch = (myid , taketdata) =>  {
+    let taketlike = taketdata.userDetails.likes
+    const found = taketlike.find(element => element == myid);
+    if(found){
+      console.log("you match");
+    }
+
   };

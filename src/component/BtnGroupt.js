@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { randomUser, likeUser, superlikeUser, unlikeUser } from "../action";
+import { randomUser, likeUser, superlikeUser, unlikeUser, checkMatch} from "../action";
 
 export const BtnGroupt = (props) => {
   
   const usersignin = useSelector((state) => state.signs);
   const taketid = props.user.user._id;
+  const taketdata = props.user.user
   const myid = usersignin.user._id;
   const disPatch = useDispatch();
 
@@ -27,7 +28,7 @@ export const BtnGroupt = (props) => {
     if (!found) {
       likes.push(taketid);
     }
-    console.log(likes);
+    // console.log(likes);
     disPatch(
       randomUser(
         usersignin.user.interested,
@@ -62,7 +63,8 @@ export const BtnGroupt = (props) => {
       //   1000 * 50
       // ),
       likeUser(likes, myid),
-      ShowBtnText("like")
+      ShowBtnText("like"),
+      checkMatch(myid, taketdata)
     );
   };
 
@@ -72,7 +74,7 @@ export const BtnGroupt = (props) => {
     if (!found) {
       unlikes.push(taketid);
     }
-    console.log(unlikes);
+    // console.log(unlikes);
     disPatch(
       randomUser(
         usersignin.user.interested,
@@ -95,8 +97,7 @@ export const BtnGroupt = (props) => {
     if (!found) {
       superlikes.push(taketid);
     }
-    console.log("superlikes");
-    console.log(superlikes);
+    // console.log(superlikes);
     disPatch(
       randomUser(
         usersignin.user.interested,
@@ -112,6 +113,7 @@ export const BtnGroupt = (props) => {
       ShowBtnText("superlike")
     );
   };
+
   return (
     <div className="mt-2 grid grid-cols-3 ">
       <div
