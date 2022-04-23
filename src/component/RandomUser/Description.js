@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Carduser from "./Carduser";
-import { fetchAllUser } from "../action";
+import { fetchAllUser } from "../../action";
 import { getDistance } from "geolib";
 
 const Description = (props) => {

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { randomUser, likeUser, superlikeUser, unlikeUser, checkMatch} from "../action";
+import { randomUser, likeUser, superlikeUser, unlikeUser, checkMatch} from "../../action";
 
 export const BtnGroupt = (props) => {
   
@@ -110,7 +110,8 @@ export const BtnGroupt = (props) => {
         usersignin.user.userSetting.MaxDistance * 1000
       ),
       superlikeUser(superlikes, myid),
-      ShowBtnText("superlike")
+      ShowBtnText("superlike"),
+      checkMatch(myid, taketdata)
     );
   };
 

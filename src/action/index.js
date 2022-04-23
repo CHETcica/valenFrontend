@@ -1,6 +1,7 @@
 import reduxType from "../config/reduxType";
 import api from "../api";
 
+
 export const fetchAllUser = () => async (dispatch) => {
   const res = await api.get("/user/showuser");
   dispatch({ type: reduxType.FETCH_SEARCH_USER, payload: res.data });
@@ -106,10 +107,11 @@ export const updateUser =
 
 
   export const checkMatch = (myid , taketdata) =>  {
-    let taketlike = taketdata.userDetails.likes
+    let taketlike = taketdata.userDetails.likes.concat(taketdata.userDetails.superlikes)
     const found = taketlike.find(element => element == myid);
     if(found){
       console.log("you match");
+      
     }
 
   };

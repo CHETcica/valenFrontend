@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Carduser from "./Carduser";
 import { useDispatch, useSelector } from "react-redux";
-import Userdescription from "../component/Description";
+import Userdescription from "./Description";
 
 const Usersetting = (props) => {
   const users = props.users;

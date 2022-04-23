@@ -1,8 +1,8 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Navbar from "./component/Navbar";
-import Menubar from "./component/Menubar";
-import Footer from "./component/Footer";
+import Navbar from "./component/Other/Navbar";
+import Menubar from "./component/Other/Menubar";
+import Footer from "./component/Other/Footer";
 import Homepage from "./pages/Homepage";
 import Profile from "./pages/Profile";
 import Chatpage from "./pages/Chatpage"

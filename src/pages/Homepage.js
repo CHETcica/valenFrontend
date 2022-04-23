@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import RandomSetting from "../component/Randomsetting";
-import Userdescription from "../component/Description";
-import { RandomNull } from "../component/RandomNull";
+import RandomSetting from "../component/RandomUser/Randomsetting";
+import Userdescription from "../component/RandomUser/Description";
+import { RandomNull } from "../component/RandomUser/RandomNull";
 import { randomUser } from "../action";
 
 const Homepage = () => {
