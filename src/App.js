@@ -12,6 +12,7 @@ import Regispage from "./pages/Regispage"
 import Login from "./pages/Login"
 import EditPersonal from "./pages/EditPersonal";
 import Liking from "./pages/Liking";
+import Matchmodal from "./component/RandomUser/MatchModal";
 
 
 
@@ -31,6 +32,7 @@ const App = () => {
             <Route path="/editpersonal" element={<EditPersonal/>} />
             <Route path="/liking" element={<Liking/>} /> 
             <Route path="/sexul" element={<Sex/>} />
+            <Route path="/matchmodal" element={<Matchmodal/>} />
           </Routes>
         {/* <Footer/> */}
     </BrowserRouter>
