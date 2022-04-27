@@ -205,7 +205,12 @@
   text-align: center;
   border-radius: 50%;
   border: 9px solid var(--color-secondary-puple);
+  animation-name: modalmatch__profile;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
 }
+
+
 .border-yellow {
   border: 9px solid var(--color-secondary-yellow);
 }

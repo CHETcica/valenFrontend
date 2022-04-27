@@ -25,7 +25,6 @@
   height: 90px;
   margin-top: 10px;
 }
-
 #heart::before,
 #heart::after {
   content: "";
@@ -58,11 +57,11 @@
   border: 5px solid var(--color-secondary-bluepasteil);
   background-color: var(--color-primary-white);
   animation-name: square;
-  animation-duration: 4s;
-  animation-iteration-count: infinite;  
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
 }
 
-.triangle-up {
+.triangle {
   position: absolute;
   width: 0;
   height: 0;
@@ -74,7 +73,7 @@
   animation-duration: 7s;
   animation-iteration-count: infinite;
 }
-.triangle-up2 {
+.triangle2 {
   position: relative;
   width: 0;
   height: 0;
@@ -104,8 +103,10 @@
   width: 23px;
   height: 23px;
   transform: rotate(-14deg);
+  animation-name: close;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
 }
-
 .close:before,
 .close:after {
   position: absolute;
@@ -122,6 +123,89 @@
 .close:after {
   transform: rotate(-45deg);
 }
+
+.square2 {
+  position: relative;
+  top: 25px;
+  left: 40px;
+  height: 23px;
+  width: 23px;
+  border: 5px solid var(--color-secondary-bluepasteil);
+  background-color: var(--color-primary-white);
+  animation-name: square;
+  animation-duration: 7s;
+  animation-iteration-count: infinite;
+}
+.triangle3 {
+  position: absolute;
+  width: 0;
+  height: 0;
+  top: -20px;
+  right: -3px;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent;
+  border-bottom: 30px solid var(--color-secondary-puple);
+  transform: rotate(47.39deg);
+
+  animation-name: square;
+    animation-duration: 7s;
+    animation-iteration-count: infinite;
+}
+.triangle22 {
+  position: relative;
+  width: 0;
+  height: 0;
+  top: 10px;
+  left: -9px;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 15px solid var(--color-primary-white);
+}
+.matchmodal__title--animation{
+    animation-name: matchmodal__title--animation;
+    animation-duration: 9s;
+    animation-iteration-count: infinite;
+}
+.circle2 {
+  position: relative;
+  height: 26px;
+  width: 26px;
+  top: -10px;
+  left: 70px;
+  border-radius: 50%;
+  border: 5px solid var(--color-secondary-yellow);
+  background-color: var(--color-primary-white);
+  animation-name: circle;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+}
+
+.close2 {
+  position: relative;
+  width: 23px;
+  height: 23px;
+  transform: rotate(-14deg);
+  animation-name: close2;
+  animation-duration: 9s;
+  animation-iteration-count: infinite;
+}
+.close2:before,
+.close2:after {
+  position: absolute;
+  left: 15px;
+  content: " ";
+  height: 23px;
+  width: 6px;
+  border-radius: 3px;
+  background-color: var(--color-primary-pink);
+}
+.close2:before {
+  transform: rotate(45deg);
+}
+.close2:after {
+  transform: rotate(-45deg);
+}
+
 @keyframes triangle {
   0% {
     left: 0px;
@@ -148,6 +232,23 @@
   }
 }
 
+@keyframes matchmodal__title--animation {
+  0% {
+    font-size: 1.0rem;
+    transform: rotate(-3.9deg);
+  }
+  
+  50% {
+    font-size: 1.5rem;
+    transform: rotate(5.67deg);
+  }
+  
+  100% {
+    font-size: 1.0rem;
+    transform: rotate(-3.9deg);
+  }
+}
+
 @keyframes circle {
   0% {
     height: 19px;
@@ -164,11 +265,79 @@
 }
 
 @keyframes square {
-    0% {
-        transform: rotate(23.67deg);
-    }
-    
-    100% {
-        transform: rotate(90.67deg);
-    }
+  0% {
+    transform: rotate(23.67deg);
   }
+  50% {
+    transform: rotate(90.67deg);
+  }
+  100% {
+    transform: rotate(23.67deg);
+  }
+}
+
+@keyframes close {
+  0% {
+    left: 0px;
+    top: 90px;
+    transform: rotate(-10.9deg);
+  }
+  25% {
+    left: 10px;
+    top: 120px;
+  }
+  50% {
+    left: 10px;
+    top: 100px;
+    transform: rotate(90.67deg);
+  }
+  75% {
+    left: 0px;
+    top: 110px;
+  }
+  100% {
+    left: 0px;
+    top: 90px;
+    transform: rotate(-10.9deg);
+  }
+}
+@keyframes close2 {
+  0% {
+    top: 10px;
+    left: 80px;
+    transform: rotate(-10.9deg);
+  }
+  
+  50% {
+    top: 5px;
+    left: 70px;
+    transform: rotate(90.67deg);
+  }
+  
+  100% {
+    top: 10px;
+    left: 80px;
+    transform: rotate(-10.9deg);
+  }
+}
+@keyframes modalmatch__profile {
+  0% {
+    transform: rotate(-5.9deg);
+  }
+  25% {
+  }
+  50% {
+    border: 18px solid var(--color-secondary-puple);
+    transform: rotate(5.67deg);
+  }
+  65% {
+    border: 18px solid var(--color-secondary-pink);
+    transform: rotate(5.67deg);
+  }
+  75% {
+    border: 9px solid var(--color-secondary-yellow);
+  }
+  100% {
+    transform: rotate(-5.9deg);
+  }
+}
