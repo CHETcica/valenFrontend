@@ -186,6 +186,7 @@
 
 .matchmodal {
   margin: 0 auto;
+  /* display: none; */
 }
 .matchmodal__card {
   border-radius: 3rem;
@@ -193,8 +194,8 @@
 }
 .matchmodal__card--header {
   width: 100%;
-  /* padding: 1rem 3rem; */
-  transform: translate(0px, -75px);
+  padding: 1rem 0.9rem;
+  transform: translate(0px, -50px);
 }
 
 .matchmodal__card--borderprofile {
@@ -222,6 +223,7 @@
 }
 .matchmodal__card--action {
   width: 100%;
+  transform: translate(0px, -50px);
 }
 .matchmodal__button--primary {
   font-size: 1.5rem;

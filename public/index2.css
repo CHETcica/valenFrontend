@@ -1,0 +1,116 @@
+:root {
+  --color-primary-pink: #fea5b7;
+  --color-primary-black: #000;
+  --color-primary-white: #fff;
+
+  --color-secondary-pink: #f178b6;
+  --color-secondary-oceanblue: #7b97f9;
+  --color-secondary-lightblue: #d6f0ff;
+  --color-secondary-bluepasteil: #8ccef2;
+  --color-secondary-puple: #c58cf2;
+  --color-secondary-yellow: #ffef61;
+  --color-secondary-inherit: inherit;
+
+  --text-fontsize-h1: 84px;
+  --text-fontsize-h2: 67px;
+  --text-fontsize-h3: 54px;
+  --text-fontsize-h4: 43px;
+  --text-fontsize-h5: 34px;
+  --text-fontsize-h6: 28px;
+  --text-fontsize-p: 22px;
+}
+#heart {
+  position: relative;
+  width: 85px;
+  height: 90px;
+  margin-top: 10px;
+}
+
+#heart::before,
+#heart::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50px;
+  height: 75px;
+  border-radius: 50px 50px 0 0;
+  background: var(--color-secondary-oceanblue);
+}
+
+#heart::before {
+  left: 50px;
+  transform: rotate(-45deg);
+  transform-origin: 0 100%;
+}
+
+#heart::after {
+  left: 0;
+  transform: rotate(45deg);
+  transform-origin: 100% 100%;
+}
+
+.square {
+  position: absolute;  
+  top: 10px;
+  height: 30px;
+  width: 30px;
+  border: 5px solid var(--color-secondary-bluepasteil);
+  background-color: var(--color-primary-white);
+  transform: rotate(23.67deg);
+}
+
+
+.triangle-up {
+  width: 0;
+  height: 0;
+  border-left: 18px solid transparent;
+  border-right: 18px solid transparent ;
+  border-bottom: 30px solid var(--color-secondary-puple);
+  
+  transform: rotate(-10.9deg);
+}
+.triangle-up2 {
+    position: relative;
+    width: 0;
+    height: 0;
+    top: 10px;
+    left: -9px;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent ;
+    border-bottom: 15px solid var(--color-primary-white);
+    
+  }
+
+
+
+.circle {
+  height: 30px;
+  width: 30px;
+  border: 5px solid var(--color-secondary-yellow);
+  background-color: var(--color-primary-white);
+  /* border-radius: 50%; */
+}
+
+.close {
+    
+    top: 32px;
+    width: 32px;
+    height: 32px;
+    transform: rotate(-25deg);
+  }
+  
+  .close:before, .close:after {
+    position: absolute;
+    left: 15px;
+    content: ' ';
+    height: 33px;
+    width: 6px;
+    border-radius: 3px;
+    background-color: var(--color-primary-pink);
+  }
+  .close:before {
+    transform: rotate(45deg);
+  }
+  .close:after {
+    transform: rotate(-45deg);
+  }
