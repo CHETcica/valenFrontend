@@ -21,23 +21,20 @@ const Matchmodal = () => {
             />
           </div>
         </div>
-        <div className="flex matchmodal__card--title">
+        <div className="grid grid-cols-3 matchmodal__card--title">
           <div className="matchmodal__card--component">
-            
-          <div className="triangle-up">
+            <div className="triangle-up">
               <div className="triangle-up2"></div>
-            </div><div className="square"></div>
-            
+            </div>
+            <div className="square"></div>
             <div className="circle"></div>
             <div className="close"></div>
           </div>
-          <div>
+          <div >
             <p className="text-center">new</p>
             <p className="text-center matchmodal__title--puple">Matching</p>
           </div>
-          <div className="matchmodal__card--component">
-            
-          </div>
+          <div className="matchmodal__card--component"></div>
         </div>
         <div className="grid  matchmodal__card--action">
           <button className="matchmodal__button--primary mx-auto">
