@@ -1,17 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { BtnGroupt } from "./BtnGroupt";
-import { useDispatch, useSelector } from "react-redux";
 import { RandomNull } from "./RandomNull";
-import MatchModal from "./MatchModal"
-
 const Carduser = (props) => {
   const users = props.users;
-  // console.log(props);
   if (!users && Object.keys(users).length === 0) return <RandomNull />;
   return (
     <div>
-      {/* <MatchModal/> */}
-      <div className=" m-auto md:w-80 my-6">
+      <div className="m-auto md:w-80 my-6">
         <div className="card shadow-xl image-full border-card-solid border-solid border-2 text-color-black">
           <figure className="userimage">
             <img

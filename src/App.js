@@ -33,7 +33,7 @@ const App = () => {
             <Route path="/liking" element={<Liking/>} /> 
             <Route path="/sexul" element={<Sex/>} />
             <Route path="/matchmodal" element={<Matchmodal/>} />
-          </Routes>
+          </Routes> 
         {/* <Footer/> */}
     </BrowserRouter>
   );

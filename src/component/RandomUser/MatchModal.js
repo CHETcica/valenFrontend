@@ -1,8 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { toggleMatchModal } from "../../action";
+
 
 const Matchmodal = () => {
   return (
-    <div className="w-100% matchmodal mt-24">
+    <div className="matchmodal" id="matchmodal">
+      <div className="bg-modalblur"></div>
       <div className="mx-auto matchmodal__card w-96 h-80 drop-shadow-lg">
         <div className="flex matchmodal__card--header">
           <div className="matchmodal__card--borderprofile ">
@@ -30,9 +34,11 @@ const Matchmodal = () => {
             <div className="circle"></div>
             <div className="close"></div>
           </div>
-          <div >
+          <div>
             <p className="text-center matchmodal__title--animation">new</p>
-            <p className="text-center matchmodal__title--puple matchmodal__title--animation">Matching</p>
+            <p className="text-center matchmodal__title--puple matchmodal__title--animation">
+              Matching
+            </p>
           </div>
           <div className="matchmodal__card--component">
             <div className="triangle3">
@@ -44,10 +50,12 @@ const Matchmodal = () => {
           </div>
         </div>
         <div className="grid  matchmodal__card--action">
-          <button className="matchmodal__button--primary mx-auto">
-            Go chat
-          </button>
-          <button className="matchmodal__button--secondary mx-auto">
+          <Link to={"/chat"} className="mx-auto">
+            <button className="matchmodal__button--primary mx-auto">
+              Go chat
+            </button>
+          </Link>
+          <button onClick={(e) => toggleMatchModal()} className="matchmodal__button--secondary mx-auto">
             Close
           </button>
         </div>

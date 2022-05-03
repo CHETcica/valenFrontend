@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { randomUser, likeUser, superlikeUser, unlikeUser, checkMatch} from "../../action";
+import { randomUser, likeUser, superlikeUser, unlikeUser, checkMatch ,toggleMatchModal} from "../../action";
 
 export const BtnGroupt = (props) => {
   
@@ -204,7 +204,8 @@ export const BtnGroupt = (props) => {
         </svg>
       </div>
       <div
-        onClick={(e) => handleLike()}
+        // onClick={(e) => handleLike()}
+        onClick={(e) => toggleMatchModal()}
         className="mx-auto button_groupt button_groupt-like"
       >
         <svg

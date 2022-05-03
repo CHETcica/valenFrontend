@@ -1,5 +1,7 @@
 import reduxType from "../config/reduxType";
 import api from "../api";
+import { ReduxFormContext } from "redux-form";
+import { reduxForm } from "redux-form";
 
 
 export const fetchAllUser = () => async (dispatch) => {
@@ -110,8 +112,16 @@ export const updateUser =
     let taketlike = taketdata.userDetails.likes.concat(taketdata.userDetails.superlikes)
     const found = taketlike.find(element => element == myid);
     if(found){
+      toggleMatchModal()
       console.log("you match");
-      
     }
+  };
 
+  export const toggleMatchModal = () =>  {
+    var matchmodal = document.getElementById("matchmodal");
+    if (matchmodal.style.display === "none") {
+      matchmodal.style.display = "block";
+    } else {
+      matchmodal.style.display = "none";
+    }
   };

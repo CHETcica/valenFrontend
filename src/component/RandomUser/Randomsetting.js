@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import Carduser from "./Carduser";
 import { useDispatch, useSelector } from "react-redux";
 import Userdescription from "./Description";
+import Matchmodal from "./MatchModal";
 
 const Usersetting = (props) => {
   const users = props.users;
-  // console.log(users);
   const usersignin = useSelector((state) => state.signs);
   const [distance, setDistance] = useState(
     usersignin?.user?.userSetting?.MaxDistance
@@ -35,11 +35,12 @@ const Usersetting = (props) => {
   return (
     <div className="rounded-lg  drawer drawer-end h-auto">
       <input id="my-drawer-4" type="checkbox" className="drawer-toggle" />
-      <div className="flex flex-col items-center justify-center drawer-content">
-        <div className="container mx-auto">
+      <div className=" items-center justify-center drawer-content">
+        <div className="m-auto">
           <div className="grid">
             <Carduser users={users} />
             <Userdescription users={users} />
+            <Matchmodal />
           </div>
         </div>
       </div>

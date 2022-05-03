@@ -92,7 +92,7 @@ const Homepage = () => {
       //   1000 * 50
       // )
     );
-  }, []);
+  },[]);
 
   return (
     <>{users.user == null ? <RandomNull /> : <RandomSetting users={users} />}</>

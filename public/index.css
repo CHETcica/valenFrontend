@@ -31,6 +31,9 @@
 .navbar {
   background-color: var(--color-primary-pink);
 }
+.fontlemon{
+  font-family: "Lemon", cursive;
+}
 .menubar {
   background-color: var(--color-secondary-lightblue);
   color: var(--color-secondary-puple);
@@ -186,11 +189,30 @@
 
 .matchmodal {
   margin: 0 auto;
-  /* display: none; */
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  z-index: 99;
+  display: none;
+}
+.bg-modalblur{
+  position: absolute;
+  left: 0rem;
+  width: 100%;
+  height: 100%;
+  /* width: 510%;
+  height: 250%; */
+  opacity: 0.3 ;
+  background-color: var(--color-primary-black);
+  
 }
 .matchmodal__card {
+  position: absolute;
   border-radius: 3rem;
   background-color: var(--color-primary-white);
+  top: 40%;
+  left: 50%; 
+  transform: translate(-50%, -50%); 
 }
 .matchmodal__card--header {
   width: 100%;
