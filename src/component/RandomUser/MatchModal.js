@@ -1,9 +1,13 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { toggleMatchModal } from "../../action";
+import { useSelector } from "react-redux";
 
 
-const Matchmodal = () => {
+
+const Matchmodal = (props) => {
+  const users = props.users;
+  const usersignin = useSelector((state) => state.signs);
   return (
     <div className="matchmodal" id="matchmodal">
       <div className="bg-modalblur"></div>
@@ -12,8 +16,13 @@ const Matchmodal = () => {
           <div className="matchmodal__card--borderprofile ">
             <img
               className="matchmodal__card--profile"
-              src="https://cdn.discordapp.com/attachments/662893950687772684/965268755892551740/06ce798640c2328122204ab73a753295.jpg"
-            />
+              // src="https://cdn.discordapp.com/attachments/662893950687772684/965268755892551740/06ce798640c2328122204ab73a753295.jpg"
+              src={
+                usersignin.user.userimageprofile
+                  ? usersignin.user.userimageprofile
+                  : "https://cdn.discordapp.com/attachments/792729018608648204/800269761069711370/profile1.jpg"
+              }
+           />
           </div>
           <div className="mt-3">
             <div id="heart"></div>
@@ -21,7 +30,12 @@ const Matchmodal = () => {
           <div className="ml-3 matchmodal__card--borderprofile border-yellow">
             <img
               className="matchmodal__card--profile"
-              src="https://cdn.discordapp.com/attachments/662893950687772684/965268703899971614/6c8ba3681240d2acdd120b021f1ef162.jpg"
+              // src="https://cdn.discordapp.com/attachments/662893950687772684/965268703899971614/6c8ba3681240d2acdd120b021f1ef162.jpg"
+              src={
+                users.user.userimageprofile
+                  ? users.user.userimageprofile
+                  : "https://cdn.discordapp.com/attachments/792729018608648204/800269761069711370/profile1.jpg"
+              }
             />
           </div>
         </div>

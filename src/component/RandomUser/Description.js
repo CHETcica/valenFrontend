@@ -12,7 +12,7 @@ const Description = (props) => {
     var birthDate = new Date(users?.user?.born?users.user.born:"2000-01-23T00:00:00.000+00:00");
     var age = today.getFullYear() - birthDate.getFullYear();
     var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())){
       age--;
     }
     return age;

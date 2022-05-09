@@ -40,7 +40,7 @@ const Usersetting = (props) => {
           <div className="grid">
             <Carduser users={users} />
             <Userdescription users={users} />
-            <Matchmodal />
+            <Matchmodal users={users}/>
           </div>
         </div>
       </div>
