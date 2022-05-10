@@ -112,12 +112,18 @@ export const updateUser =
     let taketlike = taketdata.userDetails.likes.concat(taketdata.userDetails.superlikes)
     const found = taketlike.find(element => element == myid);
     if(found){
-      toggleMatchModal()
+      // toggleMatchModal()
       console.log("you match");
+      // return true
     }
+    // else{
+    //   return false
+    // }
+
   };
 
   export const toggleMatchModal = () =>  {
+    // console.log("toggleMatchModal");
     var matchmodal = document.getElementById("matchmodal");
     if (matchmodal.style.display === "none") {
       matchmodal.style.display = "block";

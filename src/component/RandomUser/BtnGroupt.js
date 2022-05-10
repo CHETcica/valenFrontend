@@ -28,18 +28,8 @@ export const BtnGroupt = (props) => {
     if (!found) {
       likes.push(taketid);
     }
-    // console.log(likes);
     disPatch(
-      randomUser(
-        usersignin.user.interested,
-        usersignin.user.passion,
-        usersignin.user.friendId,
-        likes,
-        usersignin.user.userDetails.unlikes,
-        usersignin.user.userDetails.superlikes,
-        usersignin.user.location.coordinates,
-        usersignin.user.userSetting.MaxDistance * 1000
-      ),
+      
       // randomUser(
       //   // interested
       //   "women",
@@ -64,7 +54,17 @@ export const BtnGroupt = (props) => {
       // ),
       likeUser(likes, myid),
       ShowBtnText("like"),
-      checkMatch(myid, taketdata)
+      checkMatch(myid, taketdata),
+      randomUser(
+        usersignin.user.interested,
+        usersignin.user.passion,
+        usersignin.user.friendId,
+        likes,
+        usersignin.user.userDetails.unlikes,
+        usersignin.user.userDetails.superlikes,
+        usersignin.user.location.coordinates,
+        usersignin.user.userSetting.MaxDistance * 1000
+      )
     );
   };
 
@@ -97,8 +97,11 @@ export const BtnGroupt = (props) => {
     if (!found) {
       superlikes.push(taketid);
     }
-    // console.log(superlikes);
     disPatch(
+      
+      superlikeUser(superlikes, myid),
+      ShowBtnText("superlike"),
+      checkMatch(myid, taketdata),
       randomUser(
         usersignin.user.interested,
         usersignin.user.passion,
@@ -108,10 +111,7 @@ export const BtnGroupt = (props) => {
         superlikes,
         usersignin.user.location.coordinates,
         usersignin.user.userSetting.MaxDistance * 1000
-      ),
-      superlikeUser(superlikes, myid),
-      ShowBtnText("superlike"),
-      checkMatch(myid, taketdata)
+      )
     );
   };
 
@@ -204,8 +204,8 @@ export const BtnGroupt = (props) => {
         </svg>
       </div>
       <div
-        // onClick={(e) => handleLike()}
-        onClick={(e) => toggleMatchModal()}
+        onClick={(e) => handleLike()}
+        // onClick={(e) => toggleMatchModal()}
         className="mx-auto button_groupt button_groupt-like"
       >
         <svg
