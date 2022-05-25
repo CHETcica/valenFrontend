@@ -3,8 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { randomUser, likeUser, superlikeUser, unlikeUser, checkMatch ,toggleMatchModal} from "../../action";
 
 export const BtnGroupt = (props) => {
-  
   const usersignin = useSelector((state) => state.signs);
+  const propsSetting = props.setting
+  let Setting = []
+  if(propsSetting){
+    Setting = propsSetting
+  } 
+  console.log("setting_" + Setting);
+
   const taketid = props.user.user._id;
   const taketdata = props.user.user
   const myid = usersignin.user._id;
@@ -29,32 +35,7 @@ export const BtnGroupt = (props) => {
       likes.push(taketid);
     }
     disPatch(
-      
-      // randomUser(
-      //   // interested
-      //   "women",
-      //   // passion
-      //   ["gaming", "coding"],
-      //   // firend
-      //   ["6214a044e543ba936f58d2ea"],
-      //   // likes
-      //   // [
-      //   //   "6213b95e3ee259b511fbcf3e",
-      //   //   "6216ef7c968ef32ce2e2b49c",
-      //   //   "6218562be73c780fb58669c1",
-      //   //   "6216ee00968ef32ce2e2b49a",
-      //   // ],
-      //   likes,
-      //   // unlikes,
-      //   ["6214a044e543ba936f58d2ea"],
-      //   // location
-      //   [100.060139, 13.566704],
-      //   // distance
-      //   1000 * 50
-      // ),
       likeUser(likes, myid),
-      ShowBtnText("like"),
-      checkMatch(myid, taketdata),
       randomUser(
         usersignin.user.interested,
         usersignin.user.passion,
@@ -64,7 +45,10 @@ export const BtnGroupt = (props) => {
         usersignin.user.userDetails.superlikes,
         usersignin.user.location.coordinates,
         usersignin.user.userSetting.MaxDistance * 1000
-      )
+      ),
+      ShowBtnText("like"),
+      checkMatch(myid, taketid, taketdata)
+      
     );
   };
 
@@ -98,10 +82,9 @@ export const BtnGroupt = (props) => {
       superlikes.push(taketid);
     }
     disPatch(
-      
       superlikeUser(superlikes, myid),
       ShowBtnText("superlike"),
-      checkMatch(myid, taketdata),
+      checkMatch(myid, taketid, taketdata),
       randomUser(
         usersignin.user.interested,
         usersignin.user.passion,

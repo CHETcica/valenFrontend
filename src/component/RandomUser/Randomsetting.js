@@ -38,7 +38,7 @@ const Usersetting = (props) => {
       <div className=" items-center justify-center drawer-content">
         <div className="m-auto">
           <div className="grid">
-            <Carduser users={users} />
+            <Carduser users={users} setting={[distance,MinAge,MaxAge]}/>
             <Userdescription users={users} />
             <Matchmodal users={users}/>
           </div>
@@ -55,7 +55,7 @@ const Usersetting = (props) => {
             </p> */}
             <input
               type="range"
-              min="0"
+              min="1"
               max="100"
               // value={usersignin.user.userSetting.MaxDistance}
               value={distance}

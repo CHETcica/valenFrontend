@@ -3,6 +3,7 @@ import { BtnGroupt } from "./BtnGroupt";
 import { RandomNull } from "./RandomNull";
 const Carduser = (props) => {
   const users = props.users;
+  const setting = props.setting;
   if (!users && Object.keys(users).length === 0) return <RandomNull />;
   return (
     <div>
@@ -234,12 +235,12 @@ const Carduser = (props) => {
               ""
             )}
             <div className="sm:card-actions md:hidden ">
-              <BtnGroupt user={users} />
+              <BtnGroupt user={users} setting={setting}/>
             </div>
           </div>
         </div>
         <div className="btn-groupt-hidden">
-          <BtnGroupt user={users} />
+          <BtnGroupt user={users} setting={setting}/>
         </div>
       </div>
     </div>

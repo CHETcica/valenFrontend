@@ -3,7 +3,6 @@ import api from "../api";
 import { ReduxFormContext } from "redux-form";
 import { reduxForm } from "redux-form";
 
-
 export const fetchAllUser = () => async (dispatch) => {
   const res = await api.get("/user/showuser");
   dispatch({ type: reduxType.FETCH_SEARCH_USER, payload: res.data });
@@ -107,27 +106,32 @@ export const updateUser =
     });
   };
 
+export const updateFriendList = (myid, taketid) => async (dispatch) => {
+  const res = await api.patch("/user/addfriendlist/" + myid, {
+    friendId: taketid,
+  });
+};
 
-  export const checkMatch = (myid , taketdata) =>  {
-    let taketlike = taketdata.userDetails.likes.concat(taketdata.userDetails.superlikes)
-    const found = taketlike.find(element => element == myid);
-    if(found){
-      // toggleMatchModal()
-      console.log("you match");
-      // return true
-    }
-    // else{
-    //   return false
-    // }
 
-  };
 
-  export const toggleMatchModal = () =>  {
-    // console.log("toggleMatchModal");
-    var matchmodal = document.getElementById("matchmodal");
-    if (matchmodal.style.display === "none") {
-      matchmodal.style.display = "block";
-    } else {
-      matchmodal.style.display = "none";
-    }
-  };
+export const checkMatch = (myid, taketid, taketdata) => {
+  let taketlike = taketdata.userDetails.likes.concat(
+    taketdata.userDetails.superlikes
+  );
+  const found = taketlike.find((element) => element == myid);
+  if (found) {
+    toggleMatchModal();
+    console.log("you match");
+    updateFriendList(myid, taketid)
+  }
+};
+
+export const toggleMatchModal = () => {
+  // console.log("toggleMatchModal");
+  var matchmodal = document.getElementById("matchmodal");
+  if (matchmodal.style.display === "none") {
+    matchmodal.style.display = "block";
+  } else {
+    matchmodal.style.display = "none";
+  }
+};

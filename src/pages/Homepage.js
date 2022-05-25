@@ -66,31 +66,6 @@ const Homepage = () => {
           ? usersignin.user.userSetting.MaxDistance * 1000
           : 10 * 1000
       )
-
-      // randomUser(
-      //   // interested
-      //   "women",
-      //   // passion
-      //   ["gaming", "coding"],
-      //   // firend
-      //   ["6214a044e543ba936f58d2ea"],
-      //   // likes
-      //   [
-      //     "6213b95e3ee259b511fbcf3e",
-      //     "6216ef7c968ef32ce2e2b49c",
-      //     "6218562be73c780fb58669c1",
-      //     "6216ee00968ef32ce2e2b49a",
-      //   ],
-      //   // unlikes,
-      //   ["6214a044e543ba936f58d2ea"],
-      //   // superlikes
-      //   // ["6214a044e543ba936f58d2ea"],
-
-      //   // location
-      //   [100.060139, 13.566704],
-      //   // distance
-      //   1000 * 50
-      // )
     );
   },[]);
 
