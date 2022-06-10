@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
-import { updateUser } from "../action";
+import { updateUser } from "../../action";
 
 export const EditModal = (props) => {
   const { title, value } = props;
@@ -67,7 +67,7 @@ export const EditModal1 = (props) => {
 
 export const EditModal4 = (props) => {
   const usersignin = useSelector((state) => state.signs);
-  const myid = usersignin.user._id
+  const myid = usersignin.user._id;
   const { title, value } = props;
   const { register, handleSubmit } = useForm();
   const disPatch = useDispatch();
@@ -75,7 +75,7 @@ export const EditModal4 = (props) => {
     disPatch(updateUser(myid, title, data));
     // console.log("Update")
   };
-  
+
   return (
     <div>
       <input type="checkbox" id={title} className="modal-toggle" />

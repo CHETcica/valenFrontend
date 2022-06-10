@@ -1,6 +1,6 @@
 import React from "react";
-import Columchat from "../component/Columchat";
-import { Chatbox, Call, Calling } from "../component/Chatbox";
+import Columchat from "../component/Chat/Columchat";
+import { Chatbox, Call, Calling } from "../component/Chat/Chatbox";
 
 const Chatpage = () => {
   return (

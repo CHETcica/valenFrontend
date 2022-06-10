@@ -87,6 +87,7 @@ export const likeUser = (like, myid) => async (dispatch) => {
 };
 
 export const unlikeUser = (unlike, myid) => async (dispatch) => {
+  console.log(unlike, myid);
   const res = await api.post("/user/unlike" + myid, {
     unlikes: unlike,
   });

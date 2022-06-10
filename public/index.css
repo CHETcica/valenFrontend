@@ -271,6 +271,108 @@
   border-radius: 2rem;
   background-color: var(--color-primary-white);
 }
+.card__passion--bg{
+  background-color: var(--color-primary-white);
+  /* height: 48rem;
+  width: 81rem; */
+  border-radius: 2rem;
+}
+.card__passion--title{
+  font-size: 34px;
+  color: var(--color-secondary-puple);
+}
+
+.card__passion--subtitle{
+  font-size: 20px;
+  color: var(--color-secondary-bluepasteil);
+}
+.swap__off{
+  /* background: var(--color-secondary-puple); */
+  padding: 0.5rem 1rem;
+  border: solid 1px var(--color-secondary-puple);
+  border-radius: 1.5rem;
+  color:var(--color-secondary-puple);
+}
+.swap__on{
+  background: var(--color-secondary-puple);
+  padding: 0.5rem 1rem;
+  border: solid 1px var(--color-secondary-puple);
+  border-radius: 1.5rem;
+  color:var(--color-primary-white);
+}
+.card__passion--submit{
+  background-color: var(--color-primary-pink);
+  color: var(--color-primary-white) ;
+  width: 12rem;
+  height: 2.6rem;
+  font-size: 1.2rem;
+  border-radius: 1.5rem;
+}
+
+
+
+
+ul.ks-cboxtags {
+  list-style: none;
+  padding: 20px;
+  
+}
+ul.ks-cboxtags li{
+display: inline;
+}
+ul.ks-cboxtags li label{
+  display: inline-block;
+  background-color: rgba(255, 255, 255, .9);
+  border: 2px solid rgba(139, 139, 139, .3);
+  color: #adadad;
+  border-radius: 25px;
+  white-space: nowrap;
+  margin: 3px 0px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all .2s;
+}
+
+ul.ks-cboxtags li label {
+  padding: 8px 12px;
+  cursor: pointer;
+  margin: 0.25rem;
+}
+
+
+ul.ks-cboxtags li input[type="checkbox"]:checked  {
+  content: "\f00c";
+  transform: rotate(-360deg);
+  transition: transform .3s ease-in-out;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+  background-color: var(--color-secondary-puple);
+  color: var(--color-primary-white);
+  transition: all .2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+display: absolute;
+}
+ul.ks-cboxtags li input[type="checkbox"] {
+position: absolute;
+opacity: 0;
+}
+
+
+ul.ks-cboxtags li input[type="checkbox"]:focus + label {
+border: 2px solid #e9a1ff;
+}
+
+
+
+
+
 
 @media (max-width: 639px) {
   .btn-groupt-hidden {

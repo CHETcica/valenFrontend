@@ -67,7 +67,7 @@ const Profilemanu = () => {
           </p>
           <hr />
           <p className="text-lg my-3 pl-5">
-            <Link className="link-hover" to={"/Liking"}>
+            <Link className="link-hover" to={"/editpassion"}>
               ความชอบ
             </Link>
           </p>

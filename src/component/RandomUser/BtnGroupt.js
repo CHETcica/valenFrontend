@@ -30,12 +30,12 @@ export const BtnGroupt = (props) => {
 
   const handleLike = () => {
     let likes = usersignin.user.userDetails.likes;
-    const found = likes.find(el => el == taketid);
+    const found = likes.find(el => el === taketid);
     if (!found) {
       likes.push(taketid);
     }
     disPatch(
-      likeUser(likes, myid),
+       likeUser(likes, myid),
       randomUser(
         usersignin.user.interested,
         usersignin.user.passion,
@@ -48,18 +48,18 @@ export const BtnGroupt = (props) => {
       ),
       ShowBtnText("like"),
       checkMatch(myid, taketid, taketdata)
-      
     );
   };
 
   const handleUnLike = () => {
     let unlikes = usersignin.user.userDetails.unlikes;
-    const found = unlikes.find(el => el == taketid);
+    const found = unlikes.find(el => el === taketid);
     if (!found) {
       unlikes.push(taketid);
     }
     // console.log(unlikes);
     disPatch(
+      unlikeUser(unlikes, myid),
       randomUser(
         usersignin.user.interested,
         usersignin.user.passion,
@@ -70,14 +70,14 @@ export const BtnGroupt = (props) => {
         usersignin.user.location.coordinates,
         usersignin.user.userSetting.MaxDistance * 1000
       ),
-      unlikeUser(unlikes, myid),
+      
       ShowBtnText("unlike")
     );
   };
   
   const handleSuperlike = () => {
     let superlikes = usersignin?.user?.userDetails?.superlikes? usersignin.user.userDetails.superlikes: [];
-    const found = superlikes.find(el => el == taketid);
+    const found = superlikes.find(el => el === taketid);
     if (!found) {
       superlikes.push(taketid);
     }

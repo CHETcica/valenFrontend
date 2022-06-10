@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Modalusername, Modalusername1 } from "./ModalForm";
+// import { Modalusername, Modalusername1 } from "./ModalForm";
 
 import {
   EditModal,
@@ -10,7 +10,7 @@ import {
   EditModal7,
   EditModal8,
   EditModal9,
-} from "../component/EditModal";
+} from "./EditModal";
 
 const EditPersonalmanu = (props) => {
   const { title, value } = props;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import EditPersonalImg from "../component/EditPersonalImg";
-import EditPersonalmanu from "../component/EditPersonalmanu";
+import EditPersonalImg from "../component/Edit/EditPersonalImg";
+import EditPersonalmanu from "../component/Edit/EditPersonalmanu";
 
 const EditPersonal = () => {
   const usersignin = useSelector((state) => state.signs);
