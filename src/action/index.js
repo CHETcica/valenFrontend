@@ -56,6 +56,11 @@ export const fetchUser = () => async (dispatch) => {
   dispatch({ type: reduxType.FETCH_SEARCH_USER, payload: res.data });
 };
 
+export const fetchPassion = () => async (dispatch) => {
+  const res = await api.get("/passion/showpassion");
+  dispatch({ type: reduxType.FETCH_SEARCH_PASSION, payload: res.data });
+};
+
 export const randomUser =
   (
     gender,

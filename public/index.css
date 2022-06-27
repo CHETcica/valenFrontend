@@ -286,20 +286,7 @@
   font-size: 20px;
   color: var(--color-secondary-bluepasteil);
 }
-.swap__off{
-  /* background: var(--color-secondary-puple); */
-  padding: 0.5rem 1rem;
-  border: solid 1px var(--color-secondary-puple);
-  border-radius: 1.5rem;
-  color:var(--color-secondary-puple);
-}
-.swap__on{
-  background: var(--color-secondary-puple);
-  padding: 0.5rem 1rem;
-  border: solid 1px var(--color-secondary-puple);
-  border-radius: 1.5rem;
-  color:var(--color-primary-white);
-}
+
 .card__passion--submit{
   background-color: var(--color-primary-pink);
   color: var(--color-primary-white) ;
