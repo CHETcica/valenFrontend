@@ -1,18 +1,25 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { randomUser, likeUser, superlikeUser, unlikeUser, checkMatch ,toggleMatchModal} from "../../action";
+import {
+  randomUser,
+  likeUser,
+  superlikeUser,
+  unlikeUser,
+  checkMatch,
+  toggleMatchModal,
+} from "../../action";
 
 export const BtnGroupt = (props) => {
   const usersignin = useSelector((state) => state.signs);
-  const propsSetting = props.setting
-  let Setting = []
-  if(propsSetting){
-    Setting = propsSetting
-  } 
+  const propsSetting = props.setting;
+  let Setting = [];
+  if (propsSetting) {
+    Setting = propsSetting;
+  }
   console.log("setting_" + Setting);
 
   const taketid = props.user.user._id;
-  const taketdata = props.user.user
+  const taketdata = props.user.user;
   const myid = usersignin.user._id;
   const disPatch = useDispatch();
 
@@ -28,14 +35,37 @@ export const BtnGroupt = (props) => {
         (button.style.display = "none");
   };
 
+  // const handleLike = () => {
+  //   let likes = usersignin.user.userDetails.likes;
+  //   const found = likes.find((el) => el === taketid);
+  //   if (!found) {
+  //     likes.push(taketid);
+  //   }
+
+  //   let randomUser = randomUser(
+  //     usersignin.user.interested,
+  //     usersignin.user.passion,
+  //     usersignin.user.friendId,
+  //     likes,
+  //     usersignin.user.userDetails.unlikes,
+  //     usersignin.user.userDetails.superlikes,
+  //     usersignin.user.location.coordinates,
+  //     usersignin.user.userSetting.MaxDistance * 1000
+  //   );
+  //   let likeUser = likeUser(likes, myid);
+  //   let ShowBtnText = ShowBtnText("like");
+  //   let checkMatch = checkMatch(myid, taketid, taketdata);
+  //   disPatch(await Promise.all([randomUser, likeUser, ShowBtnText, checkMatch]));
+  // };
+
   const handleLike = () => {
     let likes = usersignin.user.userDetails.likes;
-    const found = likes.find(el => el === taketid);
+    const found = likes.find((el) => el === taketid);
     if (!found) {
       likes.push(taketid);
     }
+
     disPatch(
-       likeUser(likes, myid),
       randomUser(
         usersignin.user.interested,
         usersignin.user.passion,
@@ -46,6 +76,7 @@ export const BtnGroupt = (props) => {
         usersignin.user.location.coordinates,
         usersignin.user.userSetting.MaxDistance * 1000
       ),
+      likeUser(likes, myid),
       ShowBtnText("like"),
       checkMatch(myid, taketid, taketdata)
     );
@@ -53,7 +84,7 @@ export const BtnGroupt = (props) => {
 
   const handleUnLike = () => {
     let unlikes = usersignin.user.userDetails.unlikes;
-    const found = unlikes.find(el => el === taketid);
+    const found = unlikes.find((el) => el === taketid);
     if (!found) {
       unlikes.push(taketid);
     }
@@ -70,14 +101,15 @@ export const BtnGroupt = (props) => {
         usersignin.user.location.coordinates,
         usersignin.user.userSetting.MaxDistance * 1000
       ),
-      
       ShowBtnText("unlike")
     );
   };
-  
+
   const handleSuperlike = () => {
-    let superlikes = usersignin?.user?.userDetails?.superlikes? usersignin.user.userDetails.superlikes: [];
-    const found = superlikes.find(el => el === taketid);
+    let superlikes = usersignin?.user?.userDetails?.superlikes
+      ? usersignin.user.userDetails.superlikes
+      : [];
+    const found = superlikes.find((el) => el === taketid);
     if (!found) {
       superlikes.push(taketid);
     }
