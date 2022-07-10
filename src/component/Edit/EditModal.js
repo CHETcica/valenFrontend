@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { updateUser } from "../../action";
+import { updateUserAddress } from "../../action/update";
 
 export const EditModal = (props) => {
   const { title, value } = props;
@@ -399,6 +400,51 @@ export const EditModal9 = (props) => {
             </label>
           </div>
         </div>
+      </div>
+    </div>
+  );
+};
+
+export const EditModalAddress = (props) => {
+  const usersignin = useSelector((state) => state.signs);
+  const myid = usersignin.user._id;
+  const { title, value } = props;
+  const { register, handleSubmit } = useForm();
+  const disPatch = useDispatch();
+  const onSubmit = (data) => {
+    disPatch(updateUserAddress(myid, data.address));
+    console.log(myid, data.address)
+  };
+
+  return (
+    <div>
+      <input type="checkbox" id={title} className="modal-toggle" />
+      <div className="modal">
+        <form onSubmit={handleSubmit(onSubmit)} className="modal-box w-96">
+          <h3 className="font-bold text-lg mb-1">{title}</h3>
+          <input
+            type="text"
+            placeholder={value}
+            className="input input-bordered w-full max-w-xs"
+            {...register("address")}
+          />
+
+          <div className="modal-action">
+            <button
+              type="submit"
+              htmlFor={title}
+              className="btn btn-outline btn-secondary modal-button text-x"
+            >
+              บันทึก
+            </button>
+            <label
+              htmlFor={title}
+              className="btn btn-outline btn-secondary modal-button text-x"
+            >
+              กลับ
+            </label>
+          </div>
+        </form>
       </div>
     </div>
   );

@@ -10,6 +10,7 @@ import {
   EditModal7,
   EditModal8,
   EditModal9,
+  EditModalAddress,
 } from "./EditModal";
 
 const EditPersonalmanu = (props) => {
@@ -123,7 +124,7 @@ typei: ["username", "age", "address", "job", "height", "smoke", "LGho", "interes
         </div>
         <EditModal title="username" value={usersignin.user.username} />
         <EditModal title="age" value={calculateAge()} />
-        <EditModal4
+        <EditModalAddress
           title="address"
           value={
             usersignin?.user?.userDetails?.address
@@ -131,7 +132,7 @@ typei: ["username", "age", "address", "job", "height", "smoke", "LGho", "interes
               : "null"
           }
         />
-        <EditModal4 title="job" value={usersignin.user.userDetails.job} />
+        <EditModal4 title="role" value={usersignin.user.userDetails.role} />
         <EditModal4 title="height" value={usersignin.user.userDetails.height} />
         <EditModal5 title="smoke" value={usersignin.user.userDetails.smoke} />
         <EditModal6 title="LGho" value={usersignin.user.userDetails.LGho} />

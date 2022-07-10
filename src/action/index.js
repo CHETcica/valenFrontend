@@ -1,7 +1,5 @@
 import reduxType from "../config/reduxType";
 import api from "../api";
-import { ReduxFormContext } from "redux-form";
-import { reduxForm } from "redux-form";
 
 export const fetchAllUser = () => async (dispatch) => {
   const res = await api.get("/user/showuser");
@@ -105,11 +103,11 @@ export const superlikeUser = (superlike, myid) => async (dispatch) => {
 };
 
 export const updateUser =
-  (myid, title, { value }) =>
+  (myid, data) =>
   async (dispatch) => {
     const res = await api.patch("/user/updateuser" + myid, {
-      value,
-    });
+      data,
+    })
   };
 
 export const updateFriendList = (myid, taketid) => async (dispatch) => {
@@ -117,8 +115,6 @@ export const updateFriendList = (myid, taketid) => async (dispatch) => {
     friendId: taketid,
   });
 };
-
-
 
 export const checkMatch = (myid, taketid, taketdata) => {
   let taketlike = taketdata.userDetails.likes.concat(

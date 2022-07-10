@@ -142,7 +142,7 @@ const EditPersonal = () => {
         title="address"
         value={usersignin?.user?.userDetails?.address?usersignin.user.userDetails.address:null}
       />
-      <EditPersonalmanu title="job" value={usersignin?.user?.userDetails?.job?usersignin.user.userDetails.job:null} />
+      <EditPersonalmanu title="role" value={usersignin?.user?.userDetails?.role?usersignin.user.userDetails.role:null} />
       <EditPersonalmanu
         title="height"
         value={usersignin?.user?.userDetails?.height?usersignin.user.userDetails.height:null}

@@ -15,8 +15,8 @@ const EditPassion = () => {
   const onSubmit = (data) => console.log(data.Passion);
   console.log(errors);
 
-  var numberOfChecked = "input:checkbox:checked".length;
-  document.getElementById("Next").innerHTML = "Next("+numberOfChecked+"/5)";
+  // var numberOfChecked = "input:checkbox:checked".length;
+  // document.getElementById("Next").innerHTML = "Next("+numberOfChecked+"/5)";
 
   const passion1 = passions.passion;
   const passion = [
