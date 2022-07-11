@@ -413,7 +413,7 @@ export const EditModalAddress = (props) => {
   const disPatch = useDispatch();
   const onSubmit = (data) => {
     disPatch(updateUserAddress(myid, data.address));
-    console.log(myid, data.address)
+    // console.log(myid, data.address)
   };
 
   return (
