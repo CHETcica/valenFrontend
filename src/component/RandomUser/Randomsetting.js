@@ -38,9 +38,9 @@ const Usersetting = (props) => {
       <div className=" items-center justify-center drawer-content">
         <div className="m-auto">
           <div className="grid">
-            <Carduser users={users} setting={[distance,MinAge,MaxAge]}/>
+            <Carduser users={users} setting={[distance, MinAge, MaxAge]} />
             <Userdescription users={users} />
-            <Matchmodal users={users}/>
+            <Matchmodal users={users} />
           </div>
         </div>
       </div>
@@ -104,21 +104,43 @@ const Usersetting = (props) => {
               className="toggle toggle-primary ml-auto"
             ></input>
             <div className="mt-3 grid grid-flow-row grid-cols-2 gap-4 text-center">
-              <div className="text-color-black card-actions-passion-primary ">
-                Game
-              </div>
-              <div className="text-color-black card-actions-passion-primary ">
-                Game
-              </div>
-              <div className="text-color-black card-actions-passion-primary ">
-                Game
-              </div>
-              <div className="text-color-black card-actions-passion-secondary ">
-                Game
-              </div>
-              <div className="text-color-black card-actions-passion-secondary ">
-                Game
-              </div>
+            {usersignin.user.passion[0] ? (
+                <div className="text-color-black card-actions-passion-primary">
+                  {usersignin.user.passion[0]}
+                </div>
+              ) : (
+                ""
+              )}
+              {usersignin.user.passion[1] ? (
+                <div className="text-color-black card-actions-passion-primary">
+                  {usersignin.user.passion[1]}
+                </div>
+              ) : (
+                ""
+              )}
+              {usersignin.user.passion[2] ? (
+                <div className="text-color-black card-actions-passion-primary">
+                  {usersignin.user.passion[2]}
+                </div>
+              ) : (
+                ""
+              )}
+              {usersignin.user.passion[3] ? (
+                <div className="text-color-black card-actions-passion-primary">
+                  {usersignin.user.passion[3]}
+                </div>
+              ) : (
+                ""
+              )}
+              {usersignin.user.passion[4] ? (
+                <div className="text-color-black card-actions-passion-primary">
+                  {usersignin.user.passion[4]}
+                </div>
+              ) : (
+                ""
+              )}
+              
+              
             </div>
           </li>
         </ul>

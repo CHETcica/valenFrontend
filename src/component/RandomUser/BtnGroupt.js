@@ -90,7 +90,6 @@ export const BtnGroupt = (props) => {
     }
     // console.log(unlikes);
     disPatch(
-      unlikeUser(unlikes, myid),
       randomUser(
         usersignin.user.interested,
         usersignin.user.passion,
@@ -101,6 +100,7 @@ export const BtnGroupt = (props) => {
         usersignin.user.location.coordinates,
         usersignin.user.userSetting.MaxDistance * 1000
       ),
+      unlikeUser(unlikes, myid),
       ShowBtnText("unlike")
     );
   };
@@ -114,9 +114,6 @@ export const BtnGroupt = (props) => {
       superlikes.push(taketid);
     }
     disPatch(
-      superlikeUser(superlikes, myid),
-      ShowBtnText("superlike"),
-      checkMatch(myid, taketid, taketdata),
       randomUser(
         usersignin.user.interested,
         usersignin.user.passion,
@@ -126,7 +123,11 @@ export const BtnGroupt = (props) => {
         superlikes,
         usersignin.user.location.coordinates,
         usersignin.user.userSetting.MaxDistance * 1000
-      )
+      ),
+      superlikeUser(superlikes, myid),
+      ShowBtnText("superlike"),
+      checkMatch(myid, taketid, taketdata),
+      
     );
   };
 
