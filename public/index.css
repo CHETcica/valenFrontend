@@ -288,12 +288,13 @@
 }
 
 .card__passion--submit{
-  background-color: var(--color-primary-pink);
-  color: var(--color-primary-white) ;
+  background-color: var(--color-primary-pink) !important; 
+  color: var(--color-primary-white) !important;
   width: 12rem;
   height: 2.6rem;
   font-size: 1.2rem;
   border-radius: 1.5rem;
+  z-index: 99;
 }
 
 

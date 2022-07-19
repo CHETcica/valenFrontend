@@ -2,24 +2,28 @@ import React, { useState, useEffect } from "react";
 import { useForm, Controller } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPassion } from "../../action";
+import { useNavigate, Link } from "react-router-dom";
+import { updateUserPassion } from "../../action/update";
 
 const EditPassion = () => {
   const passions = useSelector((state) => state.passions);
-  // console.log(passions.passion);
-
+  const usersignin = useSelector((state) => state.signs);
+  const myid = usersignin.user._id;
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit = (data) => console.log(data.Passion);
-  console.log(errors);
+  const onSubmit = (data) => {
+    disPatch(updateUserPassion(myid, data.Passion));
+    navigate("/home");
+  };
 
-  // var numberOfChecked = "input:checkbox:checked".length;
-  // document.getElementById("Next").innerHTML = "Next("+numberOfChecked+"/5)";
+  
 
-  const passion1 = passions.passion;
-  const passion = [
+  const passion = passions.passion;
+  const passion1 = [
     {
       _id: "62a2cecd685b9f2480878d7f",
       name: "reading",
@@ -61,7 +65,6 @@ const EditPassion = () => {
   useEffect(() => {
     disPatch(
       fetchPassion()
-      // numberOfChecked = "input:checkbox:checked".length
     );
     // console.log(numberOfChecked);
   }, []);
@@ -87,11 +90,15 @@ const EditPassion = () => {
                 </li>
               ))}
             </ul>
-            <div className="w-100% text-center ">
-              <button className="card__passion--submit mx-auto mb-5" id="Next">
+            <div className="w-100% text-center mb-5">
+              <button
+                type="submit"
+                className="card__passion--submit mx-auto mb-5 w-100% text-center"
+              >
                 Next(0/5)
               </button>
             </div>
+            
           </form>
         </div>
       </div>

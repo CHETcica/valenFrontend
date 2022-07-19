@@ -8,3 +8,10 @@ export const updateUserAddress = (myid, value) => async (dispatch) => {
     address: value,
   });
 };
+
+export const updateUserPassion = (myid, value) => async (dispatch) => {
+  console.log(myid, value);
+    const res = await api.patch("/user/updateuserpassion/" + myid, {
+    passion: value,
+  });
+};
