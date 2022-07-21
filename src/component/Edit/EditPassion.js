@@ -4,11 +4,15 @@ import { useDispatch, useSelector } from "react-redux";
 import { fetchPassion } from "../../action";
 import { useNavigate, Link } from "react-router-dom";
 import { updateUserPassion } from "../../action/update";
+import { Alertsuccess } from "../Alert";
 
 const EditPassion = () => {
   const passions = useSelector((state) => state.passions);
   const usersignin = useSelector((state) => state.signs);
   const myid = usersignin.user._id;
+  let status = false;
+  const [count, setCount] = useState(0);
+  const disPatch = useDispatch();
   const navigate = useNavigate();
   const {
     register,
@@ -17,13 +21,20 @@ const EditPassion = () => {
   } = useForm();
   const onSubmit = (data) => {
     disPatch(updateUserPassion(myid, data.Passion));
-    navigate("/home");
+    ShowAlert()
+    // navigate("/profile");
   };
 
-  
-
-  const passion = passions.passion;
-  const passion1 = [
+  const ShowAlert = () => {
+    var button = document.getElementById("alertsuccess");
+    button.style.display === "none"
+      ? (button.style.display = "block").setTimeout(() => {
+          button.style.display = "none";
+        }, 300)
+      : (button.style.display = "none");
+  };
+  const passion1 = passions.passion;
+  const passion = [
     {
       _id: "62a2cecd685b9f2480878d7f",
       name: "reading",
@@ -61,15 +72,14 @@ const EditPassion = () => {
     },
   ];
 
-  const disPatch = useDispatch();
   useEffect(() => {
-    disPatch(
-      fetchPassion()
-    );
-    // console.log(numberOfChecked);
+    disPatch(fetchPassion());
   }, []);
   return (
     <div className="container mx-auto w-100%">
+      <div id="alertsuccess" className="card__passion--alertsuccess">
+        <Alertsuccess />
+      </div>
       <div className="card__passion--bg mx-auto mt-5 drop-shadow-2xl">
         <h1 className="card__passion--title text-center">Passion</h1>
         <h3 className="card__passion--subtitle text-center mt-2">
@@ -84,6 +94,7 @@ const EditPassion = () => {
                     type="checkbox"
                     id={el.name}
                     value={el.name}
+                    defaultChecked={status}
                     {...register("Passion")}
                   />
                   <label for={el.name}>{el.name}</label>
@@ -95,10 +106,9 @@ const EditPassion = () => {
                 type="submit"
                 className="card__passion--submit mx-auto mb-5 w-100% text-center"
               >
-                Next(0/5)
+                {"Next(" + count + "/5)"}
               </button>
             </div>
-            
           </form>
         </div>
       </div>

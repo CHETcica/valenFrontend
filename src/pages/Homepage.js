@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import RandomSetting from "../component/RandomUser/Randomsetting";
 import Userdescription from "../component/RandomUser/Description";
 import { RandomNull } from "../component/RandomUser/RandomNull";
-import { randomUser,fetchPassion } from "../action";
+import { randomUser } from "../action";
 
 const Homepage = () => {
   const usersignin = useSelector((state) => state.signs);

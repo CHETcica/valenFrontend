@@ -115,7 +115,7 @@ const EditPersonal = () => {
       <div className="grid justify-items-center grid-rows-1 gap-4">
         <div class="row-span-1">
           <div className="grid justify-items-center grid-flow-row grid-cols-4 gap-4 mb-5">
-            <EditPersonalImg value={usersignin.user.userimageprofile} />
+            
             <EditPersonalImg
               value={
                 usersignin.user.userimage[0] ? usersignin.user.userimage[0] : ""
@@ -123,7 +123,7 @@ const EditPersonal = () => {
             />
             <EditPersonalImg
               value={
-                usersignin.user.userimage[1] ? usersignin.user.userimage[1] : ""
+                usersignin.user.userimage[0] ? usersignin.user.userimage[0] : ""
               }
             />
             <EditPersonalImg value={usersignin.user.userimage[2]} />

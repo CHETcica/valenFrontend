@@ -296,6 +296,9 @@
   border-radius: 1.5rem;
   z-index: 99;
 }
+.card__passion--alertsuccess{
+  display: none;
+}
 
 
 
@@ -356,9 +359,6 @@ opacity: 0;
 ul.ks-cboxtags li input[type="checkbox"]:focus + label {
 border: 2px solid #e9a1ff;
 }
-
-
-
 
 
 
