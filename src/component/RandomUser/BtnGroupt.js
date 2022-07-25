@@ -1,23 +1,27 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { randomUser, likeUser, superlikeUser, unlikeUser } from "../action";
+import {
+  randomUser,
+  likeUser,
+  superlikeUser,
+  unlikeUser,
+  checkMatch,
+  toggleMatchModal,
+} from "../../action";
 
 export const BtnGroupt = (props) => {
   const usersignin = useSelector((state) => state.signs);
-  const id = props.user.user._id;
-  const disPatch = useDispatch();
+  const propsSetting = props.setting;
+  let Setting = [];
+  if (propsSetting) {
+    Setting = propsSetting;
+  }
+  console.log("setting_" + Setting);
 
-  // var timeLeft = 3;
-  // var timerId = setInterval(countdown, 1000);
-  // const countdown = (btnname) => {
-  //   var button = document.getElementById(btnname);
-  //   if (timeLeft == -1) {
-  //     clearTimeout(timerId);
-  //     return (button.style.display = "none");
-  //   } else {
-  //     timeLeft--;
-  //   }
-  // };
+  const taketid = props.user.user._id;
+  const taketdata = props.user.user;
+  const myid = usersignin.user._id;
+  const disPatch = useDispatch();
 
   const ShowBtnText = (btnname) => {
     // console.log(btnname, id);
@@ -26,51 +30,111 @@ export const BtnGroupt = (props) => {
       ? (button.style.display = "block").setTimeout(() => {
           button.style.display = "none";
           console.log("ปิดการแสดงปุ่ม");
-        }, 3000)
+        }, 300)
       : // ,countdown(btnname)
         (button.style.display = "none");
   };
 
-  useEffect((btnname) => {
-    if (btnname === "like") {
-      disPatch(likeUser(id));
-      console.log("like", id);
-      NewRandom()
-    } else if (btnname === "superlike") {
-      disPatch(superlikeUser(id));
-      console.log("superlike", id);
-    } else if (btnname === "unlike") {
-      disPatch(unlikeUser(id));
-      console.log("unlike", id);
-    }
-  });
+  // const handleLike = () => {
+  //   let likes = usersignin.user.userDetails.likes;
+  //   const found = likes.find((el) => el === taketid);
+  //   if (!found) {
+  //     likes.push(taketid);
+  //   }
 
-  const NewRandom = () => {
+  //   let randomUser = randomUser(
+  //     usersignin.user.interested,
+  //     usersignin.user.passion,
+  //     usersignin.user.friendId,
+  //     likes,
+  //     usersignin.user.userDetails.unlikes,
+  //     usersignin.user.userDetails.superlikes,
+  //     usersignin.user.location.coordinates,
+  //     usersignin.user.userSetting.MaxDistance * 1000
+  //   );
+  //   let likeUser = likeUser(likes, myid);
+  //   let ShowBtnText = ShowBtnText("like");
+  //   let checkMatch = checkMatch(myid, taketid, taketdata);
+  //   disPatch(await Promise.all([randomUser, likeUser, ShowBtnText, checkMatch]));
+  // };
+
+  const handleLike = () => {
+    let likes = usersignin.user.userDetails.likes;
+    const found = likes.find((el) => el === taketid);
+    if (!found) {
+      likes.push(taketid);
+    }
+
     disPatch(
       randomUser(
-        "man",
-        ["coding", "gaming", "dance"],
-        [
-          "6213b95e3ee259b511fbcf3e",
-          "6216ef7c968ef32ce2e2b49c",
-          "6218562be73c780fb58669c1",
-          "623e90c8c457f7c2b1b747e1",
-        ]
-      )
-      // randomUser(
-      // usersignin.user.interested,
-      // usersignin.user.passion,
-      // usersignin.user.friendId,
-      // usersignin.user.userDetails.likes,
-      // usersignin.user.userDetails.unlike
-      // )
+        usersignin.user.interested,
+        usersignin.user.passion,
+        usersignin.user.friendId,
+        likes,
+        usersignin.user.userDetails.unlikes,
+        usersignin.user.userDetails.superlikes,
+        usersignin.user.location.coordinates,
+        usersignin.user.userSetting.MaxDistance * 1000
+      ),
+      likeUser(likes, myid),
+      ShowBtnText("like"),
+      checkMatch(myid, taketid, taketdata)
+    );
+  };
+
+  const handleUnLike = () => {
+    let unlikes = usersignin.user.userDetails.unlikes;
+    const found = unlikes.find((el) => el === taketid);
+    if (!found) {
+      unlikes.push(taketid);
+    }
+    // console.log(unlikes);
+    disPatch(
+      randomUser(
+        usersignin.user.interested,
+        usersignin.user.passion,
+        usersignin.user.friendId,
+        usersignin.user.userDetails.likes,
+        unlikes,
+        usersignin.user.userDetails.superlikes,
+        usersignin.user.location.coordinates,
+        usersignin.user.userSetting.MaxDistance * 1000
+      ),
+      unlikeUser(unlikes, myid),
+      ShowBtnText("unlike")
+    );
+  };
+
+  const handleSuperlike = () => {
+    let superlikes = usersignin?.user?.userDetails?.superlikes
+      ? usersignin.user.userDetails.superlikes
+      : [];
+    const found = superlikes.find((el) => el === taketid);
+    if (!found) {
+      superlikes.push(taketid);
+    }
+    disPatch(
+      randomUser(
+        usersignin.user.interested,
+        usersignin.user.passion,
+        usersignin.user.friendId,
+        usersignin.user.userDetails.likes,
+        usersignin.user.userDetails.unlikes,
+        superlikes,
+        usersignin.user.location.coordinates,
+        usersignin.user.userSetting.MaxDistance * 1000
+      ),
+      superlikeUser(superlikes, myid),
+      ShowBtnText("superlike"),
+      checkMatch(myid, taketid, taketdata),
+      
     );
   };
 
   return (
     <div className="mt-2 grid grid-cols-3 ">
       <div
-        onClick={(e) => ShowBtnText("unlike")}
+        onClick={(e) => handleUnLike()}
         className="mx-auto button_groupt button_groupt-unlike "
       >
         <svg
@@ -106,7 +170,7 @@ export const BtnGroupt = (props) => {
         </svg>
       </div>
       <div
-        onClick={(e) => ShowBtnText("superlike")}
+        onClick={(e) => handleSuperlike()}
         className="mx-auto button_groupt button_groupt-superlike"
       >
         <svg
@@ -156,7 +220,8 @@ export const BtnGroupt = (props) => {
         </svg>
       </div>
       <div
-        onClick={(e) => ShowBtnText("like")}
+        onClick={(e) => handleLike()}
+        // onClick={(e) => toggleMatchModal()}
         className="mx-auto button_groupt button_groupt-like"
       >
         <svg
@@ -177,28 +242,6 @@ export const BtnGroupt = (props) => {
           />
         </svg>
       </div>
-      {/* <div
-        onClick={(e) => NewRandom()}
-        className="mx-auto button_groupt button_groupt-like"
-      >
-        <svg
-          width="87"
-          height="87"
-          viewBox="0 0 87 87"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M86.5 43.31C86.5 66.9533 67.3341 86.12 43.6918 86.12C20.0495 86.12 0.883667 66.9533 0.883667 43.31C0.883667 19.6667 20.0495 0.5 43.6918 0.5C67.3341 0.5 86.5 19.6667 86.5 43.31Z"
-            fill="white"
-            stroke="#C58CF2"
-          />
-          <path
-            d="M44.1525 67.4223L41.9629 71.3537C43.3242 72.1119 44.9808 72.1119 46.3422 71.3537L44.1525 67.4223ZM44.1525 32.4256L40.0109 34.1855C40.7169 35.8469 42.3474 36.9256 44.1525 36.9256C45.9576 36.9256 47.5881 35.8469 48.2941 34.1855L44.1525 32.4256ZM15.1189 37.3601C15.1189 47.6548 22.6486 56.3362 28.8918 61.8999C32.1566 64.8094 35.4006 67.1562 37.8186 68.7723C39.0319 69.5833 40.0483 70.2176 40.7698 70.6538C41.1308 70.8721 41.4187 71.0413 41.6214 71.1588C41.7228 71.2175 41.803 71.2633 41.8604 71.2959C41.889 71.3122 41.9121 71.3252 41.9292 71.3348C41.9378 71.3396 41.9449 71.3436 41.9505 71.3468C41.9533 71.3483 41.9557 71.3497 41.9578 71.3509C41.9588 71.3514 41.9601 71.3521 41.9606 71.3524C41.9618 71.3531 41.9629 71.3537 44.1525 67.4223C46.3422 63.491 46.343 63.4915 46.3438 63.4919C46.344 63.492 46.3447 63.4924 46.345 63.4926C46.3455 63.4929 46.3457 63.493 46.3456 63.4929C46.3452 63.4927 46.3435 63.4917 46.3402 63.4899C46.3338 63.4863 46.3216 63.4794 46.3039 63.4694C46.2685 63.4492 46.2108 63.4163 46.1325 63.371C45.9759 63.2802 45.7367 63.1398 45.4269 62.9525C44.8067 62.5774 43.9063 62.016 42.8197 61.2897C40.6376 59.8313 37.7482 57.7372 34.8796 55.1808C28.856 49.8128 24.1189 43.4631 24.1189 37.3601H15.1189ZM48.2941 30.6656C44.7527 22.332 36.6289 18.4053 29.1978 19.4789C25.462 20.0186 21.8767 21.8303 19.2383 24.9747C16.5877 28.1338 15.1189 32.3634 15.1189 37.3601H24.1189C24.1189 34.158 25.0353 32.0677 26.1329 30.7597C27.2427 29.437 28.7685 28.6344 30.4847 28.3864C33.9574 27.8847 38.1004 29.6896 40.0109 34.1855L48.2941 30.6656ZM64.1861 37.3601C64.1861 43.4631 59.449 49.8128 53.4254 55.1808C50.5568 57.7372 47.6674 59.8313 45.4853 61.2897C44.3987 62.016 43.4983 62.5774 42.8781 62.9525C42.5683 63.1398 42.3291 63.2802 42.1725 63.371C42.0942 63.4163 42.0366 63.4492 42.0011 63.4694C41.9834 63.4794 41.9712 63.4863 41.9648 63.4899C41.9616 63.4917 41.9598 63.4927 41.9594 63.4929C41.9593 63.493 41.9595 63.4929 41.96 63.4926C41.9603 63.4924 41.961 63.492 41.9612 63.4919C41.962 63.4915 41.9629 63.491 44.1525 67.4223C46.3422 71.3537 46.3432 71.3531 46.3444 71.3524C46.3449 71.3521 46.3462 71.3514 46.3472 71.3509C46.3493 71.3497 46.3517 71.3483 46.3545 71.3468C46.3601 71.3436 46.3672 71.3396 46.3758 71.3348C46.3929 71.3252 46.416 71.3122 46.4447 71.2959C46.502 71.2633 46.5822 71.2175 46.6836 71.1588C46.8863 71.0413 47.1742 70.8721 47.5352 70.6538C48.2567 70.2176 49.2731 69.5833 50.4864 68.7723C52.9044 67.1562 56.1484 64.8094 59.4132 61.8999C65.6564 56.3362 73.1861 47.6548 73.1861 37.3601H64.1861ZM48.2941 34.1855C50.2046 29.6896 54.3476 27.8847 57.8204 28.3864C59.5365 28.6344 61.0623 29.437 62.1721 30.7597C63.2697 32.0677 64.1861 34.158 64.1861 37.3601H73.1861C73.1861 32.3634 71.7173 28.1338 69.0667 24.9747C66.4283 21.8303 62.843 20.0186 59.1072 19.4789C51.6761 18.4053 43.5523 22.332 40.0109 30.6656L48.2941 34.1855Z"
-            fill="#C58CF2"
-          />
-        </svg>
-      </div> */}
     </div>
   );
 };

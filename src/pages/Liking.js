@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import EditLiking from "../component/EditLiking";
+import EditLiking from "../component/Edit/EditLiking";
 
 const Liking = () => {
     const [users, setUsers] = useState({
