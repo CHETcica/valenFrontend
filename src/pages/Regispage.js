@@ -7,7 +7,7 @@ import {
   AlertPasswordsnotmatch,
   AlertPleaseenterpassword,
 } from "../component/Alert";
-import { getFormAsyncErrors } from "redux-form";
+
 
 const Reagispage = () => {
   const disPatch = useDispatch();
@@ -18,13 +18,28 @@ const Reagispage = () => {
     if(data.password===data.confirmpassword){
       disPatch(userSignup(data))
       navigate("/login")
+    }else{
+      ShowAlertPasswordsnotmatch()
     }
   };
+
+  const ShowAlertPasswordsnotmatch = () => {
+    var button = document.getElementById("alertPasswordsnotmatch");
+    button.style.display === "none"
+      ? (button.style.display = "block")
+      : (button.style.display = "none");
+  };
+
   return (
     <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
       <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full bg-no-repeat bg-[url('https://i.pinimg.com/564x/ab/11/d2/ab11d2259be6bc12a112df7499026ed7.jpg')]">
-        {/* {submitted? password1 !== password2 ? <AlertPasswordsnotmatch /> : "" : ""}
-          {!password1 || !password2 ? <AlertPleaseenterpassword /> :""} */}
+      <div id="alertPleaseenterpassword" className="card__passion--alertsuccess">
+        <AlertPleaseenterpassword/>
+      </div>
+      <div id="alertPasswordsnotmatch" className="card__passion--alertsuccess">
+        <AlertPasswordsnotmatch/>
+      </div>
+          
       </div>
       <div className=" p-3 m-3 mx-auto card  h-full w-full bg-white shadow-xl ">
         <form

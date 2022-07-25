@@ -28,13 +28,14 @@ const EditPassion = () => {
   const ShowAlert = () => {
     var button = document.getElementById("alertsuccess");
     button.style.display === "none"
-      ? (button.style.display = "block").setTimeout(() => {
-          button.style.display = "none";
-        }, 300)
+      ? (button.style.display = "block")
+      // .setTimeout(() => {
+      //     button.style.display = "none";
+      //   }, 300)
       : (button.style.display = "none");
   };
-  const passion1 = passions.passion;
-  const passion = [
+  const passion = passions.passion;
+  const passion1 = [
     {
       _id: "62a2cecd685b9f2480878d7f",
       name: "reading",
