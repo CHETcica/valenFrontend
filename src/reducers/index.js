@@ -1,8 +1,13 @@
 import { combineReducers } from 'redux';
-import photoReducer from './photoReducer';
 import userReducer from './userReducer';
+import signinReducer from './signinReducer';
+import passionReducer from './passionReducer'
+import historyReducer from './historyReducer'
 
 export default combineReducers({
-  photos: photoReducer,
   users: userReducer,
+  signs: signinReducer,
+  passions: passionReducer,
+  historys: historyReducer
+
 });

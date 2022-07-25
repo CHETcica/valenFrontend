@@ -1,75 +1,89 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { userLogin } from "../action";
+// import { Alertsuccess } from "../component/Alert";
+import { useNavigate, Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
 
 const Login = () => {
+  //const users = useSelector((state) => state.signs);
+  const navigate = useNavigate();
+  const disPatch = useDispatch();
+  const { register, handleSubmit } = useForm();
+  const onSubmit = (data) => {
+    disPatch(userLogin(data));
+    console.log("Login");
+    navigate("/home");
+  };
   return (
-    <>
-      <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
-        <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full "></div>
-        <div className=" p-3 m-3 mx-auto card  h-full w-full bg-white shadow-xl ">
-          <form className="block mx-auto  w-2/4">
-            <h1 className="my-4 text-3xl ">Login</h1>
-
-            <div className=" mb-3 w-full mx-auto flex border border-b-black  border-block-input">
-              <div className="w-12 p-1">
-                <svg
-                  width="39"
-                  height="40"
-                  viewBox="0 0 39 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+    <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
+      <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full bg-no-repeat bg-[url('https://i.pinimg.com/564x/ab/11/d2/ab11d2259be6bc12a112df7499026ed7.jpg')]"></div>
+      <div className=" p-3 m-3 mx-auto card  h-full w-full bg-white shadow-xl ">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="block mx-auto  w-2/4"
+        >
+          <h1 className="my-4 text-3xl ">Login</h1>
+          <div className=" mb-3 w-full mx-auto flex border border-b-black  border-block-input">
+            <div className="w-12 p-1">
+              <svg
+                width="39"
+                height="40"
+                viewBox="0 0 39 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M18.8058 22.0833C30.6337 22.0833 35.1475 30.137 37.4128 36.1417C37.8937 37.4163 36.9207 38.75 35.5584 38.75H6.87827M18.8058 22.0833C15.5528 22.0833 7.96259 20 7.96259 11.6667C7.96259 5.41667 12.2999 1.25 18.8058 1.25C25.3117 1.25 29.6489 5.41667 29.6489 11.6667C29.6489 15.8333 26.6129 22.0833 18.8058 22.0833ZM18.8058 22.0833C7.97626 22.0833 3.27819 28.8347 0.823485 34.5833"
+                  stroke="#808080"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </div>
+            <input
+              type="text"
+              className="form-control w-full  bg-inherit"
+              placeholder="User name"
+              {...register("username")}
+            />
+          </div>
+          <div className="mb-3  mx-auto flex border border-b-black  border-block-input">
+            <div className="w-12 p-1">
+              <svg
+                width="40"
+                height="40"
+                viewBox="0 0 40 40"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <g opacity="0.5">
                   <path
-                    d="M18.8058 22.0833C30.6337 22.0833 35.1475 30.137 37.4128 36.1417C37.8937 37.4163 36.9207 38.75 35.5584 38.75H6.87827M18.8058 22.0833C15.5528 22.0833 7.96259 20 7.96259 11.6667C7.96259 5.41667 12.2999 1.25 18.8058 1.25C25.3117 1.25 29.6489 5.41667 29.6489 11.6667C29.6489 15.8333 26.6129 22.0833 18.8058 22.0833ZM18.8058 22.0833C7.97626 22.0833 3.27819 28.8347 0.823485 34.5833"
-                    stroke="#808080"
+                    d="M13.3333 30L16.6666 26.6667H19.9999L22.2666 24.4C24.5835 25.2072 27.1059 25.204 29.4208 24.391C31.7356 23.5779 33.706 22.0031 35.0093 19.9243C36.3126 17.8456 36.8716 15.386 36.5949 12.9481C36.3183 10.5102 35.2222 8.23848 33.4862 6.50466C31.7502 4.77084 29.4771 3.67765 27.0389 3.40402C24.6007 3.1304 22.1418 3.69253 20.0646 4.99842C17.9875 6.30432 16.4152 8.27662 15.605 10.5925C14.7949 12.9084 14.7948 15.4308 15.6049 17.7467L3.33325 30V36.6667H9.99992L13.3333 33.3334V30Z"
+                    stroke="black"
+                    stroke-width="2"
                     stroke-linecap="round"
                     stroke-linejoin="round"
                   />
-                </svg>
-              </div>
-              <input
-                type="text"
-                className="form-control w-full  bg-inherit"
-                name="username"
-                placeholder="User name"
-                aria-describedby="username"
-              />
+                  <path
+                    d="M28.3332 13.3333C29.2536 13.3333 29.9998 12.5871 29.9998 11.6667C29.9998 10.7462 29.2536 10 28.3332 10C27.4127 10 26.6665 10.7462 26.6665 11.6667C26.6665 12.5871 27.4127 13.3333 28.3332 13.3333Z"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </g>
+              </svg>
             </div>
-            <div className="mb-3  mx-auto flex border border-b-black  border-block-input">
-              <div className="w-12 p-1">
-                <svg
-                  width="40"
-                  height="40"
-                  viewBox="0 0 40 40"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <g opacity="0.5">
-                    <path
-                      d="M13.3333 30L16.6666 26.6667H19.9999L22.2666 24.4C24.5835 25.2072 27.1059 25.204 29.4208 24.391C31.7356 23.5779 33.706 22.0031 35.0093 19.9243C36.3126 17.8456 36.8716 15.386 36.5949 12.9481C36.3183 10.5102 35.2222 8.23848 33.4862 6.50466C31.7502 4.77084 29.4771 3.67765 27.0389 3.40402C24.6007 3.1304 22.1418 3.69253 20.0646 4.99842C17.9875 6.30432 16.4152 8.27662 15.605 10.5925C14.7949 12.9084 14.7948 15.4308 15.6049 17.7467L3.33325 30V36.6667H9.99992L13.3333 33.3334V30Z"
-                      stroke="black"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                    <path
-                      d="M28.3332 13.3333C29.2536 13.3333 29.9998 12.5871 29.9998 11.6667C29.9998 10.7462 29.2536 10 28.3332 10C27.4127 10 26.6665 10.7462 26.6665 11.6667C26.6665 12.5871 27.4127 13.3333 28.3332 13.3333Z"
-                      stroke="black"
-                      stroke-width="2"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                    />
-                  </g>
-                </svg>
-              </div>
-              <input
-                type="password"
-                className="form-control w-full"
-                name="password"
-                placeholder="password"
-                aria-describedby="password"
-              />
-            </div>
-            <div className="flex  mx-auto">
+            <input
+              type="password"
+              className="form-control w-full"
+              placeholder="password"
+              {...register("password")}
+            />
+          </div>
+          <div className="flex mx-auto p-3">
+            <button className="h-20" type="submit">
               <svg
                 width="186"
                 height="61"
@@ -127,43 +141,79 @@ const Login = () => {
                   </filter>
                 </defs>
               </svg>
-
-              <div className="divider divider-horizontal">OR</div>
+            </button>
+            <div className="divider divider-vertical h-18"></div>
+            <div className="pt-3">
+              <Link to={"/register"} className="text-xl">
+                Register
+              </Link>
+            </div>
+          </div>
+          <div className="w-3/4 mx-auto ">
+            <div className="grid grid-cols-3 bg-blue-700 h-16 card bg-base-300 rounded-full place-items-center">
               <div className="">
-                <button className="">Register</button>
+                <svg
+                  width="39"
+                  height="42"
+                  viewBox="0 0 39 42"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M39 21C39 9.40201 30.2696 0 19.5 0C8.73044 0 0 9.40201 0 21C0 31.4815 7.13083 40.1695 16.4531 41.7449V27.0703H11.502V21H16.4531V16.3734C16.4531 11.1103 19.3644 8.20312 23.8186 8.20312C25.9514 8.20312 28.1836 8.61328 28.1836 8.61328V13.7812H25.7248C23.3025 13.7812 22.5469 15.4001 22.5469 17.0625V21H27.9551L27.0905 27.0703H22.5469V41.7449C31.8692 40.1695 39 31.4815 39 21Z"
+                    fill="#1877F2"
+                  />
+                  <path
+                    d="M27.0905 27.0703L27.9551 21H22.5469V17.0625C22.5469 15.4018 23.3025 13.7812 25.7248 13.7812H28.1836V8.61328C28.1836 8.61328 25.9521 8.20312 23.8186 8.20312C19.3644 8.20312 16.4531 11.1103 16.4531 16.3734V21H11.502V27.0703H16.4531V41.7449C18.4721 42.085 20.5279 42.085 22.5469 41.7449V27.0703H27.0905Z"
+                    fill="white"
+                  />
+                </svg>
+              </div>
+              <div className="col-span-2  text-white text-left ml-0">
+                FACEBOOK
               </div>
             </div>
-            <div className="">
-              <div className="grid grid-cols-3 h-20 card bg-base-300 rounded-box place-items-center">
-                <div className="">
-                  <svg
-                    width="39"
-                    height="42"
-                    viewBox="0 0 39 42"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
+            <div className="divider">OR</div>
+            <div className="grid grid-cols-3 base-100 h-16 card bg-base-300 rounded-full place-items-center">
+              <div className="">
+                <svg
+                  width="39"
+                  height="42"
+                  viewBox="0 0 39 42"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_164_670)">
                     <path
-                      d="M39 21C39 9.40201 30.2696 0 19.5 0C8.73044 0 0 9.40201 0 21C0 31.4815 7.13083 40.1695 16.4531 41.7449V27.0703H11.502V21H16.4531V16.3734C16.4531 11.1103 19.3644 8.20312 23.8186 8.20312C25.9514 8.20312 28.1836 8.61328 28.1836 8.61328V13.7812H25.7248C23.3025 13.7812 22.5469 15.4001 22.5469 17.0625V21H27.9551L27.0905 27.0703H22.5469V41.7449C31.8692 40.1695 39 31.4815 39 21Z"
-                      fill="#1877F2"
+                      d="M38.6198 21.4837C38.6198 20.0562 38.5123 18.6209 38.283 17.2166H19.89V25.3033H30.4228C29.9857 27.9114 28.5814 30.2186 26.525 31.6847V36.9318H32.8088C36.4989 33.2742 38.6198 27.8728 38.6198 21.4837Z"
+                      fill="#4285F4"
                     />
                     <path
-                      d="M27.0905 27.0703L27.9551 21H22.5469V17.0625C22.5469 15.4018 23.3025 13.7812 25.7248 13.7812H28.1836V8.61328C28.1836 8.61328 25.9521 8.20312 23.8186 8.20312C19.3644 8.20312 16.4531 11.1103 16.4531 16.3734V21H11.502V27.0703H16.4531V41.7449C18.4721 42.085 20.5279 42.085 22.5469 41.7449V27.0703H27.0905Z"
-                      fill="white"
+                      d="M19.89 42.0014C25.1492 42.0014 29.5845 40.1418 32.8159 36.9318L26.5321 31.6847C24.7838 32.9656 22.5268 33.691 19.8971 33.691C14.8099 33.691 10.4964 29.9948 8.94877 25.0255H2.46429V30.4347C5.7746 37.526 12.517 42.0014 19.89 42.0014V42.0014Z"
+                      fill="#34A853"
                     />
-                  </svg>
-                </div>
-                <div className="col-span-2 text-left ml-0">facebook</div>
+                    <path
+                      d="M8.94163 25.0255C8.1248 22.4174 8.1248 19.5932 8.94163 16.9851V11.5759H2.46431C-0.301439 17.5098 -0.301439 24.5008 2.46431 30.4346L8.94163 25.0255V25.0255Z"
+                      fill="#FBBC04"
+                    />
+                    <path
+                      d="M19.89 8.31191C22.6701 8.26561 25.357 9.39219 27.3704 11.4602L32.9377 5.46458C29.4125 1.89963 24.7336 -0.0603155 19.89 0.00141517C12.517 0.00141517 5.7746 4.47689 2.46429 11.5759L8.94161 16.9851C10.4821 12.008 14.8027 8.31191 19.89 8.31191V8.31191Z"
+                      fill="#EA4335"
+                    />
+                  </g>
+                  <defs>
+                    <clipPath id="clip0_164_670">
+                      <rect width="39" height="42" fill="white" />
+                    </clipPath>
+                  </defs>
+                </svg>
               </div>
-              <div className="divider">OR</div>
-              <div className="grid h-20 card bg-base-300 rounded-box place-items-center">
-                google
-              </div>
+              <div className=" col-span-2  text-left ml-0">GOOGLE</div>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
-    </>
+    </div>
   );
 };
 
