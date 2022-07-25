@@ -27,6 +27,7 @@ const App = () => {
             <Route path="/chat" element={<Chatpage />} />
             <Route path="/register" element={<Regispage />} />
             <Route path="/login" element={<Login />} />
+
             <Route path="/alert" element={<Alertpage/>} />
             <Route path="/editpersonal" element={<EditPersonal/>} />
             <Route path="/liking" element={<Passion/>} /> 
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/editpassion" element={<Passion/>} />
           </Routes> 
         {/* <Footer/> */}
+
     </BrowserRouter>
   );
 };
