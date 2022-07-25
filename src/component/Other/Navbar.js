@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchAllUser } from "../action";
+import { fetchAllUser } from "../../action";
 import { useNavigate, Link } from "react-router-dom";
 const Navbar = () => {
   const usersignin = useSelector((state) => state.signs);
@@ -15,7 +15,7 @@ const Navbar = () => {
             />
           </div>
           <div className="flex-1 lg:flex hidden">
-            <h1 className="text-2xl">Valen Matching</h1>
+            <h1 className="text-2xl fontlemon">Valen Matching</h1>
           </div>
           <div className="flex-1 lg:flex "></div>
           <div className="flex-initial lg:flex-none"></div>

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import Historydropdown from "../History/historydropdown";
 
 const Menubar = () => {
   return (
     <div className="menubar navbar shadow-lg text-neutral-content h-7">
       <div className="mx-auto">
-        <Link to={"/"} className="flex-1 mx-4 text-2xl">
+        <Link to={"/home"} className="flex-1 mx-4 text-2xl">
           <div className="flex">
             <div className="flex-1">
               <svg
@@ -50,7 +51,7 @@ const Menubar = () => {
                 />
               </svg>
             </div>
-            <div className="my-auto ml-2 lg:flex hidden">Chat</div>
+            <div className="my-auto ml-2 lg:flex hidden">Friend</div>
           </div>
         </Link>
         <label
@@ -152,52 +153,9 @@ const Menubar = () => {
                 />
               </svg>
             </div>
-            <div className="my-auto ml-2 lg:flex hidden">Warn</div>
+            <div className="my-auto ml-2 lg:flex hidden">History</div>
           </label>
-          <ul
-            tabindex="0"
-            className="p-2 shadow menu dropdown-content bg-base-100 rounded-box w-96"
-          >
-            <li>
-              <a>
-                <div className="avatar online">
-                  <div className="w-12 rounded-full">
-                    <img src="https://api.lorem.space/image/face?hash=28212" />
-                  </div>
-                </div>
-                <div className="">
-                  <p className="text-xl">Successful Match</p>
-                  <p className="text-xs">kanomroo match</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a>
-                <div className="avatar online">
-                  <div className="w-12 rounded-full">
-                    <img src="https://api.lorem.space/image/face?hash=28212" />
-                  </div>
-                </div>
-                <div className="">
-                  <p className="text-xl">Successful Match</p>
-                  <p className="text-xs">LittleBeam match</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a>
-                <div className="avatar online">
-                  <div className="w-12 rounded-full">
-                    <img src="https://api.lorem.space/image/face?hash=28212" />
-                  </div>
-                </div>
-                <div className="">
-                  <p className="text-xl">SuperLike</p>
-                  <p className="text-xs">Meijimill</p>
-                </div>
-              </a>
-            </li>
-          </ul>
+          <Historydropdown/>
         </div>
       </div>
     </div>

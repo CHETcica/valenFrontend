@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-import { EditModal1 } from "../component/EditModal";
+import { EditModal1 } from "./EditModal";
 
 
 const EditLiking = (props) => {

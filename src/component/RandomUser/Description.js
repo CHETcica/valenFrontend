@@ -1,24 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Carduser from "./Carduser";
-import { fetchAllUser } from "../action";
+import { fetchAllUser } from "../../action";
+import { getDistance } from "geolib";
 
 const Description = (props) => {
   const users = props.users;
-  // console.log(users)
-  // console.log(users.user.username)
-
+  // console.log(users);
   const calculateAge = () => {
     var today = new Date();
-    var birthDate = new Date(users.user.born);
+    var birthDate = new Date(users?.user?.born?users.user.born:"2000-01-23T00:00:00.000+00:00");
     var age = today.getFullYear() - birthDate.getFullYear();
     var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())){
       age--;
     }
     return age;
   };
-  
+  const distance = getDistance(
+    {
+      latitude: users?.user?.location?users.user.location.coordinates[1]:13.566704,
+      longitude: users?.user?.location?users.user.location.coordinates[0]:100.060139,
+    },
+    { latitude: 13.566704, longitude: 100.060139 }
+  );
+  let distanceKM = distance * 0.001;
   return (
     <div>
       <input type="checkbox" id="modal-Description" className="modal-toggle" />
@@ -97,55 +103,60 @@ const Description = (props) => {
           </svg>
         </label>
         <div className="modal-box mt-3 sm:h/4/5  grid lg:grid-cols-2  grid-cols-1">
-          <Carduser users={users}/>
+          <Carduser users={users} />
           <div className=" pt-5">
             <div className="grid grid-cols-2">
               <h1 className="text-3xl ">
-                {users.user.username ? users.user.username : "-"}
+                {users.user.username ? users.user.username : "unknowuser"}
               </h1>
-              <h1 className="text-3xl ml-auto">Age  
-              {calculateAge()}
+              <h1 className="text-3xl ml-auto">
+                Age
+                {users?.user?.born? calculateAge():"??"}
               </h1>
             </div>
             <hr />
             <div className="my-3">
               <h3 className="text-xl ">
                 higth :
-                {users.user.userDetails.higth
-                  ? users.user.userDetails.higth
+                {users?.user?.userDetails?.higth? users.user.userDetails.higth
                   : "-"}
                 cm.
               </h3>
               <h3 className="text-xl ">
                 weigth :
-                {users.user.userDetails.weigth
-                  ? users.user.userDetails.weigth
+                {users?.user?.userDetails?.weigth? users.user.userDetails.weigth
                   : "-"}
                 kg.
               </h3>
               <h3 className="text-xl ">
-                gender : {users.user.gender ? users.user.gender : "-"}
+                gender : {users?.user?.gender? users.user.gender : "-"}
               </h3>
               <h3 className="text-xl ">
                 interested :
-                {users.user.interested ? users.user.interested : "-"}
+                {users?.user?.interested? users.user.interested : "-"}
+              </h3>
+              <h3>
+                {distanceKM?<div className="py-1 mt-2">
+                  <h3 className="distance-seccsion text-xl">
+                    distance : {distanceKM.toFixed(1)} Km
+                  </h3>
+                </div>:""}
               </h3>
             </div>
             <div className="text-3xl mt-3">
-              <h1 className="text-3xl mb-2">Passions</h1>
+              <h1 className="text-3xl mb-2">{users?.user?.passion?"Passions":""}</h1>
               <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 text-center">
-                {users.user.passion?
-                users.user.passion.map((el) => (
-                  <div className="text-color-black text-xl card-actions-passion-primary ">
-                    {el}
-                  </div>
-                )):""
-                }
+                {users?.user?.passion?.map((el) => (
+                      <div className="text-color-black text-xl card-actions-passion-primary ">
+                        {el}
+                      </div>
+                    ))
+                  }
               </div>
             </div>
-            <div className="text-3xl mt-3">
+            {users?.user?.userimage?<div className="text-3xl mt-3">
               <h1 className="text-3xl mb-2">Album</h1>
-              
+
               <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-4 gap-3">
                 {users.user.userimage ? (
                   <img
@@ -185,7 +196,7 @@ const Description = (props) => {
                   ""
                 )}
               </div>
-            </div>
+            </div>:""}
           </div>
         </div>
       </label>
