@@ -1,20 +1,142 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  randomUser,
+  likeUser,
+  superlikeUser,
+  unlikeUser,
+  checkMatch,
+  toggleMatchModal,
+} from "../../action";
 
-export const BtnGroupt = () => {
+export const BtnGroupt = (props) => {
+  const usersignin = useSelector((state) => state.signs);
+  const propsSetting = props.setting;
+  let Setting = [];
+  if (propsSetting) {
+    Setting = propsSetting;
+  }
+  console.log("setting_" + Setting);
+
+  const taketid = props.user.user._id;
+  const taketdata = props.user.user;
+  const myid = usersignin.user._id;
+  const disPatch = useDispatch();
+
   const ShowBtnText = (btnname) => {
-    console.log(btnname);
-    var x = document.getElementById(btnname);
-    if (x.style.display === "none") {
-      x.style.display = "block";
-    } else {
-      x.style.display = "none";
-    }
+    // console.log(btnname, id);
+    var button = document.getElementById(btnname);
+    button.style.display === "none"
+      ? (button.style.display = "block").setTimeout(() => {
+          button.style.display = "none";
+          console.log("ปิดการแสดงปุ่ม");
+        }, 300)
+      : // ,countdown(btnname)
+        (button.style.display = "none");
   };
+
+  // const handleLike = () => {
+  //   let likes = usersignin.user.userDetails.likes;
+  //   const found = likes.find((el) => el === taketid);
+  //   if (!found) {
+  //     likes.push(taketid);
+  //   }
+
+  //   let randomUser = randomUser(
+  //     usersignin.user.interested,
+  //     usersignin.user.passion,
+  //     usersignin.user.friendId,
+  //     likes,
+  //     usersignin.user.userDetails.unlikes,
+  //     usersignin.user.userDetails.superlikes,
+  //     usersignin.user.location.coordinates,
+  //     usersignin.user.userSetting.MaxDistance * 1000
+  //   );
+  //   let likeUser = likeUser(likes, myid);
+  //   let ShowBtnText = ShowBtnText("like");
+  //   let checkMatch = checkMatch(myid, taketid, taketdata);
+  //   disPatch(await Promise.all([randomUser, likeUser, ShowBtnText, checkMatch]));
+  // };
+
+  const handleLike = () => {
+    let likes = usersignin.user.userDetails.likes;
+    const found = likes.find((el) => el === taketid);
+    if (!found) {
+      likes.push(taketid);
+    }
+
+    disPatch(
+      randomUser(
+        usersignin.user.interested,
+        usersignin.user.passion,
+        usersignin.user.friendId,
+        likes,
+        usersignin.user.userDetails.unlikes,
+        usersignin.user.userDetails.superlikes,
+        usersignin.user.location.coordinates,
+        usersignin.user.userSetting.MaxDistance * 1000
+      ),
+      likeUser(likes, myid),
+      ShowBtnText("like"),
+      checkMatch(myid, taketid, taketdata)
+    );
+  };
+
+  const handleUnLike = () => {
+    let unlikes = usersignin.user.userDetails.unlikes;
+    const found = unlikes.find((el) => el === taketid);
+    if (!found) {
+      unlikes.push(taketid);
+    }
+    // console.log(unlikes);
+    disPatch(
+      randomUser(
+        usersignin.user.interested,
+        usersignin.user.passion,
+        usersignin.user.friendId,
+        usersignin.user.userDetails.likes,
+        unlikes,
+        usersignin.user.userDetails.superlikes,
+        usersignin.user.location.coordinates,
+        usersignin.user.userSetting.MaxDistance * 1000
+      ),
+      unlikeUser(unlikes, myid),
+      ShowBtnText("unlike")
+    );
+  };
+
+  const handleSuperlike = () => {
+    let superlikes = usersignin?.user?.userDetails?.superlikes
+      ? usersignin.user.userDetails.superlikes
+      : [];
+    const found = superlikes.find((el) => el === taketid);
+    if (!found) {
+      superlikes.push(taketid);
+    }
+    disPatch(
+      randomUser(
+        usersignin.user.interested,
+        usersignin.user.passion,
+        usersignin.user.friendId,
+        usersignin.user.userDetails.likes,
+        usersignin.user.userDetails.unlikes,
+        superlikes,
+        usersignin.user.location.coordinates,
+        usersignin.user.userSetting.MaxDistance * 1000
+      ),
+      superlikeUser(superlikes, myid),
+      ShowBtnText("superlike"),
+      checkMatch(myid, taketid, taketdata),
+      
+    );
+  };
+
   return (
     <div className="mt-2 grid grid-cols-3 ">
-      <div 
-      //onClick={ShowBtnText('unlike')} 
-      className="mx-auto button_groupt button_groupt-unlike ">
+      <div
+        onClick={(e) => handleUnLike()}
+        className="mx-auto button_groupt button_groupt-unlike "
+      >
         <svg
           width="87"
           height="87"
@@ -47,9 +169,10 @@ export const BtnGroupt = () => {
           />
         </svg>
       </div>
-      <div 
-      // onClick={ShowBtnText('superlike')}  
-      className="mx-auto button_groupt button_groupt-superlike">
+      <div
+        onClick={(e) => handleSuperlike()}
+        className="mx-auto button_groupt button_groupt-superlike"
+      >
         <svg
           width="88"
           height="87"
@@ -95,10 +218,12 @@ export const BtnGroupt = () => {
             fill="#FFEF61"
           />
         </svg>
-      </div >
-      <div 
-      //onClick={ShowBtnText('like')} 
-      className="mx-auto button_groupt button_groupt-like">
+      </div>
+      <div
+        onClick={(e) => handleLike()}
+        // onClick={(e) => toggleMatchModal()}
+        className="mx-auto button_groupt button_groupt-like"
+      >
         <svg
           width="87"
           height="87"

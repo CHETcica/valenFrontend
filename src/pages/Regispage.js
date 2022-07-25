@@ -3,36 +3,43 @@ import { useDispatch, useSelector } from "react-redux";
 import { userSignup } from "../action";
 import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
-
 import {
   AlertPasswordsnotmatch,
   AlertPleaseenterpassword,
 } from "../component/Alert";
 
-const Reagispage = () => {
-  // const [submitted, setSubmitted] = useState(false);
-  // const [username, setUsername] = useState("");
-  // const [password1, setPassword1] = useState("");
-  // const [password2, setPassword2] = useState("");
-  // const [email, setEmail] = useState("");
-  // const [birthday, setBirthday] = useState("");
-  // const navigate = useNavigate();
-  // const disPatch = useDispatch();
-  // function handleSubmit(event) {
-  //   event.preventDefault();
-  //   disPatch(userSignup(username, email, password1, birthday));
-  //   setSubmitted(true);
-  //   navigate("/login")
-  // }
 
+const Reagispage = () => {
+  const disPatch = useDispatch();
+  const navigate = useNavigate();
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => console.log(data);
+  const onSubmit = (data) => {
+    console.log(data);
+    if(data.password===data.confirmpassword){
+      disPatch(userSignup(data))
+      navigate("/login")
+    }else{
+      ShowAlertPasswordsnotmatch()
+    }
+  };
+
+  const ShowAlertPasswordsnotmatch = () => {
+    var button = document.getElementById("alertPasswordsnotmatch");
+    button.style.display === "none"
+      ? (button.style.display = "block")
+      : (button.style.display = "none");
+  };
 
   return (
     <div className="my-3 mb-10 container mx-auto grid md:grid-cols-2 sm:grid-cols-1  border-solid ">
       <div className="sm:hidden md:block p-3 m-3 mx-auto  h-full w-full bg-no-repeat bg-[url('https://i.pinimg.com/564x/ab/11/d2/ab11d2259be6bc12a112df7499026ed7.jpg')]">
-        {/* {submitted? password1 !== password2 ? <AlertPasswordsnotmatch /> : "" : ""}
-          {!password1 || !password2 ? <AlertPleaseenterpassword /> :""} */}
+      <div id="alertPleaseenterpassword" className="card__passion--alertsuccess">
+        <AlertPleaseenterpassword/>
+      </div>
+      <div id="alertPasswordsnotmatch" className="card__passion--alertsuccess">
+        <AlertPasswordsnotmatch/>
+      </div>
+          
       </div>
       <div className=" p-3 m-3 mx-auto card  h-full w-full bg-white shadow-xl ">
         <form
@@ -40,7 +47,6 @@ const Reagispage = () => {
           className="block mx-auto  w-2/4"
         >
           <h1 className="my-4 text-3xl ">Register</h1>
-
           <div className=" mb-3 w-full mx-auto flex border border-b-black  border-block-input">
             <div className="w-12 p-1">
               <svg
@@ -61,11 +67,12 @@ const Reagispage = () => {
             <input
               type="text"
               className="form-control w-full  bg-inherit"
-              {...register("firstname")}
+              placeholder="username"
+              {...register("username")}
             />
           </div>
           <div className="mb-3  mx-auto flex border border-b-black  border-block-input">
-            <div className="w-12 p-1">
+            <div className="w-12 mt-2 p-1">
               <svg
                 width="39"
                 height="27"
@@ -83,7 +90,8 @@ const Reagispage = () => {
             </div>
             <input
               type="email"
-              className="form-control w-full"
+              className="form-control w-full "
+              placeholder="email"
               {...register("email")}
             />
           </div>
@@ -120,7 +128,7 @@ const Reagispage = () => {
               className="form-control w-full"
               name="firstname"
               placeholder="password"
-              {...register("password")}
+              {...register("password", { pattern: /[A-Za-z]{3}/ })}
             />
           </div>
           <div className="mb-3 w-full mx-auto flex border border-b-black  border-block-input">
@@ -153,7 +161,7 @@ const Reagispage = () => {
             <input
               type="password"
               className="form-control w-full"
-              placeholder="Confirm Password"
+              placeholder="confirmpassword"
               {...register("confirmpassword")}
             />
           </div>
@@ -202,7 +210,7 @@ const Reagispage = () => {
               type="date"
               className="form-control w-full grid grid-cols-2 "
               placeholder="Born"
-              {...register("birthday")}
+              {...register("born")}
             />
           </div>
           <div className="">

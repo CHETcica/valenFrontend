@@ -1,66 +1,30 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Carduser from "./Carduser";
-import { fetchAllUser } from "../action";
+import { fetchAllUser } from "../../action";
+import { getDistance } from "geolib";
 
-const Description = () => {
-  // const users = useSelector((state) => state.users);
-  const [users, setUsers] = useState({
-    user: [
-      {
-        user_details: {
-          taste: [],
-          likes: [],
-          unlike: [],
-          likesMe: [],
-          higth: 170,
-          weigth: 54,
-        },
-        _id: "6213b95e3ee259b511fbcf3e",
-        username: "BOWcica",
-        email: "chetsadakozn2543@gmail.com",
-        password:
-          "$2a$12$l90I8YxiEP/1SzDvrx159.bTR1svAxWukjnH0USIig4mTVSPZv4tm",
-        gender: "man",
-        born: "2002-02-05T00:00:00.000Z",
-        phone: "0823636036",
-        location: [13.838598, 19.0398371],
-        passion: ["music", "game"],
-        // passion: { music: "5", game: "5" },
-        interested: "woman",
-        bio: "hello i like game",
-        social: {
-          Facebook: "Chet cica",
-          Instagram: "Chet cica",
-        },
-        userimageprofile:
-          "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg",
-        userimage: [
-          "https://cdn.discordapp.com/attachments/792729018608648204/794089291360763914/profile.jpg",
-        ],
-        frind_id: [],
-        __v: 0,
-      },
-    ],
-  });
-
-  const disPatch = useDispatch();
-
-  useEffect(() => {
-    disPatch(fetchAllUser());
-  }, []);
-
+const Description = (props) => {
+  const users = props.users;
+  // console.log(users);
   const calculateAge = () => {
     var today = new Date();
-    var birthDate = new Date(users.user[0].born);
+    var birthDate = new Date(users?.user?.born?users.user.born:"2000-01-23T00:00:00.000+00:00");
     var age = today.getFullYear() - birthDate.getFullYear();
     var m = today.getMonth() - birthDate.getMonth();
-    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())){
       age--;
     }
     return age;
   };
-
+  const distance = getDistance(
+    {
+      latitude: users?.user?.location?users.user.location.coordinates[1]:13.566704,
+      longitude: users?.user?.location?users.user.location.coordinates[0]:100.060139,
+    },
+    { latitude: 13.566704, longitude: 100.060139 }
+  );
+  let distanceKM = distance * 0.001;
   return (
     <div>
       <input type="checkbox" id="modal-Description" className="modal-toggle" />
@@ -139,102 +103,100 @@ const Description = () => {
           </svg>
         </label>
         <div className="modal-box mt-3 sm:h/4/5  grid lg:grid-cols-2  grid-cols-1">
-          <Carduser />
+          <Carduser users={users} />
           <div className=" pt-5">
             <div className="grid grid-cols-2">
               <h1 className="text-3xl ">
-                {users.user[0].username ? users.user[0].username : "-"}
+                {users.user.username ? users.user.username : "unknowuser"}
               </h1>
-              <h1 className="text-3xl ml-auto">Age {calculateAge()}</h1>
+              <h1 className="text-3xl ml-auto">
+                Age
+                {users?.user?.born? calculateAge():"??"}
+              </h1>
             </div>
             <hr />
             <div className="my-3">
               <h3 className="text-xl ">
-                higth :{" "}
-                {users.user[0].user_details.higth
-                  ? users.user[0].user_details.higth
+                higth :
+                {users?.user?.userDetails?.higth? users.user.userDetails.higth
                   : "-"}
                 cm.
               </h3>
               <h3 className="text-xl ">
-                weigth :{" "}
-                {users.user[0].user_details.weigth
-                  ? users.user[0].user_details.weigth
+                weigth :
+                {users?.user?.userDetails?.weigth? users.user.userDetails.weigth
                   : "-"}
                 kg.
               </h3>
               <h3 className="text-xl ">
-                gender : {users.user[0].gender ? users.user[0].gender : "-"}
+                gender : {users?.user?.gender? users.user.gender : "-"}
               </h3>
               <h3 className="text-xl ">
-                interested :{" "}
-                {users.user[0].interested ? users.user[0].interested : "-"}
+                interested :
+                {users?.user?.interested? users.user.interested : "-"}
+              </h3>
+              <h3>
+                {distanceKM?<div className="py-1 mt-2">
+                  <h3 className="distance-seccsion text-xl">
+                    distance : {distanceKM.toFixed(1)} Km
+                  </h3>
+                </div>:""}
               </h3>
             </div>
             <div className="text-3xl mt-3">
-              <h1 className="text-3xl mb-2">Passions</h1>
+              <h1 className="text-3xl mb-2">{users?.user?.passion?"Passions":""}</h1>
               <div className="grid grid-cols-2 xl:grid-cols-4 gap-3 text-center">
-                {/* {myObject.map(function (value, label) {
-                   value * value
-                })} */}
-
-                {/* {users.user[0].passion.map((passion, frequency) => (
-                  <div className="text-color-black text-xl card-actions-passion-primary ">
-                    {frequency}
-                  </div>
-                ))} */}
-                {users.user[0].passion?
-                users.user[0].passion.map((el) => (
-                  <div className="text-color-black text-xl card-actions-passion-primary ">
-                    {el}
-                  </div>
-                )):""
-                }
+                {users?.user?.passion?.map((el) => (
+                      <div className="text-color-black text-xl card-actions-passion-primary ">
+                        {el}
+                      </div>
+                    ))
+                  }
               </div>
             </div>
-            <div className="text-3xl mt-3">
+            {users?.user?.userimage?<div className="text-3xl mt-3">
               <h1 className="text-3xl mb-2">Album</h1>
-              
+
               <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-4 gap-3">
-                {users.user[0].userimage[0] ? (
+                {users.user.userimage ? (
                   <img
-                    src={users.user[0].userimage[0]}
+                    src={users.user.userimage[0]}
                     alt="+"
-                    className="user-description rounded-2xl"
+                    className="avatar rounded-2xl"
                   />
                 ) : (
                   ""
                 )}
-                {users.user[0].userimage[1] ? (
+                {users.user.userimage[1] ? (
                   <img
-                    src={users.user[0].userimage[1]}
+                    src={users.user.userimage[1]}
                     alt="+"
-                    className="user-description rounded-2xl"
+                    className="avatar rounded-2xl"
                   />
                 ) : (
                   ""
                 )}
 
-                {users.user[0].userimage[2] ? (
+                {users.user.userimage[2] ? (
                   <img
-                    src={users.user[0].userimage[2]}
+                    src={users.user.userimage[2]}
                     alt="+"
-                    className="user-description rounded-2xl"
+                    className="avatar rounded-2xl"
                   />
                 ) : (
                   ""
                 )}
-                {users.user[0].userimage[3] ? (
+                {users.user.userimage[3] ? (
                   <img
-                    src={users.user[0].userimage[3]}
+                    src={users.user.userimage[3]}
                     alt="+"
-                    className="user-description rounded-2xl"
+                    className="avatar rounded-2xl"
                   />
                 ) : (
                   ""
                 )}
               </div>
-            </div>
+            </div>:""}
           </div>
         </div>
       </label>

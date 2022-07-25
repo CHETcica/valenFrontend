@@ -1,13 +1,28 @@
-import React from 'react'
-import EditPersonalmanu from "../component/EditPersonalmanu";
+import React, { useState } from "react";
+import EditLiking from "../component/Edit/EditLiking";
+
 const Liking = () => {
+    const [users, setUsers] = useState({
+        user: [
+          {
+            user_liking: {
+              sport: ["ฟุตบอล"],
+              song: ["แร็ป"],
+              food: ["ก๋วยเตี๋ยว"],
+              unlike: ["ทะเล"],
+            },
+          },
+        ],
+          frind_id: [],
+        __v: 0,
+      });
     return (
         <>
             <div align="center" className='text-xl my-5'> <p>ความชอบ</p></div>
-            <EditPersonalmanu title="กีฬา" />
-            <EditPersonalmanu title="เพลง" />
-            <EditPersonalmanu title="อาหาร" />
-            <EditPersonalmanu title="สถานที่ท่องเที่ยว" />
+            <EditLiking hobby="กีฬา"chosen="ฟุตบอล"/>
+            <EditLiking hobby="เพลง"chosen="แร็ป"/>
+            <EditLiking hobby="อาหาร"chosen="ก๋วยเตี๋ยว"/>
+            <EditLiking hobby="ที่ท่องเที่ยว"chosen="ทะเล"/>
         </>
     )
 }
